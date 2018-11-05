@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.zhangruirui.utils.ToastUtil;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
               public void onClick(DialogInterface dialog,
                                   int whichButton) {
                 // LEFT DO NOTHING
+                ToastUtil.showToast(MainActivity.this, "感谢您的挽留");
               }
             }).show();
   }
