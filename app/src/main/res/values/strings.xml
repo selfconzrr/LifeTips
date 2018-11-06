@@ -1,4 +1,12 @@
 <resources>
   <string name="app_name">LifeTips</string>
   <string name="welcome">欢迎使用您的生活小管家</string>
+  <string name="login_button">Login</string>
+  <string name="login_toast">用户名或密码错误，请重新输入</string>
+  <string name="account">Account:</string>
+  <string name="account_hint">input your account</string>
+  <string name="password">Password:</string>
+  <string name="password_hint">input your password</string>
+  <string name="remember_password">Remember password</string>
+
 </resources>

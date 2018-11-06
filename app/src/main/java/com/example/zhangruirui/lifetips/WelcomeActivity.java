@@ -11,6 +11,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfcon
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：11/06/18
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
   @BindView(R.id.welcome_pic)
@@ -46,8 +53,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
   @OnClick(R.id.welcome_pic)
   public void onClick() {
-    // TODO: 2018/11/6  等将来添加完 LoginActivity 时改为 Login
-    final Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+    final Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
     mClicked = true;
