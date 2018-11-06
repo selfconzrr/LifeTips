@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">LifeTips</string>
+  <string name="welcome">欢迎使用您的生活小管家</string>
 </resources>
