@@ -8,5 +8,7 @@
   <string name="password">Password:</string>
   <string name="password_hint">input your password</string>
   <string name="remember_password">Remember password</string>
+  <string name="light_intensity">光照强度</string>
+  <string name="quit">退出</string>
 
 </resources>

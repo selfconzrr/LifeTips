@@ -2,6 +2,7 @@ package com.example.zhangruirui.lifetips;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -27,8 +28,14 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @OnClick(R.id.quit)
-  public void onClick() {
+  public void onClickQuit() {
     doExit();
+  }
+
+  @OnClick(R.id.light_intensity)
+  public void onClickLight() {
+    final Intent intent = new Intent(MainActivity.this, LightIntensityActivity.class);
+    startActivity(intent);
   }
 
   private void doExit() {
