@@ -20,4 +20,13 @@
     android:text="@string/light_intensity"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/quit" />
+
+  <Button
+    android:id="@+id/getTime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/light_intensity"
+    android:text="@string/getTime"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/light_intensity" />
 </RelativeLayout>

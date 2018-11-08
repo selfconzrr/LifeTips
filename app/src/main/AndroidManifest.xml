@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.example.zhangruirui.lifetips">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/launcher"
@@ -19,7 +21,8 @@
       </intent-filter>
     </activity>
     <activity android:name=".LoginActivity" />
-    <activity android:name=".LightIntensityActivity"></activity>
+    <activity android:name=".LightIntensityActivity" />
+    <activity android:name=".NetworkTimeActivity"></activity>
   </application>
 
 </manifest>

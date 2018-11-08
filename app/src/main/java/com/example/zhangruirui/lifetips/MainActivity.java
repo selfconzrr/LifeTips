@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
+  @OnClick(R.id.getTime)
+  public void onClickTime() {
+    final Intent intent = new Intent(MainActivity.this, NetworkTimeActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")
