@@ -29,4 +29,13 @@
     android:text="@string/getTime"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/light_intensity" />
+
+  <Button
+    android:id="@+id/sms"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/getTime"
+    android:text="@string/sms"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/getTime" />
 </RelativeLayout>

@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
+  @OnClick(R.id.sms)
+  public void onClickSms() {
+    final Intent intent = new Intent(MainActivity.this, SMSActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")

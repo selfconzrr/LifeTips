@@ -24,7 +24,7 @@ public class ToastUtil {
     activity.runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        final Toast toast = Toast.makeText(activity, word, Toast.LENGTH_LONG);
+        final Toast toast = Toast.makeText(activity, word, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM, 0, 50);
         toast.show();
       }
