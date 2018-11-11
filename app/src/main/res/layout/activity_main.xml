@@ -38,4 +38,13 @@
     android:text="@string/sms"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/getTime" />
+
+  <Button
+    android:id="@+id/set"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/quit"
+    android:text="@string/set"
+    android:textColor="#ff0000"
+    />
 </RelativeLayout>

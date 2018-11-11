@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:background="@drawable/background"
+  android:orientation="vertical">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/clear_cache" />
+
+  <Button
+    android:id="@+id/clear_cache"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/clear_cache" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/advice"
+    android:textColor="#ff404040"
+    android:textSize="16.0sp" />
+
+  <Button
+    android:id="@+id/advice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/advice" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/help" />
+
+  <Button
+    android:id="@+id/help"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/help" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/about" />
+
+  <Button
+    android:id="@+id/about"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/about_us" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/light_adjust" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <SeekBar
+      android:id="@+id/light"
+      android:layout_width="320dp"
+      android:layout_height="wrap_content"
+      android:max="255"
+      android:progress="180" />
+
+    <TextView
+      android:id="@+id/show_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      tools:text="100" />
+
+  </LinearLayout>
+
+</LinearLayout>
