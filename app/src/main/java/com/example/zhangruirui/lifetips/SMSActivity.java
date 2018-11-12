@@ -22,7 +22,7 @@ import butterknife.OnClick;
 /**
  * @author zhangruirui
  * email：1138517609@qq.com
- * GitHub：https://github.com/selfcon
+ * GitHub：https://github.com/selfconzrr
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/09/18
  */
