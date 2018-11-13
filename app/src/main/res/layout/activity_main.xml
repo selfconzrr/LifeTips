@@ -47,4 +47,14 @@
     android:text="@string/set"
     android:textColor="#ff0000"
     />
+
+  <Button
+    android:id="@+id/calculate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/light_intensity"
+    android:layout_toRightOf="@+id/set"
+    android:text="@string/calculator"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@+id/set" />
 </RelativeLayout>

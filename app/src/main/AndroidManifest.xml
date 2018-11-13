@@ -26,7 +26,8 @@
     <activity android:name=".LightIntensityActivity" />
     <activity android:name=".NetworkTimeActivity" />
     <activity android:name=".SMSActivity" />
-    <activity android:name=".SetActivity"></activity>
+    <activity android:name=".SetActivity" />
+    <activity android:name=".CalculatorActivity"></activity>
   </application>
 
 </manifest>

@@ -43,4 +43,29 @@
   <string name="dialog_memo_ok">确定</string>
   <string name="dialog_memo_cancle">取消</string>
 
+  <!-- calculator 计算器-->
+  <string name="calculator">计算器</string>
+  <string name="num_0_label">0</string>
+  <string name="num_1_label">1</string>
+  <string name="num_2_label">2</string>
+  <string name="num_3_label">3</string>
+  <string name="num_4_label">4</string>
+  <string name="num_5_label">5</string>
+  <string name="num_6_label">6</string>
+  <string name="num_7_label">7</string>
+  <string name="num_8_label">8</string>
+  <string name="num_9_label">9</string>
+  <string name="op_dot_label">.</string>
+  <string name="op_equal_label">=</string>
+  <string name="op_add_label">+</string>
+  <string name="op_minus_label">-</string>
+  <string name="op_multi_label">*</string>
+  <string name="op_div_label">/</string>
+  <string name="op_one_in_x_label">1/x</string>
+  <string name="op_converse_label">+/-</string>
+  <string name="op_exit_label">EX</string>
+  <string name="op_clear_label">CE</string>
+  <string name="result">0</string>
+  <string name="title">My Calculator</string>
+
 </resources>

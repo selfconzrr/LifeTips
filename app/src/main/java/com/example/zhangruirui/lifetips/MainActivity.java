@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
+  @OnClick(R.id.calculate)
+  public void onClickCalculate() {
+    final Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")
