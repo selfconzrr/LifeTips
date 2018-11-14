@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
   @OnClick(R.id.calculate)
   public void onClickCalculate() {
     final Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick(R.id.BMI)
+  public void onClickBMI() {
+    final Intent intent = new Intent(MainActivity.this, BMIActivity.class);
     startActivity(intent);
   }
 

@@ -68,4 +68,21 @@
   <string name="result">0</string>
   <string name="title">My Calculator</string>
 
+  <!-- BMI 健康指数分析-->
+  <string name="BMI">体质分析</string>
+  <string name="clear">清空</string>
+  <string name="compute">计算</string>
+  <string name="condition">您的体重情况为：</string>
+  <string name="default_value">默认值</string>
+  <string name="fit_weight">您的健康体重为：</string>
+  <string name="height">身高(cm)：</string>
+  <string name="height_hint">请输入身高</string>
+  <string name="introduce">BMI指数（即身体质量指数，英文为Body Mass Index，简称BMI），是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。当我们需要比较及分析一个人的体重对于不同高度的人所带来的健康影响时，BMI值是一个中立而可靠的指标。本程序按照中国标准计算</string>
+  <string name="index">您的BMI指数为：</string>
+  <string name="sex">性别：</string>
+  <string name="sex_man">男/M</string>
+  <string name="sex_woman">女/F</string>
+  <string name="test_result">测试结果</string>
+  <string name="weight">体重(kg)：</string>
+  <string name="weight_hint">请输入体重</string>
 </resources>

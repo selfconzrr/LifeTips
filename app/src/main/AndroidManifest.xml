@@ -27,7 +27,13 @@
     <activity android:name=".NetworkTimeActivity" />
     <activity android:name=".SMSActivity" />
     <activity android:name=".SetActivity" />
-    <activity android:name=".CalculatorActivity"></activity>
+    <activity android:name=".CalculatorActivity" />
+    <activity
+      android:name=".bmi.BMIActivity"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+      android:name=".bmi.ResultActivity"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
   </application>
 
 </manifest>

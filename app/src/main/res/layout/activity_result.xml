@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/background"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/test_result"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="@string/test_result"
+    android:textColor="#7000"
+    android:textSize="30sp" />
+
+  <ImageView
+    android:id="@+id/result_image"
+    android:layout_width="100dp"
+    android:layout_height="250dp"
+    android:layout_gravity="center_horizontal"
+    android:scaleType="centerCrop"
+    android:src="@drawable/normal" />
+
+  <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20dp">
+
+    <TextView
+      android:id="@+id/index"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/index"
+      android:textColor="#000"
+      android:textSize="15sp" />
+
+    <TextView
+      android:id="@+id/index_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/index"
+      android:layout_marginLeft="120dp"
+      android:text="@string/default_value"
+      android:textColor="#F00"
+      android:textSize="15sp"
+      android:layout_marginStart="120dp" />
+
+    <TextView
+      android:id="@+id/condition"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:layout_below="@id/index"
+      android:text="@string/condition"
+      android:textColor="#000"
+      android:textSize="15sp" />
+
+    <TextView
+      android:id="@+id/condition_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="120dp"
+      android:layout_alignBottom="@id/condition"
+      android:text="@string/default_value"
+      android:textColor="#F00"
+      android:textSize="15sp"
+      android:layout_marginStart="120dp" />
+    <!-- layout_alignBottom 本元素的下边缘和某元素的的下边缘对齐 -->
+    <TextView
+      android:id="@+id/fit_weight"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:layout_below="@+id/condition"
+      android:text="@string/fit_weight"
+      android:textColor="#000"
+      android:textSize="15sp" />
+
+    <TextView
+      android:id="@+id/weight_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/fit_weight"
+      android:layout_marginLeft="120dp"
+      android:text="@string/default_value"
+      android:textColor="#F00"
+      android:textSize="15sp"
+      android:layout_marginStart="120dp" />
+
+  </RelativeLayout>
+
+</LinearLayout>
