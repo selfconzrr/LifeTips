@@ -67,4 +67,14 @@
     android:text="@string/BMI"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/calculate" />
+
+  <Button
+    android:id="@+id/compass"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/sms"
+    android:layout_toRightOf="@id/BMI"
+    android:text="@string/compass"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/BMI" />
 </RelativeLayout>

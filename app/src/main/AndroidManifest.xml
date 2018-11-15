@@ -34,6 +34,7 @@
     <activity
       android:name=".bmi.ResultActivity"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity android:name=".compass.CompassActivity"></activity>
   </application>
 
 </manifest>

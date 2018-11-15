@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
+import com.example.zhangruirui.lifetips.compass.CompassActivity;
 import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -66,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
   @OnClick(R.id.BMI)
   public void onClickBMI() {
     final Intent intent = new Intent(MainActivity.this, BMIActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick(R.id.compass)
+  public void onClickCompass() {
+    final Intent intent = new Intent(MainActivity.this, CompassActivity.class);
     startActivity(intent);
   }
 
