@@ -45,8 +45,7 @@
     android:layout_height="wrap_content"
     android:layout_below="@id/quit"
     android:text="@string/set"
-    android:textColor="#ff0000"
-    />
+    android:textColor="#ff0000" />
 
   <Button
     android:id="@+id/calculate"
@@ -77,4 +76,13 @@
     android:text="@string/compass"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/BMI" />
+
+  <Button
+    android:id="@+id/music_player"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/set"
+    android:text="@string/listen_music"
+    android:textColor="#ff0000" />
+
 </RelativeLayout>

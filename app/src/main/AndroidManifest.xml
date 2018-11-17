@@ -5,6 +5,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.RECEIVE_SMS" />
   <uses-permission android:name="android.permission.SEND_SMS" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
   <application
     android:allowBackup="true"
@@ -34,7 +35,11 @@
     <activity
       android:name=".bmi.ResultActivity"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-    <activity android:name=".compass.CompassActivity"></activity>
+    <activity android:name=".compass.CompassActivity" />
+    <activity android:name=".music.MusicActivity"></activity>
+
+    <service android:name=".music.PlayService"></service>
+
   </application>
 
 </manifest>

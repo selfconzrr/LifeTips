@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="@drawable/background"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/musicname"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/title_divider"
+    android:gravity="center"
+    android:textColor="#ff0000" />
+
+  <FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="380dp">
+    <!-- 先不要歌曲背景 -->
+    <!--<ImageView
+        android:id="@+id/musicbj"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/image" />-->
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <ListView
+        android:id="@+id/musiclist"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:cacheColorHint="#00000000"
+        android:fadeScrollbars="false"
+        android:fastScrollEnabled="true" />
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#6000">
+
+        <SeekBar
+          android:id="@+id/playprogress"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="3dp"
+          android:progressDrawable="@drawable/progress_horizontal"
+          android:thumb="@drawable/progress_thumb" />
+
+        <TextView
+          android:id="@+id/curr"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/playprogress"
+          android:layout_marginLeft="50dp"
+          android:text="@string/ini_time"
+          android:textColor="#FFF" />
+
+        <TextView
+          android:id="@+id/duration"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/playprogress"
+          android:layout_marginLeft="260dp"
+          android:text="@string/ini_time"
+          android:textColor="#FFF" />
+      </RelativeLayout>
+    </RelativeLayout>
+  </FrameLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/playcontrol_background">
+
+    <ImageButton
+      android:id="@+id/prev"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="50dp"
+      android:layout_marginTop="8dp"
+      android:background="@drawable/button_prev" />
+
+    <ImageButton
+      android:id="@+id/play"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/button_play" />
+
+    <ImageButton
+      android:id="@+id/next"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="260dp"
+      android:layout_marginTop="8dp"
+      android:background="@drawable/button_next" />
+  </RelativeLayout>
+
+</LinearLayout>

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
+import com.example.zhangruirui.lifetips.music.MusicActivity;
 import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -73,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
   @OnClick(R.id.compass)
   public void onClickCompass() {
     final Intent intent = new Intent(MainActivity.this, CompassActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick(R.id.music_player)
+  public void onClickMusic() {
+    final Intent intent = new Intent(MainActivity.this, MusicActivity.class);
     startActivity(intent);
   }
 

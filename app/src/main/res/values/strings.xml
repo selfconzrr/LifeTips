@@ -87,4 +87,8 @@
   <string name="test_result">测试结果</string>
   <string name="weight">体重(kg)：</string>
   <string name="weight_hint">请输入体重</string>
+
+  <!-- Music -->
+  <string name="ini_time">00:00</string>
+  <string name="listen_music">听听音乐</string>
 </resources>
