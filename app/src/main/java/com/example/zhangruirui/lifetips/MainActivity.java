@@ -3,6 +3,7 @@ package com.example.zhangruirui.lifetips;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -93,7 +94,14 @@ public class MainActivity extends AppCompatActivity {
               public void onClick(DialogInterface dialog,
                                   int whichButton) {
                 // TODO: 2018/11/5 这里需要做一些操作：关闭数据库、保存用户设置的屏幕亮度等
-
+                SetActivity set = new SetActivity();
+                //Log.e("zry", bright+"ddd");
+                final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
+                final int value = pref.getInt("light_value", 180);
+                SharedPreferences.Editor editor = getSharedPreferences("light", MODE_PRIVATE)
+                    .edit();
+                editor.putInt("light_value", value);
+                editor.apply();
                 finish();
               }
             })

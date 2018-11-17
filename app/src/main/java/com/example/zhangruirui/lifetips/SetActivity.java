@@ -148,5 +148,4 @@ public class SetActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
                 + "Blog:http://blog.csdn.net/u011489043")
         .show();
   }
-
 }
