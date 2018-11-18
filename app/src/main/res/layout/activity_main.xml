@@ -85,4 +85,13 @@
     android:text="@string/listen_music"
     android:textColor="#ff0000" />
 
+  <Button
+    android:id="@+id/setRemind"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/calculate"
+    android:layout_toRightOf="@id/music_player"
+    android:text="@string/remind"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/music_player" />
 </RelativeLayout>

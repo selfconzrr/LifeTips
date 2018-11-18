@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
+import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -84,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
+  @OnClick(R.id.setRemind)
+  public void onClickRemind() {
+    final Intent intent = new Intent(MainActivity.this, RemindActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")
@@ -94,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
               public void onClick(DialogInterface dialog,
                                   int whichButton) {
                 // TODO: 2018/11/5 这里需要做一些操作：关闭数据库、保存用户设置的屏幕亮度等
-                SetActivity set = new SetActivity();
-                //Log.e("zry", bright+"ddd");
                 final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
                 final int value = pref.getInt("light_value", 180);
                 SharedPreferences.Editor editor = getSharedPreferences("light", MODE_PRIVATE)

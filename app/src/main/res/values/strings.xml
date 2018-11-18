@@ -91,4 +91,16 @@
   <!-- Music -->
   <string name="ini_time">00:00</string>
   <string name="listen_music">听听音乐</string>
+
+  <!-- 待办事项 -->
+  <string name="add_task">添加提醒事项</string>
+  <string name="cancel">取消</string>
+  <string name="date_format">yyyy-mm-dd</string>
+  <string name="remind">待办事项</string>
+  <string name="set_remind_date">设置提醒日期</string>
+  <string name="set_remind_time">设置提醒时间</string>
+  <string name="sure">确定</string>
+  <string name="task_hint">请输入待办事项</string>
+  <string name="time_format">hh-mm-ss</string>
+
 </resources>
