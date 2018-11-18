@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
+import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.utils.ToastUtil;
 
@@ -88,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
   @OnClick(R.id.setRemind)
   public void onClickRemind() {
     final Intent intent = new Intent(MainActivity.this, RemindActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick(R.id.diary)
+  public void onClickDiary() {
+    final Intent intent = new Intent(MainActivity.this, TimeDiaryActivity.class);
     startActivity(intent);
   }
 

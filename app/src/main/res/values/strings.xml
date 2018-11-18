@@ -103,4 +103,10 @@
   <string name="task_hint">请输入待办事项</string>
   <string name="time_format">hh-mm-ss</string>
 
+  <!-- 时光便签 -->
+  <string name="add_event">新的事件</string>
+  <string name="change_bg">更换背景</string>
+  <string name="diary">时光便签</string>
+  <string name="save">保存</string>
+
 </resources>

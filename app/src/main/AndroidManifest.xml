@@ -47,7 +47,11 @@
       android:name=".remind.AlarmService"
       android:enabled="true"
       android:exported="true"
-      android:process="system"></service>
+      android:process="system" />
+
+    <activity android:name=".notes.TimeDiaryActivity" />
+    <activity android:name=".notes.WriteActivity" />
+    <activity android:name=".notes.EditActivity"></activity>
   </application>
 
 </manifest>

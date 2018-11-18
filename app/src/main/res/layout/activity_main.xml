@@ -94,4 +94,14 @@
     android:text="@string/remind"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/music_player" />
+
+  <Button
+    android:id="@+id/diary"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/BMI"
+    android:layout_toRightOf="@id/setRemind"
+    android:text="@string/diary"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/setRemind" />
 </RelativeLayout>
