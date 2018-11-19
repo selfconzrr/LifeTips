@@ -62,7 +62,7 @@ public class SetActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
     changeAppBrightness(this, bright);
   }
 
-  private void changeAppBrightness(Context context, int brightness) {
+  void changeAppBrightness(Context context, int brightness) {
     final Window window = ((Activity) context).getWindow();
     final WindowManager.LayoutParams lp = window.getAttributes();
     if (brightness == -1) {

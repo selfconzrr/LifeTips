@@ -51,7 +51,8 @@
 
     <activity android:name=".notes.TimeDiaryActivity" />
     <activity android:name=".notes.WriteActivity" />
-    <activity android:name=".notes.EditActivity"></activity>
+    <activity android:name=".notes.EditActivity" />
+    <activity android:name=".BaseActivity"></activity>
   </application>
 
 </manifest>
