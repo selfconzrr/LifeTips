@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
@@ -10,8 +9,99 @@
     android:id="@+id/quit"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="退出"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:textColor="#ff0000"
+    android:text="@string/quit" />
 
-</android.support.constraint.ConstraintLayout>
+  <Button
+    android:id="@+id/light_intensity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/quit"
+    android:text="@string/light_intensity"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/quit" />
+
+  <Button
+    android:id="@+id/getTime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/light_intensity"
+    android:text="@string/getTime"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/light_intensity" />
+
+  <Button
+    android:id="@+id/sms"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/getTime"
+    android:text="@string/sms"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/getTime" />
+
+  <Button
+    android:id="@+id/set"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/quit"
+    android:text="@string/set"
+    android:textColor="#ff0000" />
+
+  <Button
+    android:id="@+id/calculate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/light_intensity"
+    android:layout_toRightOf="@+id/set"
+    android:text="@string/calculator"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@+id/set" />
+
+  <Button
+    android:id="@+id/BMI"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/calculate"
+    android:layout_below="@+id/getTime"
+    android:text="@string/BMI"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/calculate" />
+
+  <Button
+    android:id="@+id/compass"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/sms"
+    android:layout_toRightOf="@id/BMI"
+    android:text="@string/compass"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/BMI" />
+
+  <Button
+    android:id="@+id/music_player"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/set"
+    android:text="@string/listen_music"
+    android:textColor="#ff0000" />
+
+  <Button
+    android:id="@+id/setRemind"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/calculate"
+    android:layout_toRightOf="@id/music_player"
+    android:text="@string/remind"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/music_player" />
+
+  <Button
+    android:id="@+id/diary"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/BMI"
+    android:layout_toRightOf="@id/setRemind"
+    android:text="@string/diary"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/setRemind" />
+</RelativeLayout>

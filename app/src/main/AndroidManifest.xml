@@ -2,20 +2,57 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.example.zhangruirui.lifetips">
 
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.RECEIVE_SMS" />
+  <uses-permission android:name="android.permission.SEND_SMS" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+
   <application
     android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
+    android:icon="@mipmap/launcher"
     android:label="@string/app_name"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity">
+    <activity android:name=".MainActivity" />
+    <activity android:name=".HelpActivity" />
+    <activity android:name=".WelcomeActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:name=".LoginActivity" />
+    <activity android:name=".LightIntensityActivity" />
+    <activity android:name=".NetworkTimeActivity" />
+    <activity android:name=".SMSActivity" />
+    <activity android:name=".SetActivity" />
+    <activity android:name=".CalculatorActivity" />
+    <activity
+      android:name=".bmi.BMIActivity"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+      android:name=".bmi.ResultActivity"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity android:name=".compass.CompassActivity" />
+    <activity android:name=".music.MusicActivity" />
+
+    <service android:name=".music.PlayService" />
+
+    <activity android:name=".remind.RemindActivity" />
+
+    <service
+      android:name=".remind.AlarmService"
+      android:enabled="true"
+      android:exported="true"
+      android:process="system" />
+
+    <activity android:name=".notes.TimeDiaryActivity" />
+    <activity android:name=".notes.WriteActivity" />
+    <activity android:name=".notes.EditActivity" />
+    <activity android:name=".BaseActivity"></activity>
   </application>
 
 </manifest>

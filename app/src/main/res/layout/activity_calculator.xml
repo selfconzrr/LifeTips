@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_gravity="center"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:textSize="24.5sp"
+    android:layout_marginTop="30dip"
+    android:layout_marginBottom="30dip"
+    android:text="@string/title" />
+
+  <TextView
+    android:id="@+id/result"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:layout_marginBottom="30dip"
+    android:layout_marginLeft="10dip"
+    android:layout_marginRight="10dip"
+    android:textSize="20sp"
+    android:text="@string/result" />
+
+  <TableLayout
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_background"
+    android:stretchColumns="*">
+
+    <TableRow>
+
+      <Button
+        android:id="@+id/num_9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_9_label" />
+
+      <Button
+        android:id="@+id/num_8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_8_label" />
+
+      <Button
+        android:id="@+id/num_7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_7_label" />
+
+      <Button
+        android:id="@+id/op_add"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_add_label" />
+    </TableRow>
+
+    <TableRow>
+
+      <Button
+        android:id="@+id/num_6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_6_label" />
+
+      <Button
+        android:id="@+id/num_5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_5_label" />
+
+      <Button
+        android:id="@+id/num_4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_4_label" />
+
+      <Button
+        android:id="@+id/op_minus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_minus_label" />
+    </TableRow>
+
+    <TableRow>
+
+      <Button
+        android:id="@+id/num_3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_3_label" />
+
+      <Button
+        android:id="@+id/num_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_2_label" />
+
+      <Button
+        android:id="@+id/num_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_1_label" />
+
+      <Button
+        android:id="@+id/op_multi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_multi_label" />
+    </TableRow>
+
+    <TableRow>
+
+      <Button
+        android:id="@+id/num_0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/num_0_label" />
+
+      <Button
+        android:id="@+id/op_dot"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_dot_label" />
+
+      <Button
+        android:id="@+id/op_equal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_equal_label" />
+
+      <Button
+        android:id="@+id/op_div"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_div_label" />
+    </TableRow>
+
+    <TableRow>
+
+      <Button
+        android:id="@+id/op_one_in_x"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_one_in_x_label" />
+
+      <Button
+        android:id="@+id/op_converse"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_converse_label" />
+
+      <Button
+        android:id="@+id/op_exit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_exit_label" />
+
+      <Button
+        android:id="@+id/op_clear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/op_clear_label" />
+    </TableRow>
+  </TableLayout>
+</LinearLayout>

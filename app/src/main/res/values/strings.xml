@@ -1,3 +1,112 @@
 <resources>
+
+  <!-- Default-->
   <string name="app_name">LifeTips</string>
+  <string name="compass">指南针</string>
+  <string name="direction">方向</string>
+  <string name="light_intensity">光照强度</string>
+  <string name="quit">退出</string>
+  <string name="welcome">欢迎使用您的生活小管家</string>
+
+  <!-- 登录界面 Login-->
+  <string name="account">Account:</string>
+  <string name="account_hint">input your account</string>
+  <string name="login_button">Login</string>
+  <string name="login_toast">用户名或密码错误，请重新输入</string>
+  <string name="password">Password:</string>
+  <string name="password_hint">input your password</string>
+  <string name="remember_password">Remember password</string>
+
+  <!-- 获取网络时间-->
+  <string name="getTime">获取时间</string>
+  <string name="getNetworkTime">获取网络时间</string>
+  <string name="showNetworkTime">yyyy-MM-dd HH:mm:ss</string>
+
+  <!-- 收发短信 SMS-->
+  <string name="content">Content：</string>
+  <string name="content_hint">Input the content to send：</string>
+  <string name="from">From：</string>
+  <string name="phone_number">Input the Phone Number：</string>
+  <string name="to">To：</string>
+  <string name="send">Send</string>
+  <string name="sms">收发短信</string>
+
+  <!-- 设置-->
+  <string name="about">关于</string>
+  <string name="about_us">关于我们</string>
+  <string name="advice">我要提意见</string>
+  <string name="clear_cache">清除缓存</string>
+  <string name="help">使用帮助</string>
+  <string name="light_adjust">亮度调节</string>
+  <string name="set">设置</string>
+
+  <!-- memo——MyDialog -->
+  <string name="dialog_memo_title">添加提醒事项</string>
+  <string name="dialog_memo_ok">确定</string>
+  <string name="dialog_memo_cancle">取消</string>
+
+  <!-- calculator 计算器-->
+  <string name="calculator">计算器</string>
+  <string name="num_0_label">0</string>
+  <string name="num_1_label">1</string>
+  <string name="num_2_label">2</string>
+  <string name="num_3_label">3</string>
+  <string name="num_4_label">4</string>
+  <string name="num_5_label">5</string>
+  <string name="num_6_label">6</string>
+  <string name="num_7_label">7</string>
+  <string name="num_8_label">8</string>
+  <string name="num_9_label">9</string>
+  <string name="op_dot_label">.</string>
+  <string name="op_equal_label">=</string>
+  <string name="op_add_label">+</string>
+  <string name="op_minus_label">-</string>
+  <string name="op_multi_label">*</string>
+  <string name="op_div_label">/</string>
+  <string name="op_one_in_x_label">1/x</string>
+  <string name="op_converse_label">+/-</string>
+  <string name="op_exit_label">EX</string>
+  <string name="op_clear_label">CE</string>
+  <string name="result">0</string>
+  <string name="title">My Calculator</string>
+
+  <!-- BMI 健康指数分析-->
+  <string name="BMI">体质分析</string>
+  <string name="clear">清空</string>
+  <string name="compute">计算</string>
+  <string name="condition">您的体重情况为：</string>
+  <string name="default_value">默认值</string>
+  <string name="fit_weight">您的健康体重为：</string>
+  <string name="height">身高(cm)：</string>
+  <string name="height_hint">请输入身高</string>
+  <string name="introduce">BMI指数（即身体质量指数，英文为Body Mass Index，简称BMI），是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。当我们需要比较及分析一个人的体重对于不同高度的人所带来的健康影响时，BMI值是一个中立而可靠的指标。本程序按照中国标准计算</string>
+  <string name="index">您的BMI指数为：</string>
+  <string name="sex">性别：</string>
+  <string name="sex_man">男/M</string>
+  <string name="sex_woman">女/F</string>
+  <string name="test_result">测试结果</string>
+  <string name="weight">体重(kg)：</string>
+  <string name="weight_hint">请输入体重</string>
+
+  <!-- Music -->
+  <string name="ini_time">00:00</string>
+  <string name="listen_music">听听音乐</string>
+
+  <!-- 待办事项 -->
+  <string name="add_task">添加提醒事项</string>
+  <string name="cancel">取消</string>
+  <string name="date_format">yyyy-mm-dd</string>
+  <string name="remind">待办事项</string>
+  <string name="set_remind_date">设置提醒日期</string>
+  <string name="set_remind_time">设置提醒时间</string>
+  <string name="sure">确定</string>
+  <string name="task_hint">请输入待办事项</string>
+  <string name="time_format">hh-mm-ss</string>
+
+  <!-- 时光便签 -->
+  <string name="add_event">新的事件</string>
+  <string name="change_bg">更换背景</string>
+  <string name="diary">时光便签</string>
+  <string name="save">保存</string>
+
 </resources>
