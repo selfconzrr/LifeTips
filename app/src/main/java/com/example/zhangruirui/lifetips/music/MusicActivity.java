@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -19,6 +18,7 @@ import android.widget.SeekBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 import com.example.zhangruirui.utils.PlayUtil;
 import com.example.zhangruirui.utils.ToastUtil;
@@ -35,7 +35,7 @@ import java.util.Map;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/17/18
  */
-public class MusicActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MusicActivity extends BaseActivity implements AdapterView.OnItemClickListener {
 
   private ImageButton mPlay;
   private ImageButton mPrev;
@@ -44,7 +44,7 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
   private TextView mDuration;
   private TextView mCurrPro;
   private SeekBar mPlayPro;
-  private ListView mlistview;
+  private ListView mListView;
   private PlayService.MyBind mBind;
   private int REFTIME = 500;
   private int mPosition = 0;
@@ -57,9 +57,9 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
         return;
       }
       setView();
-      if (mBind.getDuartion() - mBind.getCurr() < 500) {
+      if (mBind.getDuration() - mBind.getCurr() < 500) {
         mPosition++;
-        playnext(mPosition);
+        playNext(mPosition);
       }
       mHandler.postDelayed(callback, REFTIME);
     }
@@ -84,14 +84,14 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
     setClickListener(new MyOnClickListener());
     mPlayPro.setOnSeekBarChangeListener(new MyOnSeekBarChangeListener());
     mHandler = new Handler();
-    mediaFile = new ArrayList<Map<String, Object>>();
+    mediaFile = new ArrayList<>();
     if (getMediaFile() != null) {
       mediaFile = getMediaFile();
     }
-    mlistview.setAdapter(new SimpleAdapter(this, mediaFile,
+    mListView.setAdapter(new SimpleAdapter(this, mediaFile,
         android.R.layout.simple_list_item_1, new String[]{"name"},
         new int[]{android.R.id.text1,}));
-    mlistview.setOnItemClickListener(this);
+    mListView.setOnItemClickListener(this);
   }
 
   @Override
@@ -120,21 +120,21 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
   }
 
   private void findView() {
-    mPlay = (ImageButton) findViewById(R.id.play);
-    mPrev = (ImageButton) findViewById(R.id.prev);
-    mNext = (ImageButton) findViewById(R.id.next);
-    mMusicName = (TextView) findViewById(R.id.musicname);
-    mDuration = (TextView) findViewById(R.id.duration);
-    mCurrPro = (TextView) findViewById(R.id.curr);
-    mPlayPro = (SeekBar) findViewById(R.id.playprogress);
-    mlistview = (ListView) findViewById(R.id.musiclist);
+    mPlay = findViewById(R.id.play);
+    mPrev = findViewById(R.id.prev);
+    mNext = findViewById(R.id.next);
+    mMusicName = findViewById(R.id.musicname);
+    mDuration = findViewById(R.id.duration);
+    mCurrPro = findViewById(R.id.curr);
+    mPlayPro = findViewById(R.id.playprogress);
+    mListView = findViewById(R.id.musiclist);
 
   }
 
   public void setView() {
-    mPlayPro.setMax(mBind.getDuartion());
+    mPlayPro.setMax(mBind.getDuration());
     mCurrPro.setText(PlayUtil.parseInt(mBind.getCurr() / 1000));
-    mDuration.setText(PlayUtil.parseInt(mBind.getDuartion() / 1000));
+    mDuration.setText(PlayUtil.parseInt(mBind.getDuration() / 1000));
     mPlayPro.setProgress(mBind.getCurr());
   }
 
@@ -168,13 +168,13 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
         case R.id.next:
           if (mPosition < mediaFile.size()) {
             mPosition++;
-            playnext(mPosition);
+            playNext(mPosition);
           }
           break;
         case R.id.prev:
           if (mPosition > 0) {
             mPosition--;
-            playnext(mPosition);
+            playNext(mPosition);
           }
           break;
       }
@@ -199,7 +199,7 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
   }
 
   private List<Map<String, Object>> getMediaFile() {
-    List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+    List<Map<String, Object>> list = new ArrayList<>();
     ContentResolver cr = getContentResolver();
     Uri AUDIO_URI = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
     String[] columns = new String[]{MediaStore.Audio.Media.DISPLAY_NAME,
@@ -207,8 +207,8 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
     Cursor cursor = cr.query(AUDIO_URI, columns,
         MediaStore.Audio.Media.DURATION + ">?",
         new String[]{"10000"}, null);
-    while (cursor.moveToNext()) {
-      Map<String, Object> map = new HashMap<String, Object>();
+    while (cursor != null && cursor.moveToNext()) {
+      Map<String, Object> map = new HashMap<>();
       map.put("path", cursor.getString(1));
       String name = cursor.getString(0);
       if (name.endsWith(".mp3")) {
@@ -219,18 +219,20 @@ public class MusicActivity extends AppCompatActivity implements AdapterView.OnIt
       map.put("name", name);
       list.add(map);
     }
-
+    if (cursor != null) {
+      cursor.close();
+    }
     return list;
 
   }
 
   public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
     mPosition = arg2;
-    playnext(arg2);
+    playNext(arg2);
     mHandler.postDelayed(callback, REFTIME);
   }
 
-  public void playnext(int i) {
+  public void playNext(int i) {
     if (i < mediaFile.size() && i >= 0) {
       Map<String, Object> map = mediaFile.get(i);
       mBind.play((String) map.get("path"));

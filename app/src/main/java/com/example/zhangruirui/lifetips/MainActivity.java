@@ -11,6 +11,7 @@ import com.example.zhangruirui.lifetips.compass.CompassActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
+import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.ButterKnife;
@@ -111,7 +112,7 @@ public class MainActivity extends BaseActivity {
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putInt("light_value", value);
                 editor.apply();
-                finish();
+                ActivityCollector.finishAll();
               }
             })
         .setNegativeButton("再玩一会",

@@ -15,6 +15,13 @@ import com.example.zhangruirui.lifetips.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：11/18/18
+ */
 public class AlarmService extends Service {
   static Timer mTimer = null;
 
@@ -43,6 +50,7 @@ public class AlarmService extends Service {
   public void onDestroy() {
     Log.e("addNotification", "===========destroy=======");
     super.onDestroy();
+    cleanAllNotification();
   }
 
   @Override
@@ -85,7 +93,9 @@ public class AlarmService extends Service {
         notification.ledOffMS = 1000;
         notification.flags = Notification.FLAG_INSISTENT;
         notification.flags = Notification.FLAG_AUTO_CANCEL;
-        mn.notify((int) System.currentTimeMillis(), notification);
+        if (mn != null) {
+          mn.notify((int) System.currentTimeMillis(), notification);
+        }
       }
     }, delay, period);
     return super.onStartCommand(intent, flags, startId);

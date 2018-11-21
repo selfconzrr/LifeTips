@@ -9,6 +9,13 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：11/15/18
+ */
 public class SampleView extends View {
   private Paint mPaint = new Paint();
 

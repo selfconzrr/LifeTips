@@ -6,9 +6,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 
 import butterknife.BindView;
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/15/18
  */
-public class CompassActivity extends AppCompatActivity {
+public class CompassActivity extends BaseActivity {
 
   @BindView(R.id.direction)
   Button mDirection;
@@ -57,14 +57,14 @@ public class CompassActivity extends AppCompatActivity {
 
   private final SensorEventListener mListener = new SensorEventListener() {
     public void onSensorChanged(SensorEvent event) {
-      float[] values = event.values;
+      final float[] values = event.values;
       if (mSampleView != null) {
         mSampleView.setValues(values);
         mSampleView.invalidate();// call onDraw
       }
 
       if (mDirection != null) {
-        float direction = values[0];
+        final float direction = values[0];
         if (direction > 22.5f && direction < 157.5f) {
           // east
           mDirection.setText("东");

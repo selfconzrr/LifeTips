@@ -128,12 +128,12 @@ public class NotepadAdapter extends BaseAdapter {
             @Override
             public void onClick(DialogInterface dialog, int i) {
 
-              SqliteHelper sql = new SqliteHelper(context, null,
-                  null, 0);
+              SQLiteHelper sql = new SQLiteHelper(context
+              );
               SQLiteDatabase dataBase = sql.getWritableDatabase();
               SqliteOperation change = new SqliteOperation();
               Notepad notepad = new Notepad();
-              notepad.setid((String) list.get(position).get(
+              notepad.setId((String) list.get(position).get(
                   "idItem"));
               change.delete(dataBase, notepad);
               ((TimeDiaryActivity) context).showUpdate();

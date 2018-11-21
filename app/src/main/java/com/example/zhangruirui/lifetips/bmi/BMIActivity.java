@@ -2,10 +2,10 @@ package com.example.zhangruirui.lifetips.bmi;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
+import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 import com.example.zhangruirui.utils.ToastUtil;
 
@@ -20,7 +20,7 @@ import butterknife.OnClick;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/14/18
  */
-public class BMIActivity extends AppCompatActivity {
+public class BMIActivity extends BaseActivity {
 
   @BindView(R.id.height)
   EditText mHeight;
@@ -36,7 +36,7 @@ public class BMIActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    // 继承 AppCompatActivity 的页面用此方法无效
+    // 继承 AppCompatActivity 的页面用此方法隐藏标题栏无效
     // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.activity_bmi);
     ButterKnife.bind(this);
