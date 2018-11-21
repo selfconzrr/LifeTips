@@ -1,7 +1,6 @@
 package com.example.zhangruirui.lifetips;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -30,7 +29,7 @@ import butterknife.OnClick;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/08/18
  */
-public class NetworkTimeActivity extends AppCompatActivity {
+public class NetworkTimeActivity extends BaseActivity {
 
   @BindView(R.id.showTime)
   EditText mShowTime;
@@ -48,7 +47,6 @@ public class NetworkTimeActivity extends AppCompatActivity {
     setContentView(R.layout.activity_network_time);
     ButterKnife.bind(this);
     EventBus.getDefault().register(this);
-
   }
 
   @Override

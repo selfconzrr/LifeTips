@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
@@ -24,7 +23,7 @@ import butterknife.OnClick;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/05/18
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -107,11 +106,9 @@ public class MainActivity extends AppCompatActivity {
             new DialogInterface.OnClickListener() {
               public void onClick(DialogInterface dialog,
                                   int whichButton) {
-                // TODO: 2018/11/5 这里需要做一些操作：关闭数据库、保存用户设置的屏幕亮度等
                 final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
                 final int value = pref.getInt("light_value", 180);
-                SharedPreferences.Editor editor = getSharedPreferences("light", MODE_PRIVATE)
-                    .edit();
+                SharedPreferences.Editor editor = pref.edit();
                 editor.putInt("light_value", value);
                 editor.apply();
                 finish();

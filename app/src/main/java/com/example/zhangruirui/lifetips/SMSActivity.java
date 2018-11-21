@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
@@ -26,7 +25,7 @@ import butterknife.OnClick;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/09/18
  */
-public class SMSActivity extends AppCompatActivity {
+public class SMSActivity extends BaseActivity {
 
   @BindView(R.id.sender)
   TextView mFromNumber;

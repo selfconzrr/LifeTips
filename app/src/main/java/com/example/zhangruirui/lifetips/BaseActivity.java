@@ -1,6 +1,5 @@
 package com.example.zhangruirui.lifetips;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,10 +27,9 @@ public class BaseActivity extends AppCompatActivity {
   protected void onResume() {
 
     super.onResume();
-    SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
-    int value = pref.getInt("light_value", 180);
+    final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
+    final int value = pref.getInt("light_value", 180);
     SetActivity set = new SetActivity();
-    //Log.e("zry", value+"gg");
     set.changeAppBrightness(this, value);
   }
 
@@ -41,7 +39,4 @@ public class BaseActivity extends AppCompatActivity {
     ActivityCollector.removeActivity(this);
   }
 
-  public void startActivity(Class<?> paramClass) {
-    startActivity(new Intent(this, paramClass));
-  }
 }

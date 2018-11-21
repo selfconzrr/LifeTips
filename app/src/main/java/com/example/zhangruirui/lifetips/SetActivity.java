@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -29,7 +28,7 @@ import butterknife.OnClick;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/11/18
  */
-public class SetActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener {
 
   @BindView(R.id.light)
   SeekBar mLight;
@@ -46,7 +45,6 @@ public class SetActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
     final int value = pref.getInt("light_value", 180);
     mLight.setOnSeekBarChangeListener(this); // 不要忘了设置 Listener，否则不会触发 onProgressChanged
     mLight.setProgress(value);
-
   }
 
   @SuppressLint("SetTextI18n")
