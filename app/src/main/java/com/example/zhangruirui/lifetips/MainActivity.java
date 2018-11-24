@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
+import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.utils.ActivityCollector;
@@ -95,6 +96,12 @@ public class MainActivity extends BaseActivity {
   @OnClick(R.id.diary)
   public void onClickDiary() {
     final Intent intent = new Intent(MainActivity.this, TimeDiaryActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.noteBook})
+  public void onClickNoteBook() {
+    final Intent intent = new Intent(MainActivity.this, NotebookActivity.class);
     startActivity(intent);
   }
 
