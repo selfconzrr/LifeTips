@@ -12,7 +12,7 @@ public class SqliteOperation {
   public long add(SQLiteDatabase paramSQLiteDatabase, Notepad paramNotepad) {
     ContentValues localContentValues = new ContentValues();
     localContentValues.put("title", paramNotepad.getTitle());
-    localContentValues.put("date", paramNotepad.getdata());
+    localContentValues.put("date", paramNotepad.getData());
     localContentValues.put("content", paramNotepad.getContent());
     long l = paramSQLiteDatabase.insert(table, null, localContentValues);
     paramSQLiteDatabase.close();
@@ -20,7 +20,7 @@ public class SqliteOperation {
   }
 
   public void delete(SQLiteDatabase paramSQLiteDatabase, Notepad paramNotepad) {
-    paramSQLiteDatabase.delete(table, "id=" + paramNotepad.getid(), null);
+    paramSQLiteDatabase.delete(table, "id=" + paramNotepad.getId(), null);
     paramSQLiteDatabase.close();
   }
 
@@ -35,13 +35,13 @@ public class SqliteOperation {
         return localArrayList;
       }
       Notepad localNotepad = new Notepad();
-      localNotepad.setid(localCursor.getString(localCursor
+      localNotepad.setId(localCursor.getString(localCursor
           .getColumnIndex("id")));
       localNotepad.setTitle(localCursor.getString(localCursor
           .getColumnIndex("title")));
       localNotepad.setContent(localCursor.getString(localCursor
           .getColumnIndex("content")));
-      localNotepad.setdata(localCursor.getString(localCursor
+      localNotepad.setData(localCursor.getString(localCursor
           .getColumnIndex("date")));
       localArrayList.add(localNotepad);
     }
@@ -51,9 +51,9 @@ public class SqliteOperation {
     ContentValues localContentValues = new ContentValues();
     localContentValues.put("title", paramNotepad.getTitle());
     localContentValues.put("content", paramNotepad.getContent());
-    localContentValues.put("date", paramNotepad.getdata());
+    localContentValues.put("date", paramNotepad.getData());
     paramSQLiteDatabase.update(table, localContentValues, "id="
-        + paramNotepad.getid(), null);
+        + paramNotepad.getId(), null);
     paramSQLiteDatabase.close();
   }
 }

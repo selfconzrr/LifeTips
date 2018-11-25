@@ -8,6 +8,13 @@ import android.os.IBinder;
 
 import java.io.IOException;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：11/17/18
+ */
 public class PlayService extends Service {
   MyBind mBind;
   MediaPlayer mPlayer;
@@ -42,7 +49,7 @@ public class PlayService extends Service {
       return mPlayer.getCurrentPosition();
     }
 
-    public int getDuartion() {
+    public int getDuration() {
       return mPlayer.getDuration();
     }
 

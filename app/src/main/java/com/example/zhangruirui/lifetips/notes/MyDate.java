@@ -4,6 +4,13 @@ import android.util.Log;
 
 import java.util.Calendar;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：11/18/18
+ */
 public class MyDate {
   public String getDate() {
     Calendar localCalendar = Calendar.getInstance();

@@ -2,7 +2,6 @@ package com.example.zhangruirui.lifetips;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -18,7 +17,7 @@ import butterknife.OnClick;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/06/18
  */
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends BaseActivity {
 
   @BindView(R.id.welcome_pic)
   ImageView mWelcomePic;
@@ -31,7 +30,8 @@ public class WelcomeActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-    this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager
+        .LayoutParams.FLAG_KEEP_SCREEN_ON);
     setContentView(R.layout.activity_welcome);
     ButterKnife.bind(this);
     mWelcomePic.setAlpha(mAlpha);

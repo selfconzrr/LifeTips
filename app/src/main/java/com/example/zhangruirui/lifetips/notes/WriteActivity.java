@@ -33,8 +33,8 @@ public class WriteActivity extends AppCompatActivity {
 
       @Override
       public void onClick(View v) {
-        SQLiteDatabase localSqLiteDatabase = new SqliteHelper(
-            WriteActivity.this.context, null, null, 0)
+        SQLiteDatabase localSqLiteDatabase = new SQLiteHelper(
+            WriteActivity.this.context)
             .getWritableDatabase();
         Notepad localNotepad = new Notepad();
         SqliteOperation localChangeSqlite = new SqliteOperation();
@@ -48,7 +48,7 @@ public class WriteActivity extends AppCompatActivity {
             + strContent.substring(0, 11) : strContent;
         localNotepad.setContent(strContent);
         localNotepad.setTitle(strTitle);
-        localNotepad.setdata(WriteActivity.this.date);
+        localNotepad.setData(WriteActivity.this.date);
         localChangeSqlite.add(localSqLiteDatabase, localNotepad);
         finish();
       }

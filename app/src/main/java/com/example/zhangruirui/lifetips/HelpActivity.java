@@ -1,7 +1,6 @@
 package com.example.zhangruirui.lifetips;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 /**
@@ -13,7 +12,7 @@ import android.view.Window;
  * <p>
  * 用户使用 APP 的帮助指导
  */
-public class HelpActivity extends AppCompatActivity {
+public class HelpActivity extends BaseActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

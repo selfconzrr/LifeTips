@@ -4,7 +4,14 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class SqliteHelper extends SQLiteOpenHelper {
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：11/18/18
+ */
+public class SQLiteHelper extends SQLiteOpenHelper {
   private static String INFONAME;
   private static String NAME;
   private static int VERSION = 1;
@@ -14,8 +21,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     INFONAME = "notepad.db";
   }
 
-  public SqliteHelper(Context paramContext, String paramString,
-                      SQLiteDatabase.CursorFactory paramCursorFactory, int paramInt) {
+  SQLiteHelper(Context paramContext) {
     super(paramContext, INFONAME, null, VERSION);
   }
 

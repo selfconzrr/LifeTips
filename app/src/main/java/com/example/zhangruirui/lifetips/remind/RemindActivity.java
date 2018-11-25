@@ -6,7 +6,6 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +13,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 import com.example.zhangruirui.utils.ToastUtil;
 
@@ -29,7 +29,7 @@ import java.util.Locale;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/18/18
  */
-public class RemindActivity extends AppCompatActivity implements View.OnClickListener {
+public class RemindActivity extends BaseActivity implements View.OnClickListener {
 
   private EditText mDate, mTime, mEdit, mRemark;
   public DatePickerDialog mDatePicker = null;

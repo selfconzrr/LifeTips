@@ -104,4 +104,15 @@
     android:text="@string/diary"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/setRemind" />
+
+  <Button
+    android:id="@+id/noteBook"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/compass"
+    android:layout_toRightOf="@id/diary"
+    android:text="@string/note_book"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/diary" />
+
 </RelativeLayout>

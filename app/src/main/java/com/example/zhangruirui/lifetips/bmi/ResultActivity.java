@@ -3,11 +3,11 @@ package com.example.zhangruirui.lifetips.bmi;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 
 import java.text.DecimalFormat;
@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/14/18
  */
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends BaseActivity {
 
   @BindView(R.id.result_image)
   ImageView mResultIV;

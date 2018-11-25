@@ -2,7 +2,6 @@ package com.example.zhangruirui.lifetips;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,14 +12,14 @@ import android.widget.TextView;
  * Blog：http://blog.csdn.net/u011489043
  * Date：11/05/18
  */
-public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
+public class CalculatorActivity extends BaseActivity implements View.OnClickListener {
 
   public static final int ADD = 1; // 加
   public static final int MINUS = 2; // 减
   public static final int MULTI = 3; // 乘
   public static final int DIV = 4; // 除
-  public static final int ONE_IN_X = 5;
-  public static final int CONVERSE = 6;
+  public static final int ONE_IN_X = 5; // 倒数
+  public static final int CONVERSE = 6; // 相反数
   public static final int EQUAL = 7;
 
   private boolean mLastInputIsOp;
@@ -90,70 +89,70 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     switch (v.getId()) {
       case R.id.num_0:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("0");
         else
           resultView.setText(currentText.append('0'));
         mLastInputIsOp = false;
         break;
       case R.id.num_1:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("1");
         else
           resultView.setText(currentText.append('1'));
         mLastInputIsOp = false;
         break;
       case R.id.num_2:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("2");
         else
           resultView.setText(currentText.append('2'));
         mLastInputIsOp = false;
         break;
       case R.id.num_3:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("3");
         else
           resultView.setText(currentText.append('3'));
         mLastInputIsOp = false;
         break;
       case R.id.num_4:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("4");
         else
           resultView.setText(currentText.append('4'));
         mLastInputIsOp = false;
         break;
       case R.id.num_5:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("5");
         else
           resultView.setText(currentText.append('5'));
         mLastInputIsOp = false;
         break;
       case R.id.num_6:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("6");
         else
           resultView.setText(currentText.append('6'));
         mLastInputIsOp = false;
         break;
       case R.id.num_7:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("7");
         else
           resultView.setText(currentText.append('7'));
         mLastInputIsOp = false;
         break;
       case R.id.num_8:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("8");
         else
           resultView.setText(currentText.append('8'));
         mLastInputIsOp = false;
         break;
       case R.id.num_9:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("9");
         else
           resultView.setText(currentText.append('9'));
@@ -257,7 +256,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         mLastInputIsOp = false;
         break;
       case R.id.op_one_in_x:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("0");
         else {
           if (mLastOp == EQUAL) {
@@ -274,7 +273,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         mLastInputIsOp = false;
         break;
       case R.id.op_converse:
-        if (mLastInputIsOp || currentText.equals("0"))
+        if (mLastInputIsOp || currentText.toString().equals("0"))
           resultView.setText("0");
         else {
           if (mLastOp == EQUAL) {
