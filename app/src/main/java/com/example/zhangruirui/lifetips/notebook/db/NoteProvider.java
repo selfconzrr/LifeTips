@@ -30,7 +30,7 @@ public class NoteProvider extends ContentProvider {
       selectionArgs, String sortOrder) {
     Log.v("LOG", "NoteProvider -- query()");
     Cursor c = mNoteDAO.queryNote(null, null);
-    Log.v("LOG", "id=" + c.getInt(1) + " content=" + c.getString(2));
+//    Log.v("LOG", "id=" + c.getInt(1) + " content=" + c.getString(2));
     return c;
   }
 

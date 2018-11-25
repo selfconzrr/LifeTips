@@ -111,5 +111,11 @@
 
   <!-- NoteBook -->
   <string name="note_book">笔记本</string>
+  <string name="add_note">AddNote</string>
+  <string name="search_hint">请输入要搜索标题的关键字</string>
+  <string name="searchNote">Search</string>
+  <string name="title_hint">请输入笔记的标题</string>
+  <string name="note_content_hint">请输入笔记的内容</string>
+  <string name="modify_note">Modify</string>
 
 </resources>

@@ -64,6 +64,10 @@
       android:name=".notebook.db.NoteProvider"
       android:authorities="com.terry.NoteBook"
       android:exported="false" />
+
+    <activity
+      android:name=".notebook.activity.NoteDetailActivity"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
   </application>
 
 </manifest>
