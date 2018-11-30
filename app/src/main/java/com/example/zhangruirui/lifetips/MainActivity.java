@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
+import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
 import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
@@ -102,6 +103,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.noteBook})
   public void onClickNoteBook() {
     final Intent intent = new Intent(MainActivity.this, NotebookActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.harvest_offer})
+  public void onClickOffer() {
+    final Intent intent = new Intent(MainActivity.this, LeetcodeActivity.class);
     startActivity(intent);
   }
 

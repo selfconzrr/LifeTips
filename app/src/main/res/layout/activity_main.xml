@@ -115,4 +115,12 @@
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/diary" />
 
+  <Button
+    android:id="@+id/harvest_offer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/music_player"
+    android:text="@string/offer"
+    android:textColor="#ff0000"/>
+
 </RelativeLayout>

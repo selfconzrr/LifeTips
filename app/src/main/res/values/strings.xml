@@ -118,4 +118,7 @@
   <string name="note_content_hint">请输入笔记的内容</string>
   <string name="modify_note">Modify</string>
 
+  <!-- 剑指 offer -->
+  <string name="offer">剑指offer</string>
+
 </resources>
