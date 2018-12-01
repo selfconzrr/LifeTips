@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="55dp">
+  android:layout_height="55dp"
+  xmlns:tools="http://schemas.android.com/tools">
 
   <TextView
     android:id="@+id/tv_title"
-    android:layout_width="match_parent"
+    android:layout_width="230dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="2dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:text="Problem Title" />
+    tools:text="Problem Title"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+  <TextView
+    android:id="@+id/tv_knowledge"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="2dp"
+    android:layout_toRightOf="@+id/tv_title"
+    tools:text="Problem Knowledge"
+    android:layout_toEndOf="@+id/tv_title" />
 
   <TextView
     android:id="@+id/tv_accept_rate"
@@ -18,15 +31,18 @@
     android:layout_width="150dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:layout_height="wrap_content"
-    android:text="Accept Rate: 17%" />
+    tools:text="Accept Rate: 17%"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    tools:ignore="RtlSymmetry" />
 
   <TextView
-    android:id="@+id/tv_difficulty"
+    android:id="@+id/tv_hot_index"
     android:layout_below="@+id/tv_title"
     android:layout_toRightOf="@+id/tv_accept_rate"
     android:layout_width="200dp"
     android:layout_height="wrap_content"
-    android:text="Difficulty: Hard" />
+    tools:text="Hot Index: 9999"
+    android:layout_toEndOf="@+id/tv_accept_rate" />
 
   <View
     android:layout_alignParentBottom="true"

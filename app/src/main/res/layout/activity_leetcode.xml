@@ -14,7 +14,7 @@
 
     <TextView
       android:layout_weight="1"
-      android:text="Title"
+      android:text="@string/problem_title"
       android:gravity="center"
       android:layout_width="0dp"
       android:textColor="@color/black"
@@ -27,7 +27,20 @@
 
     <TextView
       android:layout_weight="1"
-      android:text="AC Rate"
+      android:text="@string/problem_knowledge"
+      android:gravity="center"
+      android:layout_width="0dp"
+      android:textColor="@color/black"
+      android:layout_height="match_parent" />
+
+    <View
+      android:background="@color/divider_gray"
+      android:layout_width="1dp"
+      android:layout_height="match_parent" />
+
+    <TextView
+      android:layout_weight="1"
+      android:text="@string/problem_ac_rate"
       android:gravity="center"
       android:layout_width="0dp"
       android:layout_height="match_parent" />
@@ -39,7 +52,7 @@
 
     <TextView
       android:layout_weight="1"
-      android:text="Difficulty"
+      android:text="@string/problem_hot"
       android:gravity="center"
       android:layout_width="0dp"
       android:layout_height="match_parent" />
