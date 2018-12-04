@@ -118,4 +118,12 @@
   <string name="note_content_hint">请输入笔记的内容</string>
   <string name="modify_note">Modify</string>
 
+  <!-- 剑指 offer -->
+  <string name="offer">剑指offer</string>
+  <string name="problem_title">Title</string>
+  <string name="problem_knowledge">Knowledge</string>
+  <string name="problem_ac_rate">AC Rate</string>
+  <string name="problem_hot">Hot Index</string>
+  <string name="see_problem_answer">查看讨论</string>
+
 </resources>

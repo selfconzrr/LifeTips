@@ -68,6 +68,8 @@
     <activity
       android:name=".notebook.activity.NoteDetailActivity"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity android:name=".leetcode.activity.LeetcodeActivity" />
+    <activity android:name=".leetcode.activity.ProblemDetailActivity"></activity>
   </application>
 
 </manifest>
