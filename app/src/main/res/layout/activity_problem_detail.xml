@@ -13,7 +13,7 @@
   <WebView
     android:id="@+id/problem_detail_view"
     android:layout_width="match_parent"
-    android:layout_height="300dp" />
+    android:layout_height="wrap_content" />
 
   <Button
     android:id="@+id/go_answer"
@@ -21,4 +21,10 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="40dp"
     android:text="@string/see_problem_answer" />
+
+  <us.feras.mdv.MarkdownView
+    android:id="@+id/problem_discuss_view"
+    android:layout_width="match_parent"
+    android:layout_height="300dp" />
+
 </LinearLayout>

@@ -29,6 +29,8 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'org.jsoup:jsoup:1.10.3'
+    implementation 'us.feras.mdv:markdownview:1.1.0'
+
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

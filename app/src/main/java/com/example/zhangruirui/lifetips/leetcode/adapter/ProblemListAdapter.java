@@ -59,7 +59,8 @@ public class ProblemListAdapter extends RecyclerView.Adapter<ProblemListAdapter.
       public void onClick(View v) {
         final Intent intent = new Intent(mContext, ProblemDetailActivity.class);
         intent.putExtra("PUrl", problem.getUrl()); // 将题目网页传给试题详情页进行展示
-        Log.e("zhangrr", "put:" + problem.getUrl());
+        intent.putExtra("PTitle", problem.getTitle());
+        Log.e("zhangrr", "put:" + problem.getUrl() + " title = " + problem.getTitle());
         mContext.startActivity(intent);
       }
     });

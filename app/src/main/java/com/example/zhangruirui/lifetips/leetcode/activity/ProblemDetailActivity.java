@@ -11,6 +11,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.leetcode.model.Mapping;
 import com.example.zhangruirui.lifetips.leetcode.model.ProblemParser;
 
 import org.jsoup.Jsoup;
@@ -22,6 +23,8 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import us.feras.mdv.MarkdownView;
 
 public class ProblemDetailActivity extends AppCompatActivity {
 
@@ -30,8 +33,13 @@ public class ProblemDetailActivity extends AppCompatActivity {
 
   private String mProblemUrl;
 
+  private String mProblemTitle;
+
   @BindView(R.id.go_answer)
   Button mSeeAnswer;
+
+  @BindView(R.id.problem_discuss_view)
+  MarkdownView mProblemDiscussWebView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +48,36 @@ public class ProblemDetailActivity extends AppCompatActivity {
     ButterKnife.bind(this);
     Intent intent = getIntent();
     mProblemUrl = intent.getStringExtra("PUrl");
+    mProblemTitle = intent.getStringExtra("PTitle");
+//    mProblemDiscussWebView.setWebViewClient(new WebViewClient(){
+//      @Override
+//      public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//        view.loadUrl(url);
+//        return true;
+//      }
+//    });
   }
 
   @Override
   protected void onResume() {
     super.onResume();
     new GetProblemDetailAsyncTask(this).execute(mProblemUrl);
+  }
+
+  @OnClick(R.id.go_answer)
+  public void onClick() {
+//    mProblemDiscussWebView.loadUrl(Mapping.getMap().get(mProblemTitle));
+//    mProblemDiscussWebView.loadUrl(mProblemUrl);
+    Log.e("zhangrr", "onClick() called = " + Mapping.getMap().get(mProblemTitle));
+    mProblemDiscussWebView.loadMarkdownFile(Mapping.getMap().get(mProblemTitle));
+
+//    String html= null;
+//    try {
+//      html = new Markdown4jProcessor().process(Mapping.getMap().get(mProblemTitle));
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+//    mProblemDiscussWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
   }
 
   @SuppressLint("StaticFieldLeak")
