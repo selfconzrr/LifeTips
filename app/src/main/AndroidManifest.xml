@@ -69,7 +69,10 @@
       android:name=".notebook.activity.NoteDetailActivity"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     <activity android:name=".leetcode.activity.LeetcodeActivity" />
-    <activity android:name=".leetcode.activity.ProblemDetailActivity"></activity>
+    <activity android:name=".leetcode.activity.ProblemDetailActivity" />
+    <activity android:name=".lifecycle.LifeCycleMainActivity" />
+    <activity android:name=".lifecycle.LifeCycle2Activity" />
+    <activity android:name=".lifecycle.LifeCycle3Activity"></activity>
   </application>
 
 </manifest>

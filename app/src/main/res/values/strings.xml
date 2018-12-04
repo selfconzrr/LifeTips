@@ -126,4 +126,8 @@
   <string name="problem_hot">Hot Index</string>
   <string name="see_problem_answer">查看讨论</string>
 
+  <!-- 生命周期测试 -->
+  <string name="jump_to_2nd">跳到第二个Activity</string>
+  <string name="jump_to_3rd">跳到第三个Activity</string>
+  <string name="back_to_1st">回到第一个Activity</string>
 </resources>
