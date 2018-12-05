@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.zhangruirui.utils.ActivityCollector;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * @author zhangruirui
@@ -21,6 +22,7 @@ public class BaseActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     Log.d("BaseActivity", getClass().getSimpleName());
     ActivityCollector.addActivity(this);
+    Fresco.initialize(this);
   }
 
   @Override

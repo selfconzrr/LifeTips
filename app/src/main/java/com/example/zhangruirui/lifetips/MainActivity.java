@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
+import com.example.zhangruirui.lifetips.demo_learning.dialog.DialogShowHelper;
 import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
@@ -41,7 +42,7 @@ public class MainActivity extends BaseActivity {
     ButterKnife.bind(this);
   }
 
-  // 避免多次启动 启动界面
+  // 避免多次启动 Splash Screen
   @Override
   public void onBackPressed() {
     // super.onBackPressed();
@@ -132,6 +133,12 @@ public class MainActivity extends BaseActivity {
   public void onClickRx() {
     final Intent intent = new Intent(MainActivity.this, RxActivity.class);
     startActivity(intent);
+  }
+
+  @OnClick({R.id.dialog})
+  public void onClickDialog() {
+    final DialogShowHelper myDialog = new DialogShowHelper(this);
+    myDialog.show();
   }
 
   private void doExit() {

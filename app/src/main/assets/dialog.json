@@ -1,0 +1,24 @@
+{
+  "type": 1,
+  "title": "i am the title dddddddddddddddddddddddddddd",
+  "desc": "blur blur blur 33333333333333333333333333333!",
+  "picture": "http://img02.tooopen.com/images/20160509/tooopen_sy_161967094653.jpg",
+  "btns": [
+    {
+      "type": 0,
+      "text": "Allow Access",
+      "url": {
+        "type": "1",
+        "value": "market://search?q=baidu"
+      }
+    },
+    {
+      "type": 1,
+      "text": "Not Now"
+    },
+    {
+      "type": 3,
+      "text": "close dialog"
+    }
+  ]
+}

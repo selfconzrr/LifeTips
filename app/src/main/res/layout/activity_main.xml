@@ -133,4 +133,12 @@
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/harvest_offer" />
 
+  <Button
+    android:id="@+id/dialog"
+    android:text="Dialog"
+    android:layout_below="@+id/diary"
+    android:layout_toRightOf="@+id/rx"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
 </RelativeLayout>

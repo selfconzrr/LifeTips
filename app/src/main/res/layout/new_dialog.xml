@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:fresco="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/dialog_shape">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/img_picture"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    fresco:placeholderImage="@drawable/main_background" />
+
+  <Button
+    android:id="@+id/btn_close"
+    style="?android:attr/borderlessButtonStyle"
+    android:layout_width="23dp"
+    android:layout_height="23dp"
+    android:layout_marginBottom="169dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/close_btn_style"
+    app:layout_constraintBottom_toBottomOf="@+id/img_picture"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="x" />
+
+  <TextView
+    android:id="@+id/tv_show_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="17dp"
+    android:gravity="center_horizontal"
+    android:maxLines="2"
+    android:textColor="#333333"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toTopOf="@+id/tv_description"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/img_picture"
+    app:layout_constraintVertical_chainStyle="spread_inside"
+    tools:text="Allow kwai to access your location zhangrr zhangrr zhangrr" />
+
+  <TextView
+    android:id="@+id/tv_description"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tv_show_title"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:gravity="center_horizontal"
+    android:maxLines="2"
+    android:textColor="#636363"
+    android:textSize="14sp"
+    app:layout_constraintBottom_toTopOf="@+id/btn_allow_access"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_show_title"
+    tools:text="Explore more fun videos around you zhangrr zhangrr zhangrr" />
+
+  <Button
+    android:id="@+id/btn_allow_access"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tv_description"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="17dp"
+    android:background="@drawable/btn_confirm_style"
+    android:textColor="#333333"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toTopOf="@+id/btn_not_now"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_description"
+    tools:text="Allow Access" />
+
+  <Button
+    android:id="@+id/btn_not_now"
+    style="?android:attr/borderlessButtonStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/btn_allow_access"
+    android:layout_marginBottom="16dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="14dp"
+    android:textColor="#4C7BB0"
+    android:textSize="14sp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btn_allow_access"
+    tools:text="Not Now" />
+</android.support.constraint.ConstraintLayout>
