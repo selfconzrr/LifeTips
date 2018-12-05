@@ -130,4 +130,8 @@
   <string name="jump_to_2nd">跳到第二个Activity</string>
   <string name="jump_to_3rd">跳到第三个Activity</string>
   <string name="back_to_1st">回到第一个Activity</string>
+
+  <!-- RxJava 学习 -->
+  <string name="rxJava">RxJava</string>
+
 </resources>

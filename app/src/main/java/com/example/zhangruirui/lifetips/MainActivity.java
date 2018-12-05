@@ -112,6 +112,12 @@ public class MainActivity extends BaseActivity {
     startActivity(intent);
   }
 
+  @OnClick({R.id.rx})
+  public void onClickRx() {
+    final Intent intent = new Intent(MainActivity.this, LeetcodeActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")

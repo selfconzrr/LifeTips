@@ -121,6 +121,16 @@
     android:layout_height="wrap_content"
     android:layout_below="@id/music_player"
     android:text="@string/offer"
-    android:textColor="#ff0000"/>
+    android:textColor="#ff0000" />
+
+  <Button
+    android:id="@+id/rx"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/setRemind"
+    android:layout_toRightOf="@id/harvest_offer"
+    android:text="@string/rxJava"
+    android:textColor="#ff0000"
+    android:layout_toEndOf="@id/harvest_offer" />
 
 </RelativeLayout>
