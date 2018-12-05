@@ -1,4 +1,4 @@
-package com.example.zhangruirui.lifetips.lifecycle;
+package com.example.zhangruirui.lifetips.demo_learning.lifecycle;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -70,9 +70,13 @@
       android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     <activity android:name=".leetcode.activity.LeetcodeActivity" />
     <activity android:name=".leetcode.activity.ProblemDetailActivity" />
-    <activity android:name=".lifecycle.LifeCycleMainActivity" />
-    <activity android:name=".lifecycle.LifeCycle2Activity" />
-    <activity android:name=".lifecycle.LifeCycle3Activity"></activity>
+    <activity android:name=".demo_learning.lifecycle.LifeCycleMainActivity" />
+    <activity android:name=".demo_learning.lifecycle.LifeCycle2Activity" />
+    <activity android:name=".demo_learning.lifecycle.LifeCycle3Activity" />
+    <activity android:name=".demo_learning.launchmode.BasicActivity" />
+    <activity
+      android:name=".demo_learning.launchmode.ActivityStandard"
+      android:launchMode="standard" />
   </application>
 
 </manifest>
