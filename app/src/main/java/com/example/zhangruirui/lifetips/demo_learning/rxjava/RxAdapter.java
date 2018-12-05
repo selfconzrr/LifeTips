@@ -42,7 +42,7 @@ public class RxAdapter extends RecyclerView.Adapter<RxAdapter.ViewHolder> {
 
     ViewHolder(View itemView) {
       super(itemView);
-      mTitle = itemView.findViewById(R.id.title);
+      mTitle = itemView.findViewById(R.id.item_tv);
     }
   }
 }

@@ -17,15 +17,18 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="AllowBackup">
-    <activity android:name=".MainActivity" />
-    <activity android:name=".HelpActivity" />
-    <activity android:name=".WelcomeActivity">
+    <activity
+      android:name=".MainActivity"
+      android:theme="@style/SplashTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
+      />
     </activity>
+    <activity android:name=".HelpActivity" />
+    <activity android:name=".WelcomeActivity" />
     <activity android:name=".LoginActivity" />
     <activity android:name=".LightIntensityActivity" />
     <activity android:name=".NetworkTimeActivity" />
@@ -77,7 +80,8 @@
     <activity
       android:name=".demo_learning.launchmode.ActivityStandard"
       android:launchMode="standard" />
-    <activity android:name=".demo_learning.rxjava.RxActivity"></activity>
+    <activity android:name=".demo_learning.rxjava.RxActivity" />
+    <activity android:name=".SplashActivity"></activity>
   </application>
 
 </manifest>
