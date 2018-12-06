@@ -26,7 +26,6 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import us.feras.mdv.MarkdownView;
 
 public class ProblemDetailActivity extends AppCompatActivity {
 

@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+/**
+ * 暂时无用
+ */
 public class SplashActivity extends AppCompatActivity {
 
   @Override

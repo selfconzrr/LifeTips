@@ -83,7 +83,12 @@
     <activity android:name=".demo_learning.rxjava.RxActivity" />
     <activity android:name=".SplashActivity" />
     <activity android:name=".demo_learning.HandlerDemoActivity" />
-    <activity android:name=".demo_learning.customtab.CustomTabActivity"></activity>
+    <activity android:name=".demo_learning.customtab.CustomTabActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator1stActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.ViewActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator2ndActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator3rdActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator4thActivity"></activity>
   </application>
 
 </manifest>

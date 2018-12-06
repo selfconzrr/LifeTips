@@ -143,4 +143,22 @@
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/rx" />
 
+  <Button
+    android:id="@+id/coordinator"
+    android:text="协调者"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/noteBook"
+    android:layout_toRightOf="@+id/dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/dialog" />
+
+  <Button
+    android:id="@+id/dianzan"
+    android:text="点赞动效"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/harvest_offer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
 </RelativeLayout>

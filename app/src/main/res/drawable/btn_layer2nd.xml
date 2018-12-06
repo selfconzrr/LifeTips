@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 用于设置 button 的样式，阴影效果 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item android:state_pressed="true">
+
+    <shape android:shape="rectangle">
+      <corners android:radius="10dp" />
+      <solid android:color="#FF0000" />
+    </shape>
+
+  </item>
+
+  <item>
+
+    <layer-list>
+      <!-- 灰色阴影 -->
+      <item>
+        <shape>
+          <solid android:color="@android:color/darker_gray" />
+          <corners android:radius="10dp" />
+        </shape>
+      </item>
+      <!-- 白色前景 -->
+      <item android:bottom="3dp" android:top="3dp">
+        <shape>
+          <gradient android:angle="270" android:endColor="#FF0000" android:startColor="#BABABA" />
+          <corners android:radius="10dp" />
+        </shape>
+      </item>
+
+    </layer-list>
+  </item>
+</selector>

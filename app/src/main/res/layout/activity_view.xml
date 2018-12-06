@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <Button
+    android:id="@+id/btn"
+    android:textSize="16sp"
+    android:text="@string/app_name"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content" />
+
+  <com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.LoveView
+    android:id="@+id/myLayout"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/btn">
+
+    <com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.MyView
+      android:id="@+id/myview"
+      app:layout_constraintTop_toBottomOf="@+id/btn"
+      android:background="#ffffff"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+
+  </com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.LoveView>
+</android.support.constraint.ConstraintLayout>

@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
+import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.Coordinator1stActivity;
+import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.ViewActivity;
 import com.example.zhangruirui.lifetips.demo_learning.dialog.DialogShowHelper;
 import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
@@ -140,6 +142,18 @@ public class MainActivity extends BaseActivity {
   public void onClickDialog() {
     final DialogShowHelper myDialog = new DialogShowHelper(this);
     myDialog.show();
+  }
+
+  @OnClick({R.id.coordinator})
+  public void onClickCoordinator() {
+    final Intent intent = new Intent(MainActivity.this, Coordinator1stActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.dianzan})
+  public void onClickDianzan() {
+    final Intent intent = new Intent(MainActivity.this, ViewActivity.class);
+    startActivity(intent);
   }
 
   private void doExit() {
