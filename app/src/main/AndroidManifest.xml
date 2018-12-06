@@ -81,7 +81,9 @@
       android:name=".demo_learning.launchmode.ActivityStandard"
       android:launchMode="standard" />
     <activity android:name=".demo_learning.rxjava.RxActivity" />
-    <activity android:name=".SplashActivity"></activity>
+    <activity android:name=".SplashActivity" />
+    <activity android:name=".demo_learning.HandlerDemoActivity" />
+    <activity android:name=".demo_learning.customtab.CustomTabActivity"></activity>
   </application>
 
 </manifest>

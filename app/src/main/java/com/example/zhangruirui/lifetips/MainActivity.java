@@ -43,9 +43,10 @@ public class MainActivity extends BaseActivity {
   }
 
   // 避免多次启动 Splash Screen
+  // TODO: 2018/12/6
   @Override
   public void onBackPressed() {
-    // super.onBackPressed();
+//     super.onBackPressed();
     Intent intent = new Intent(Intent.ACTION_MAIN);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     intent.addCategory(Intent.CATEGORY_HOME);
