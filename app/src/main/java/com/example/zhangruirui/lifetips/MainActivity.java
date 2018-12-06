@@ -8,6 +8,10 @@ import android.os.Bundle;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
+import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.Coordinator1stActivity;
+import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.ViewActivity;
+import com.example.zhangruirui.lifetips.demo_learning.dialog.DialogShowHelper;
+import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
 import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
@@ -30,9 +34,25 @@ public class MainActivity extends BaseActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    // The easiest way to transition back to your normal theme in your launcher (main) activity
+    // is to call setTheme ()
+    // Make sure this is before calling super.onCreate
+    setTheme(R.style.AppTheme);
+
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
+  }
+
+  // 避免多次启动 Splash Screen
+  // TODO: 2018/12/6
+  @Override
+  public void onBackPressed() {
+//     super.onBackPressed();
+    Intent intent = new Intent(Intent.ACTION_MAIN);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.addCategory(Intent.CATEGORY_HOME);
+    startActivity(intent);
   }
 
   @OnClick(R.id.quit)
@@ -109,6 +129,30 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.harvest_offer})
   public void onClickOffer() {
     final Intent intent = new Intent(MainActivity.this, LeetcodeActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.rx})
+  public void onClickRx() {
+    final Intent intent = new Intent(MainActivity.this, RxActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.dialog})
+  public void onClickDialog() {
+    final DialogShowHelper myDialog = new DialogShowHelper(this);
+    myDialog.show();
+  }
+
+  @OnClick({R.id.coordinator})
+  public void onClickCoordinator() {
+    final Intent intent = new Intent(MainActivity.this, Coordinator1stActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.dianzan})
+  public void onClickDianzan() {
+    final Intent intent = new Intent(MainActivity.this, ViewActivity.class);
     startActivity(intent);
   }
 

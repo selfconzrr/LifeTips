@@ -126,4 +126,23 @@
   <string name="problem_hot">Hot Index</string>
   <string name="see_problem_answer">查看讨论</string>
 
+  <!-- 生命周期测试 -->
+  <string name="jump_to_2nd">跳到第二个Activity</string>
+  <string name="jump_to_3rd">跳到第三个Activity</string>
+  <string name="back_to_1st">回到第一个Activity</string>
+
+  <!-- RxJava 学习 -->
+  <string name="rxJava">RxJava</string>
+
+  <!-- CoordinatorLayout 学习 -->
+  <string name="fixed">"第一个固定(pin)"</string>
+  <string name="followscroll">"不设置,跟随滑动"</string>
+  <string name="haha">"哈哈"</string>
+  <string name="inappbaroutcollap">"appbar之内,collap之外"</string>
+  <string name="parallax">"视差效果(parallax)"</string>
+  <string name="phone_hint">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
+  <string name="raw">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
+  <string name="toolbar">"我是toolbar"</string>
+  <string name="user_name">"用户名/手机号"</string>
+
 </resources>

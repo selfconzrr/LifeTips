@@ -17,15 +17,18 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="AllowBackup">
-    <activity android:name=".MainActivity" />
-    <activity android:name=".HelpActivity" />
-    <activity android:name=".WelcomeActivity">
+    <activity
+      android:name=".MainActivity"
+      android:theme="@style/SplashTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
+      />
     </activity>
+    <activity android:name=".HelpActivity" />
+    <activity android:name=".WelcomeActivity" />
     <activity android:name=".LoginActivity" />
     <activity android:name=".LightIntensityActivity" />
     <activity android:name=".NetworkTimeActivity" />
@@ -69,7 +72,23 @@
       android:name=".notebook.activity.NoteDetailActivity"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     <activity android:name=".leetcode.activity.LeetcodeActivity" />
-    <activity android:name=".leetcode.activity.ProblemDetailActivity"></activity>
+    <activity android:name=".leetcode.activity.ProblemDetailActivity" />
+    <activity android:name=".demo_learning.lifecycle.LifeCycleMainActivity" />
+    <activity android:name=".demo_learning.lifecycle.LifeCycle2Activity" />
+    <activity android:name=".demo_learning.lifecycle.LifeCycle3Activity" />
+    <activity android:name=".demo_learning.launchmode.BasicActivity" />
+    <activity
+      android:name=".demo_learning.launchmode.ActivityStandard"
+      android:launchMode="standard" />
+    <activity android:name=".demo_learning.rxjava.RxActivity" />
+    <activity android:name=".SplashActivity" />
+    <activity android:name=".demo_learning.HandlerDemoActivity" />
+    <activity android:name=".demo_learning.customtab.CustomTabActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator1stActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.ViewActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator2ndActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator3rdActivity" />
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator4thActivity"></activity>
   </application>
 
 </manifest>

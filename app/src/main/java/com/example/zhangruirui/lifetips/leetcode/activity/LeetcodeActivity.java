@@ -3,7 +3,9 @@ package com.example.zhangruirui.lifetips.leetcode.activity;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -31,6 +33,7 @@ import butterknife.ButterKnife;
  * <p>
  * 剑指 Offer 试题的展示界面
  */
+@SuppressWarnings("ConstantConditions")
 public class LeetcodeActivity extends AppCompatActivity {
 
   @BindView(R.id.rev_problems)
@@ -49,6 +52,11 @@ public class LeetcodeActivity extends AppCompatActivity {
     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
     mRecyclerView.setLayoutManager(linearLayoutManager);
 
+    DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration
+        .VERTICAL);
+    itemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_decor));
+
+    mRecyclerView.addItemDecoration(itemDecoration);
     loadData(); // 初次加载该界面时 实时加载最新的试题数据
   }
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <android.support.design.widget.AppBarLayout
+    android:id="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentScrim="@color/colorPrimary">
+
+    <android.support.design.widget.CollapsingToolbarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:collapsedTitleGravity="right"
+      app:contentScrim="@color/colorPrimary"
+      app:expandedTitleGravity="center"
+      app:layout_scrollFlags="scroll|snap|exitUntilCollapsed|enterAlwaysCollapsed"
+      app:title="coordinatorlayout"
+      >
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <Button
+    android:id="@+id/PopUp"
+    android:text="@string/app_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+  <android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab"
+    android:layout_margin="16dp"
+    android:layout_gravity="bottom|end"
+    android:src="@mipmap/ic_launcher_round"
+    app:rippleColor="#ff0000"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</android.support.design.widget.CoordinatorLayout>

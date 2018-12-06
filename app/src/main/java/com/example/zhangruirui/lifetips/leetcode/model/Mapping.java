@@ -1,7 +1,6 @@
 package com.example.zhangruirui.lifetips.leetcode.model;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Mapping {
 
