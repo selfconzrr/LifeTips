@@ -6,7 +6,7 @@ import android.support.v7.util.DiffUtil;
 public class DiffItemCallBack extends DiffUtil.ItemCallback<Bean> {
   @Override
   public boolean areItemsTheSame(@NonNull Bean oldItem, @NonNull Bean newItem) {
-    return oldItem.getmId() == newItem.getmId();
+    return oldItem.getId() == newItem.getId();
   }
 
   @Override

@@ -42,7 +42,7 @@ public class Coordinator2ndActivity extends AppCompatActivity {
 
   @OnClick(R.id.fab)
   public void onClick() {
-    Snackbar.make(mFloatingActionButton, "Hello Kwai", Snackbar.LENGTH_LONG).setAction
+    Snackbar.make(mFloatingActionButton, "Hello ZRR", Snackbar.LENGTH_LONG).setAction
         ("ActionII", new View.OnClickListener() {
       @Override
       public void onClick(View view) {

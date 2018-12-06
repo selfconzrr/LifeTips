@@ -10,7 +10,7 @@ import java.util.List;
 public class DiffCallBack extends DiffUtil.Callback {
   private List<String> mOldDatas, mNewDatas;
 
-  public DiffCallBack(List<String> oldDatas, List<String> newDatas) {
+  DiffCallBack(List<String> oldDatas, List<String> newDatas) {
     this.mOldDatas = oldDatas;
     this.mNewDatas = newDatas;
   }
@@ -97,7 +97,7 @@ public class DiffCallBack extends DiffUtil.Callback {
     String newData = mNewDatas.get(newItemPosition);
 
     Bundle payload = new Bundle();
-    if (oldData != newData) {
+    if (!oldData.equals(newData)) {
       payload.putString("NEW_DATA", newData);
     }
     Log.e("zhangrr", "getChangePayload() called with: oldItemPosition = [" + oldItemPosition +

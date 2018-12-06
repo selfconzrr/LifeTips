@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+
 /**
  * 自定义 View 我们大部分时候只需重写两个函数：onMeasure()、onDraw()。
  * onMeasure 负责对当前 View 的尺寸进行测量，onDraw 负责把当前这个 View 绘制出来。
@@ -25,7 +26,8 @@ public class MyView extends View {
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    Log.e("zhangrr", "onMeasure() called with: measureHeight = [" + getMeasuredHeight() + " height = " + getHeight());
+    Log.e("zhangrr", "onMeasure() called with: measureHeight = [" + getMeasuredHeight() + " " +
+        "height = " + getHeight());
 //    int width = getMySize(100, widthMeasureSpec);
 //    int height = getMySize(100, heightMeasureSpec);
 //
@@ -41,7 +43,8 @@ public class MyView extends View {
   @Override
   protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
     super.onLayout(changed, left, top, right, bottom);
-    Log.e("zhangrr", "onLayout() called with: measureHeight = [" + getMeasuredHeight() + " height = " + getHeight());
+    Log.e("zhangrr", "onLayout() called with: measureHeight = [" + getMeasuredHeight() + " height" +
+        " = " + getHeight());
   }
 
   @Override

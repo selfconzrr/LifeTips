@@ -9,32 +9,24 @@ class Bean {
     this.mName = mName;
   }
 
-  public int getmId() {
+  public int getId() {
     return mId;
   }
 
-  public void setmId(int mId) {
-    this.mId = mId;
-  }
-
-  public String getmName() {
+  private String getName() {
     return mName;
-  }
-
-  public void setmName(String mName) {
-    this.mName = mName;
   }
 
   @Override
   public boolean equals(Object obj) {
     final Bean bean = (Bean) obj;
-    return getmName().equals(bean.getmName());
+    return getName().equals(bean.getName());
   }
 
   @Override
   public int hashCode() {
-    int result = getmName().hashCode();
-    result = 29 * result + getmName().hashCode();
+    int result = getName().hashCode();
+    result = 29 * result + getName().hashCode();
     return result;
   }
 }

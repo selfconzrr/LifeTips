@@ -1,11 +1,11 @@
 package com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -36,6 +36,14 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：12/06/18
+ */
+@SuppressWarnings({"ConstantConditions", "unchecked"})
 public class FragmentModel extends Fragment {
   private static final String PARAM = "param";
   private static final int INITIAL_CAPACITY = 10;
@@ -50,8 +58,6 @@ public class FragmentModel extends Fragment {
   private List<String> mList;
 
   private MyAdapter myAdapter;
-
-  private Activity mActivity;
 
   LinearLayoutManager mLinearLayoutManager;
 
@@ -81,7 +87,6 @@ public class FragmentModel extends Fragment {
   @Override
   public void onAttach(Context context) {
     super.onAttach(context);
-    mActivity = (Activity) context;
   }
 
   @Override
@@ -95,7 +100,7 @@ public class FragmentModel extends Fragment {
 
   // 生命周期函数中只有 onCreateView() 在重写时不用写 super 方法，其他都需要
   @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
     Log.e("zhangrr", "onCreateView() called mTabTitleText = " + mTabTitleText);
     // 需要注意的是 inflate() 的第三个参数是 false，因为在 Fragment 内部实现中，会把该布局添加到 container 中，如果设为
@@ -118,24 +123,24 @@ public class FragmentModel extends Fragment {
 
     mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
       @Override
-      public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+      public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
         super.onScrollStateChanged(recyclerView, newState);
-        /**
-         * The RecyclerView is not currently scrolling.（静止没有滚动）
-         * public static final int SCROLL_STATE_IDLE = 0;
+        /*
+          The RecyclerView is not currently scrolling.（静止没有滚动）
+          public static final int SCROLL_STATE_IDLE = 0;
          */
 
-        /**
-         * The RecyclerView is currently being dragged by outside input such as user touch input.
-         *（正在被外部拖拽,一般为用户正在用手指滚动）
-         *  public static final int SCROLL_STATE_DRAGGING = 1;
+        /*
+          The RecyclerView is currently being dragged by outside input such as user touch input.
+         （正在被外部拖拽,一般为用户正在用手指滚动）
+           public static final int SCROLL_STATE_DRAGGING = 1;
          */
 
-        /**
-         * The RecyclerView is currently animating to a final position while not under outside
-         * control.
-         *（自动滚动）
-         * public static final int SCROLL_STATE_SETTLING = 2;
+        /*
+          The RecyclerView is currently animating to a final position while not under outside
+          control.
+         （自动滚动）
+          public static final int SCROLL_STATE_SETTLING = 2;
          */
 
         Log.e("zhangrr", "onScrollStateChanged() called with: recyclerView");
@@ -144,7 +149,7 @@ public class FragmentModel extends Fragment {
       }
 
       @Override
-      public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+      public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
         Log.e("zhangrr", "onScrolled called with: mNeedMove = " + mNeedMove);
 
@@ -191,7 +196,6 @@ public class FragmentModel extends Fragment {
 
                   mList.remove(position);
                   // doCalculate();
-
 
                   myAdapter.setDatas(mList);
                   myAdapter.notifyItemRemoved(position); // 使用该方法，一般还需要我们再调用下面的方法或者

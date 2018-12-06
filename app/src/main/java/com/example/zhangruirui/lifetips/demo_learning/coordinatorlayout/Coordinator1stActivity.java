@@ -20,6 +20,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：12/06/18
+ */
 public class Coordinator1stActivity extends AppCompatActivity {
 
   @BindView(R.id.fab)
@@ -38,12 +45,12 @@ public class Coordinator1stActivity extends AppCompatActivity {
   public void onClick() {
     Snackbar.make(mFloatingActionButton, "Hello ZRR", Snackbar.LENGTH_LONG).setAction("ActionI",
         new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Intent intent = new Intent(Coordinator1stActivity.this, Coordinator2ndActivity.class);
-        startActivity(intent);
-      }
-    }).show();
+          @Override
+          public void onClick(View view) {
+            Intent intent = new Intent(Coordinator1stActivity.this, Coordinator2ndActivity.class);
+            startActivity(intent);
+          }
+        }).show();
   }
 
   @OnClick(R.id.PopUp)

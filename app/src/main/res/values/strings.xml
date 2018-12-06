@@ -135,14 +135,14 @@
   <string name="rxJava">RxJava</string>
 
   <!-- CoordinatorLayout 学习 -->
-  <string name="user_name">"用户名/手机号"</string>
-  <string name="phone_hint">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
-  <string name="raw">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
-  <string name="haha">"哈哈"</string>
   <string name="fixed">"第一个固定(pin)"</string>
   <string name="followscroll">"不设置,跟随滑动"</string>
-  <string name="parallax">"视差效果(parallax)"</string>
-  <string name="toolbar">"我是toolbar"</string>
+  <string name="haha">"哈哈"</string>
   <string name="inappbaroutcollap">"appbar之内,collap之外"</string>
+  <string name="parallax">"视差效果(parallax)"</string>
+  <string name="phone_hint">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
+  <string name="raw">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
+  <string name="toolbar">"我是toolbar"</string>
+  <string name="user_name">"用户名/手机号"</string>
 
 </resources>

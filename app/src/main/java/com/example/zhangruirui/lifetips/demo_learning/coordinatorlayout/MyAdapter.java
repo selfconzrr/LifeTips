@@ -1,6 +1,7 @@
 package com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.recyclerview.extensions.AsyncListDiffer;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,6 +15,7 @@ import com.example.zhangruirui.lifetips.R;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
   private boolean hasNotLongClickFlag = true;
@@ -22,7 +24,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
   private OnItemClickListener itemClickListener;
 
-  final AsyncListDiffer<Bean> mItemCallback = new AsyncListDiffer(this, new DiffItemCallBack());
+  private final AsyncListDiffer<Bean> mItemCallback = new AsyncListDiffer(this, new
+      DiffItemCallBack());
 
   MyAdapter() {
   }
@@ -30,10 +33,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   public void setDatas(List<String> list) {
     // this.list = list; // 这样实质是保存的引用，会导致两个数据集同步变化
     this.list = new ArrayList<>(list); // 第一种写法
-    if (list != null) { // 第二种写法
-      this.list.clear();
-      this.list.addAll(list);
-    }
+    // 第二种写法
+    this.list.clear();
+    this.list.addAll(list);
     Log.e("zhangrr", "setDatas() called with: list = [" + list.size() + "]");
   }
 
@@ -41,8 +43,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     return list;
   }
 
+  @NonNull
   @Override
-  public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
     Log.e("zhangrr", "onCreateViewHolder() called with: parent = " + "]");
     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent,
@@ -72,7 +75,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   }
 
   @Override
-  public void onBindViewHolder(final MyViewHolder holder, int position) {
+  public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
     Log.e("zhangrr", "两参 onBindViewHolder() called with: position = " + position + " text = " +
         list.get(position));
     holder.mText.setText(list.get(position));
@@ -83,7 +86,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
    * 三参的 onBindViewHolder 才是真正和 onCreateViewHolder 对应的方法，在该方法内部会调用两参的 onBindViewHolder
    */
   @Override
-  public void onBindViewHolder(MyViewHolder holder, int position, List<Object> payloads) {
+  public void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull List<Object>
+      payloads) {
     Log.e("zhangrr", "三参 onBindViewHolder() called with: position = [" + position + "], " +
         "adapter = [" + holder.getAdapterPosition() + " layout = " + holder.getLayoutPosition()
         + " getpos = " + holder.getPosition());
@@ -111,7 +115,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   }
 
   @Override
-  public void onViewRecycled(MyViewHolder holder) {
+  public void onViewRecycled(@NonNull MyViewHolder holder) {
     super.onViewRecycled(holder);
   }
 
@@ -146,7 +150,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     MyViewHolder(View itemView) {
       super(itemView);
-      mText = (TextView) itemView.findViewById(R.id.item_tv);
+      mText = itemView.findViewById(R.id.item_tv);
     }
   }
 
