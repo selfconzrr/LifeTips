@@ -3,7 +3,6 @@ package com.example.zhangruirui.lifetips;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
@@ -19,6 +18,7 @@ import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.ToastUtil;
+import com.tencent.mmkv.MMKV;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,6 +40,10 @@ public class MainActivity extends BaseActivity {
     setTheme(R.style.AppTheme);
 
     super.onCreate(savedInstanceState);
+    // TODO: 2018/12/6 将 SharedPreference 替换为 MMKV
+    // 参考链接：https://github.com/selfconzrr/MMKV/blob/master/readme_cn.md
+    MMKV.initialize(this);
+
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
   }
@@ -165,11 +169,9 @@ public class MainActivity extends BaseActivity {
             new DialogInterface.OnClickListener() {
               public void onClick(DialogInterface dialog,
                                   int whichButton) {
-                final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
-                final int value = pref.getInt("light_value", 180);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putInt("light_value", value);
-                editor.apply();
+                MMKV mmkv = MMKV.defaultMMKV();
+                final int value = mmkv.getInt("light_value", 180);
+                mmkv.putInt("light_value", value);
                 ActivityCollector.finishAll();
               }
             })

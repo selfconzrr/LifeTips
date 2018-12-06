@@ -183,7 +183,7 @@ public class DateUtil implements Serializable {
    * @return 格式化后的日期显示
    */
   private static String dateFormat(String sdate, String format) {
-    SimpleDateFormat formatter = new SimpleDateFormat(format, Locale.CHINA);
+    SimpleDateFormat formatter = new SimpleDateFormat(format, Locale.getDefault());
     java.sql.Date date = java.sql.Date.valueOf(sdate);
 
     return formatter.format(date);
@@ -220,7 +220,7 @@ public class DateUtil implements Serializable {
   }
 
   public static Date getDate(String sDate, String dateFormat) {
-    SimpleDateFormat fmt = new SimpleDateFormat(dateFormat, Locale.CHINA);
+    SimpleDateFormat fmt = new SimpleDateFormat(dateFormat, Locale.getDefault());
     ParsePosition pos = new ParsePosition(0);
 
     return fmt.parse(sDate, pos);
@@ -340,7 +340,7 @@ public class DateUtil implements Serializable {
    * @return String 指定格式的日期字符串.
    */
   private static String getFormatDateTime(Date date, String format) {
-    SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.CHINA);
+    SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.getDefault());
     return sdf.format(date);
   }
 
@@ -380,7 +380,7 @@ public class DateUtil implements Serializable {
    * @return 给定字符串描述的日期对象。
    */
   private static Date getDateFromString(String dateStr, String pattern) {
-    SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.CHINA);
+    SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.getDefault());
     Date resDate = null;
     try {
       resDate = sdf.parse(dateStr);
@@ -664,7 +664,7 @@ public class DateUtil implements Serializable {
    */
   public static String getCurrentDateString(String dateFormat) {
     Calendar cal = Calendar.getInstance(TimeZone.getDefault());
-    SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, Locale.CHINA);
+    SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, Locale.getDefault());
     sdf.setTimeZone(TimeZone.getDefault());
 
     return sdf.format(cal.getTime());
@@ -732,7 +732,7 @@ public class DateUtil implements Serializable {
    */
   public static String getCurTimeByFormat(String format) {
     Date newdate = new Date(System.currentTimeMillis());
-    SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.CHINA);
+    SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.getDefault());
     return sdf.format(newdate);
   }
 
@@ -745,7 +745,7 @@ public class DateUtil implements Serializable {
    */
   public static long getDiff(String startTime, String endTime) {
     long diff = 0;
-    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     try {
       Date startDate = ft.parse(startTime);
       Date endDate = ft.parse(endTime);
@@ -808,7 +808,7 @@ public class DateUtil implements Serializable {
   public static String getDateByAddHour(String datetime, int minute) {
     String returnTime = null;
     Calendar cal = new GregorianCalendar();
-    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     Date date;
     try {
       date = ft.parse(datetime);
@@ -831,7 +831,7 @@ public class DateUtil implements Serializable {
    */
   public static int getDiffHour(String startTime, String endTime) {
     long diff = 0;
-    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+    SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     try {
       Date startDate = ft.parse(startTime);
       Date endDate = ft.parse(endTime);
@@ -1123,7 +1123,7 @@ public class DateUtil implements Serializable {
    */
   private static int getDiffDays(String startDate, String endDate) {
     long diff = 0;
-    SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.CHINA);
+    SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault());
     try {
       Date sDate = ft.parse(startDate + " 00:00:00");
       Date eDate = ft.parse(endDate + " 00:00:00");

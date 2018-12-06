@@ -46,7 +46,7 @@ import io.reactivex.schedulers.Schedulers;
 @SuppressWarnings({"ConstantConditions", "unchecked"})
 public class FragmentModel extends Fragment {
   private static final String PARAM = "param";
-  private static final int INITIAL_CAPACITY = 10;
+  private static final int INITIAL_CAPACITY = 100;
 
   @BindView(R.id.recycler)
   RecyclerView mRecyclerView;
