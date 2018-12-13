@@ -6,7 +6,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.zhangruirui.utils.CacheCleanUtil;
 import com.example.zhangruirui.utils.ToastUtil;
+import com.tencent.mmkv.MMKV;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,13 +36,17 @@ public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChange
   @BindView(R.id.show_value)
   TextView mShowLightValue;
 
+  MMKV mmkv = MMKV.defaultMMKV();
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_set);
     ButterKnife.bind(this);
-    final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
-    final int value = pref.getInt("light_value", 180);
+
+    // final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
+    // final int value = pref.getInt("light_value", 180);
+    final int value = mmkv.getInt("light_value", 180);
     mLight.setOnSeekBarChangeListener(this); // 不要忘了设置 Listener，否则不会触发 onProgressChanged
     mLight.setProgress(value);
   }
@@ -52,10 +56,7 @@ public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChange
   public void onProgressChanged(SeekBar seekBar, int progress,
                                 boolean fromUser) {
     final int bright = seekBar.getProgress();
-    final SharedPreferences.Editor editor = getSharedPreferences("light",
-        MODE_PRIVATE).edit();
-    editor.putInt("light_value", bright);
-    editor.apply();
+    mmkv.putInt("light_value", bright);
     mShowLightValue.setText(" : " + String.valueOf(bright));
     changeAppBrightness(this, bright);
   }

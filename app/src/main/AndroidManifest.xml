@@ -3,6 +3,9 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.example.zhangruirui.lifetips">
 
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.RECEIVE_SMS" />
   <uses-permission android:name="android.permission.SEND_SMS" />
@@ -25,7 +28,6 @@
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
-      />
     </activity>
     <activity android:name=".HelpActivity" />
     <activity android:name=".WelcomeActivity" />
@@ -83,12 +85,18 @@
     <activity android:name=".demo_learning.rxjava.RxActivity" />
     <activity android:name=".SplashActivity" />
     <activity android:name=".demo_learning.HandlerDemoActivity" />
-    <activity android:name=".demo_learning.customtab.CustomTabActivity" />
     <activity android:name=".demo_learning.coordinatorlayout.Coordinator1stActivity" />
     <activity android:name=".demo_learning.coordinatorlayout.ViewActivity" />
     <activity android:name=".demo_learning.coordinatorlayout.Coordinator2ndActivity" />
     <activity android:name=".demo_learning.coordinatorlayout.Coordinator3rdActivity" />
-    <activity android:name=".demo_learning.coordinatorlayout.Coordinator4thActivity"></activity>
+    <activity android:name=".demo_learning.coordinatorlayout.Coordinator4thActivity" />
+
+    <meta-data
+      android:value="5c11f976b465f58cfc00024d"
+      android:name="UMENG_APPKEY" />
+    <meta-data
+      android:value="Wandoujia"
+      android:name="UMENG_CHANNEL" />
   </application>
 
 </manifest>
