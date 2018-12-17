@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 import com.example.zhangruirui.utils.ToastUtil;
@@ -53,6 +55,12 @@ public class BMIActivity extends BaseActivity {
         }
       }
     });
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   @OnClick(R.id.compute)

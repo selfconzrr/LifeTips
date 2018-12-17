@@ -3,20 +3,21 @@ package com.example.zhangruirui.lifetips.demo_learning;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 
 import java.lang.ref.SoftReference;
 
 import butterknife.ButterKnife;
+
 /**
  * HandlerDemo：注意避免内存泄漏，在 Activity 或者 fragment 生命周期结束时，移除掉
  * MessageQueue 中尚未处理的 message 及 callback；
  * 借助软引用存储 Handler 对 Activity 的引用。
  */
-public class HandlerDemoActivity extends AppCompatActivity {
+public class HandlerDemoActivity extends BasicActivity {
 
   private NewHandler mHandler = new NewHandler(this);
 

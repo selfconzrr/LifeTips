@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.events.GetTimeEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -47,6 +49,12 @@ public class NetworkTimeActivity extends BaseActivity {
     setContentView(R.layout.activity_network_time);
     ButterKnife.bind(this);
     EventBus.getDefault().register(this);
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   @Override

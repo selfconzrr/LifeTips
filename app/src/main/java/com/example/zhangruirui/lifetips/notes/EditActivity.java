@@ -3,16 +3,16 @@ package com.example.zhangruirui.lifetips.notes;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 import com.example.zhangruirui.utils.ToastUtil;
 
-public class EditActivity extends AppCompatActivity {
+public class EditActivity extends BasicActivity {
 
   private Context context = this;
   private String date;

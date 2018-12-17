@@ -3,25 +3,23 @@ package com.example.zhangruirui.lifetips;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 
 /**
  * 暂时无用
  */
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BasicActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
 
     super.onCreate(savedInstanceState);
     final int DELAY_TIME = 1000; // 1s之后执行相应的逻辑
-    new Handler().postDelayed(new Runnable() {
-      @Override
-      public void run() {
-        // 启动登录界面
-        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-        finish();
-      }
+    new Handler().postDelayed(() -> {
+      // 启动登录界面
+      startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+      finish();
     }, DELAY_TIME);
   }
 

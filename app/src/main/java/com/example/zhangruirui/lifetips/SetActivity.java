@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.utils.CacheCleanUtil;
 import com.example.zhangruirui.utils.ToastUtil;
 import com.tencent.mmkv.MMKV;
@@ -49,6 +51,12 @@ public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChange
     final int value = mmkv.getInt("light_value", 180);
     mLight.setOnSeekBarChangeListener(this); // 不要忘了设置 Listener，否则不会触发 onProgressChanged
     mLight.setProgress(value);
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   @SuppressLint("SetTextI18n")

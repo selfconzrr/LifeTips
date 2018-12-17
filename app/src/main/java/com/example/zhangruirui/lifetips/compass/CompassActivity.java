@@ -8,6 +8,8 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
 
@@ -41,6 +43,12 @@ public class CompassActivity extends BaseActivity {
     if (mSensorManager != null) {
       mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
     }
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   @Override

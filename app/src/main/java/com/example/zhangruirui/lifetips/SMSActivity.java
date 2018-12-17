@@ -12,6 +12,8 @@ import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.BindView;
@@ -56,6 +58,12 @@ public class SMSActivity extends BaseActivity {
     mSendStatusReceiver = new SendStatusReceiver();
     registerReceiver(mMessageReceiver, receiverFilter);
     registerReceiver(mSendStatusReceiver, sendFilter);
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   @OnClick(R.id.send)

@@ -3,6 +3,9 @@ package com.example.zhangruirui.lifetips;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
+
 /**
  * @author zhangruirui
  * email：1138517609@qq.com
@@ -19,5 +22,11 @@ public class HelpActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     this.requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.activity_help);
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 }

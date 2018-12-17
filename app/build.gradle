@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -36,6 +40,7 @@ dependencies {
     implementation 'com.android.support:customtabs:25.1.0+'
     implementation 'com.tencent:mmkv:1.0.10'
 
+    implementation project(':slidebacklayout')
     implementation 'com.umeng.umsdk:analytics:7.5.4'
     implementation 'com.umeng.umsdk:common:1.5.4'
 

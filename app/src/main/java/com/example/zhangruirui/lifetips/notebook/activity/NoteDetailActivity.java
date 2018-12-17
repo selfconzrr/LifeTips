@@ -13,7 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 import com.example.zhangruirui.lifetips.notebook.bean.Note;
 import com.example.zhangruirui.lifetips.notebook.db.NoteDAO;
 import com.example.zhangruirui.lifetips.notebook.util.TextFormatUtil;
@@ -30,7 +33,7 @@ import java.util.Date;
  * <p>
  * 笔记详情页
  */
-public class NoteDetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class NoteDetailActivity extends BasicActivity implements View.OnClickListener {
 
   public static final String SENDED_NOTE_ID = "note_id";
   private EditText mEtTitle;
@@ -55,6 +58,12 @@ public class NoteDetailActivity extends AppCompatActivity implements View.OnClic
     toolbar.setNavigationOnClickListener(this);
     initData();
     initView();
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   private void initData() {

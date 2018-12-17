@@ -3,12 +3,12 @@ package com.example.zhangruirui.lifetips.demo_learning.rxjava;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ import io.reactivex.schedulers.Schedulers;
  * Blog：http://blog.csdn.net/u011489043
  * Date：12/05/18
  */
-public class RxActivity extends AppCompatActivity {
+public class RxActivity extends BasicActivity {
 
   private static final String TAG = "RxActivity";
   RecyclerView.Adapter mAdapter;

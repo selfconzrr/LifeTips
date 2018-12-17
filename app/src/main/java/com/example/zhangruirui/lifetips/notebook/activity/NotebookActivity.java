@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +12,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 import com.example.zhangruirui.lifetips.notebook.adapter.NaviListAdapter;
 import com.example.zhangruirui.lifetips.notebook.fragment.AllNotesFragment;
 import com.example.zhangruirui.lifetips.notebook.fragment.SearchNoteFragment;
@@ -38,7 +40,7 @@ import java.util.Arrays;
  * 3.DrawerLayout 和 Fragment 实现侧滑菜单
  * 4.SQLite 存储数据
  */
-public class NotebookActivity extends AppCompatActivity implements Toolbar
+public class NotebookActivity extends BasicActivity implements Toolbar
     .OnMenuItemClickListener, AdapterView.OnItemClickListener {
 
   private DrawerLayout mDlLayout;
@@ -56,6 +58,12 @@ public class NotebookActivity extends AppCompatActivity implements Toolbar
     mFragments[2] = new SettingFragment();
     initView();
     showFragment();
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   private void initView() {

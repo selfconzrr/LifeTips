@@ -9,6 +9,9 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -34,6 +37,12 @@ public class LightIntensityActivity extends BaseActivity {
       final Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
       sensorManager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   private SensorEventListener listener = new SensorEventListener() {
