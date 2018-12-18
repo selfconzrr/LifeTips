@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  tools:context=".demo_learning.jscommunication.JSActivity">
+
+  <TextView
+    android:id="@+id/js_and"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/js_and"
+    android:padding="4dip"
+    android:textSize="16sp" />
+
+  <WebView
+    android:id="@+id/js"
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@+id/js_and"
+    android:layout_height="100dp" />
+</android.support.constraint.ConstraintLayout>

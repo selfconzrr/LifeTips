@@ -1,7 +1,6 @@
 package com.example.zhangruirui.lifetips;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,6 +10,7 @@ import com.example.zhangruirui.lifetips.demo_learning.MenuDemoActivity;
 import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.Coordinator1stActivity;
 import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.ViewActivity;
 import com.example.zhangruirui.lifetips.demo_learning.dialog.DialogShowHelper;
+import com.example.zhangruirui.lifetips.demo_learning.jscommunication.JSActivity;
 import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
@@ -19,6 +19,11 @@ import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.ToastUtil;
+import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXTextObject;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.mmkv.MMKV;
 
 import butterknife.ButterKnife;
@@ -33,6 +38,10 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
 
+  // 注意通过 AS 下载程序和通过 apk 安装程序，生成的签名是不一样的，申请 app_id 需要注意
+  private static final String APP_ID = "wx59b5f3646e7f0fde"; //申请的 app_id
+  public static IWXAPI api;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // The easiest way to transition back to your normal theme in your launcher (main) activity
@@ -46,6 +55,7 @@ public class MainActivity extends BaseActivity {
     MMKV.initialize(this);
 
     setContentView(R.layout.activity_main);
+    registerToWx();
     ButterKnife.bind(this);
   }
 
@@ -167,29 +177,59 @@ public class MainActivity extends BaseActivity {
     startActivity(intent);
   }
 
+  @OnClick({R.id.JSDemo})
+  public void onClickJS() {
+    final Intent intent = new Intent(MainActivity.this, JSActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.shareApp})
+  public void onClickShare() {
+    wechatShare(1);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")
         .setMessage("小主，确认退出吗？")
         .setIcon(R.drawable.quit)
         .setPositiveButton("残忍退出",
-            new DialogInterface.OnClickListener() {
-              public void onClick(DialogInterface dialog,
-                                  int whichButton) {
-                MMKV mmkv = MMKV.defaultMMKV();
-                final int value = mmkv.getInt("light_value", 180);
-                mmkv.putInt("light_value", value);
-                ActivityCollector.finishAll();
-              }
+            (dialog, whichButton) -> {
+              MMKV mmkv = MMKV.defaultMMKV();
+              final int value = mmkv.getInt("light_value", 180);
+              mmkv.putInt("light_value", value);
+              ActivityCollector.finishAll();
             })
         .setNegativeButton("再玩一会",
-            new DialogInterface.OnClickListener() {
-              public void onClick(DialogInterface dialog,
-                                  int whichButton) {
-                // LEFT DO NOTHING
-                ToastUtil.showToast(MainActivity.this, "感谢您的挽留");
-              }
+            (dialog, whichButton) -> {
+              // LEFT DO NOTHING
+              ToastUtil.showToast(MainActivity.this, "感谢您的挽留");
             }).show();
   }
 
+  private void registerToWx() {
+    api = WXAPIFactory.createWXAPI(this, APP_ID, false);
+    api.registerApp(APP_ID);
+  }
+
+  private void wechatShare(int i) {
+    if (!MainActivity.api.isWXAppInstalled()) {
+      ToastUtil.showToast(MainActivity.this, "您还未安装微信客户端");
+      return;
+    }
+    final String text1 = "微信测试";
+    final String content = "能不能成啊!";
+
+    WXTextObject text = new WXTextObject();
+    text.text = content;
+    WXMediaMessage msg = new WXMediaMessage();
+    msg.mediaObject = text;
+    msg.title = text1;
+    msg.description = text1;
+    SendMessageToWX.Req req = new SendMessageToWX.Req();
+    req.transaction = String.valueOf(System.currentTimeMillis());
+    req.message = msg;
+    req.scene = i;
+    MainActivity.api.sendReq(req);
+  }
 }

@@ -4,6 +4,7 @@
   <string name="app_name">LifeTips</string>
   <string name="compass">指南针</string>
   <string name="direction">方向</string>
+  <string name="js_and">JS和android通信</string>
   <string name="light_intensity">光照强度</string>
   <string name="menuDemo">菜单学习</string>
   <string name="quit">退出</string>

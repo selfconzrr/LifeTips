@@ -170,4 +170,22 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 
+  <Button
+    android:id="@+id/JSDemo"
+    android:text="JS交互"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/dialog"
+    android:layout_toRightOf="@+id/menu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+  <Button
+    android:id="@+id/shareApp"
+    android:text="APP分享"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/coordinator"
+    android:layout_toRightOf="@+id/JSDemo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
 </RelativeLayout>

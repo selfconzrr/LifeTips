@@ -113,7 +113,11 @@
       </intent-filter>
     </receiver>
 
-    <activity android:name=".demo_learning.MenuDemoActivity"></activity>
+    <activity android:name=".demo_learning.MenuDemoActivity" />
+    <activity
+      android:name=".demo_learning.jscommunication.JSActivity"
+      android:hardwareAccelerated="true" />
+    <activity android:name=".share.wxapi.WXEntryActivity" />
   </application>
 
 </manifest>
