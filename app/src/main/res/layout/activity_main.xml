@@ -161,4 +161,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 
+  <Button
+    android:id="@+id/menu"
+    android:text="Menu"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/rx"
+    android:layout_toRightOf="@+id/dianzan"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
 </RelativeLayout>

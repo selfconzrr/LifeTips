@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
+import com.example.zhangruirui.lifetips.demo_learning.MenuDemoActivity;
 import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.Coordinator1stActivity;
 import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.ViewActivity;
 import com.example.zhangruirui.lifetips.demo_learning.dialog.DialogShowHelper;
@@ -157,6 +158,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.dianzan})
   public void onClickDianzan() {
     final Intent intent = new Intent(MainActivity.this, ViewActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.menu})
+  public void onClickMenu() {
+    final Intent intent = new Intent(MainActivity.this, MenuDemoActivity.class);
     startActivity(intent);
   }
 

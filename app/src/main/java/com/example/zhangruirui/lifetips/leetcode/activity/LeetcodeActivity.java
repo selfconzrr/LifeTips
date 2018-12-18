@@ -65,6 +65,7 @@ public class LeetcodeActivity extends BasicActivity {
     itemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_decor));
 
     mRecyclerView.addItemDecoration(itemDecoration);
+    mRecyclerView.post(() -> Log.e("zhangrr", "onCreate() called with: savedInstanceState = [" + mRecyclerView.getWidth() + "]"));
     loadData(); // 初次加载该界面时 实时加载最新的试题数据
   }
 
