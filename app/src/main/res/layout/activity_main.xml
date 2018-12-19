@@ -5,10 +5,18 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
+<com.bugfree.zhangruirui.banner.CycleViewPager
+  android:id="@+id/view_pager"
+  android:layout_width="match_parent"
+  android:layout_height="200dp">
+
+</com.bugfree.zhangruirui.banner.CycleViewPager>
+
   <Button
     android:id="@+id/quit"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_below="@+id/view_pager"
     android:textColor="#ff0000"
     android:text="@string/quit" />
 
@@ -17,6 +25,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_toRightOf="@id/quit"
+    android:layout_below="@+id/view_pager"
+
     android:text="@string/light_intensity"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/quit" />
@@ -26,6 +36,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_toRightOf="@id/light_intensity"
+    android:layout_below="@+id/view_pager"
+
     android:text="@string/getTime"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/light_intensity" />
@@ -35,6 +47,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_toRightOf="@id/getTime"
+    android:layout_below="@+id/view_pager"
+
     android:text="@string/sms"
     android:textColor="#ff0000"
     android:layout_toEndOf="@id/getTime" />

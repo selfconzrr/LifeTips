@@ -3,7 +3,11 @@ package com.example.zhangruirui.lifetips;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
+import com.bugfree.zhangruirui.banner.CycleViewPager;
+import com.bugfree.zhangruirui.banner.model.PicInfo;
 import com.example.zhangruirui.lifetips.bmi.BMIActivity;
 import com.example.zhangruirui.lifetips.compass.CompassActivity;
 import com.example.zhangruirui.lifetips.demo_learning.MenuDemoActivity;
@@ -26,6 +30,10 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.mmkv.MMKV;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -38,9 +46,18 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
 
+  // TODO: 2018/12/19 更换 app id
   // 注意通过 AS 下载程序和通过 apk 安装程序，生成的签名是不一样的，申请 app_id 需要注意
   private static final String APP_ID = "wx59b5f3646e7f0fde"; //申请的 app_id
   public static IWXAPI api;
+
+  /**
+   * 模拟请求后得到的数据
+   */
+  List<PicInfo> mList = new ArrayList<>();
+
+  @BindView(R.id.view_pager)
+  CycleViewPager mCycleViewPager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +74,23 @@ public class MainActivity extends BaseActivity {
     setContentView(R.layout.activity_main);
     registerToWx();
     ButterKnife.bind(this);
+    initData();
+
+    //设置选中和未选中时的图片
+    mCycleViewPager.setIndicators(R.mipmap.ad_select, R.mipmap.ad_unselect);
+    mCycleViewPager.setDelay(2000);
+    mCycleViewPager.setData(mList, mAdCycleViewListener);
+  }
+
+  private void initData() {
+    mList.add(new PicInfo("标题1",
+        "http://img2.3lian.com/2014/c7/25/d/40.jpg"));
+    mList.add(new PicInfo("标题2",
+        "http://img2.3lian.com/2014/c7/25/d/41.jpg"));
+    mList.add(new PicInfo("标题3",
+        "http://imgsrc.baidu.com/forum/pic/item/b64543a98226cffc8872e00cb9014a90f603ea30.jpg"));
+    mList.add(new PicInfo("标题4",
+        "http://imgsrc.baidu.com/forum/pic/item/261bee0a19d8bc3e6db92913828ba61eaad345d4.jpg"));
   }
 
   // 避免多次启动 Splash Screen
@@ -232,4 +266,22 @@ public class MainActivity extends BaseActivity {
     req.scene = i;
     MainActivity.api.sendReq(req);
   }
+
+  /**
+   * 轮播图点击监听
+   */
+  private CycleViewPager.ImageCycleViewListener mAdCycleViewListener =
+      new CycleViewPager.ImageCycleViewListener() {
+
+        @Override
+        public void onImageClick(PicInfo info, int position, View imageView) {
+
+          if (mCycleViewPager.isCycle()) {
+            position = position - 1;
+          }
+          Toast.makeText(MainActivity.this, info.getTitle() +
+              "选择了--" + position, Toast.LENGTH_LONG).show();
+        }
+      };
+
 }
