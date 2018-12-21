@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 系统默认的小工具布局中只支持以下这些标签，如果用了列表以外的标签，会导致小工具加载错误:
+https://developer.android.com/guide/topics/appwidgets/#CreatingLayout
+
+FrameLayout、LinearLayout、RelativeLayout
+TextClock、Button、Chronometer、ImageButton、ImageView、ProgressBar、TextView -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <ImageView
+    android:id="@+id/widget"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:src="@drawable/launch_icon"
+    android:layout_alignParentStart="true" />
+</RelativeLayout>

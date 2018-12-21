@@ -4,13 +4,15 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 import com.example.zhangruirui.lifetips.leetcode.adapter.ProblemListAdapter;
 import com.example.zhangruirui.lifetips.leetcode.model.Problem;
 import com.example.zhangruirui.lifetips.leetcode.model.ProblemParser;
@@ -34,7 +36,7 @@ import butterknife.ButterKnife;
  * 剑指 Offer 试题的展示界面
  */
 @SuppressWarnings("ConstantConditions")
-public class LeetcodeActivity extends AppCompatActivity {
+public class LeetcodeActivity extends BasicActivity {
 
   @BindView(R.id.rev_problems)
   RecyclerView mRecyclerView;
@@ -48,6 +50,12 @@ public class LeetcodeActivity extends AppCompatActivity {
     setContentView(R.layout.activity_leetcode);
     ButterKnife.bind(this);
 
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
+
     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
     mRecyclerView.setLayoutManager(linearLayoutManager);
@@ -57,6 +65,7 @@ public class LeetcodeActivity extends AppCompatActivity {
     itemDecoration.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_decor));
 
     mRecyclerView.addItemDecoration(itemDecoration);
+    mRecyclerView.post(() -> Log.e("zhangrr", "onCreate() called with: savedInstanceState = [" + mRecyclerView.getWidth() + "]"));
     loadData(); // 初次加载该界面时 实时加载最新的试题数据
   }
 

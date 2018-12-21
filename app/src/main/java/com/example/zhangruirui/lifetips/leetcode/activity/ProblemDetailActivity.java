@@ -7,12 +7,14 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebView;
 import android.widget.Button;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.lifetips.demo_learning.launchmode.BasicActivity;
 import com.example.zhangruirui.lifetips.leetcode.model.Mapping;
 import com.example.zhangruirui.lifetips.leetcode.model.ProblemParser;
 
@@ -27,7 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ProblemDetailActivity extends AppCompatActivity {
+public class ProblemDetailActivity extends BasicActivity {
 
   @BindView(R.id.problem_detail_view)
   WebView mProblemDetailWebView;
@@ -47,6 +49,12 @@ public class ProblemDetailActivity extends AppCompatActivity {
     Intent intent = getIntent();
     mProblemUrl = intent.getStringExtra("PUrl");
     mProblemTitle = intent.getStringExtra("PTitle");
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
   @Override

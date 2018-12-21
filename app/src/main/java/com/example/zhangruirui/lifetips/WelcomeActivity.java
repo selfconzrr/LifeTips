@@ -35,17 +35,14 @@ public class WelcomeActivity extends BaseActivity {
     setContentView(R.layout.activity_welcome);
     ButterKnife.bind(this);
     mWelcomePic.setAlpha(mAlpha);
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          Thread.sleep(4000);
-          if (!mClicked) {
-            onClick();
-          }
-        } catch (InterruptedException e) {
-          e.printStackTrace();
+    new Thread(() -> {
+      try {
+        Thread.sleep(4000);
+        if (!mClicked) {
+          onClick();
         }
+      } catch (InterruptedException e) {
+        e.printStackTrace();
       }
     }).start();
 

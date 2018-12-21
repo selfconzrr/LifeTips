@@ -1,0 +1,91 @@
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ExternalInterfaceExample</title>
+    <script language="JavaScript">
+        var jsReady = false;
+		/* This function is invoked by the activity */
+        function wave() {
+            document.write("我爱学习--喜欢学习，就和大家一起来分享你的学习经验与技巧。。。");
+            
+        }
+        function isReady() {
+            return jsReady;
+        }
+        function pageInit() {
+            jsReady = true;
+            document.forms["form1"].output.value += "\n" + "JavaScript is ready.\n";
+        }
+        function thisMovie(movieName) {
+            if (navigator.appName.indexOf("Microsoft") != -1) {
+                return window[movieName];
+            } else {
+                return document[movieName];
+            }
+        }
+        function sendToActionScript(value) {
+            thisMovie("test7").sendToActionScript(value);
+        }
+        function sendToJavaScript(value) {
+            document.forms["form1"].output.value += "ActionScript says: " + value + "\n";
+        }
+        document.onkeydown=function(){
+            //alert(event.keyCode);
+            var key;
+            switch(event.keyCode){
+                case 81:
+                    key="q";break;
+                case 87:
+                    key="w";break;
+                case 69:
+                    key="e";break;
+                case 82:
+                    key="r";break;
+                case 84:
+                    key="t";break;
+                case 89:
+                    key="y";break;
+                case 85:
+                    key="u";break;
+                case 73:
+                    key="i";break;
+                case 79:
+                    key="o";break;
+                case 80:
+                    key="p";break;
+
+            }
+           // alert(key);
+            thisMovie("test7").asFun(key);
+        }
+    </script>
+</head>
+
+<body onload="pageInit();">
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+        id="test7" width="1280" height="800"
+        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+    <param name="movie" value="test7.swf" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#869ca7" />
+    <param name="allowScriptAccess" value="sameDomain" />
+    <embed src="test7.swf" quality="high" bgcolor="#869ca7"
+           width="500" height="375" name="test7" align="middle"
+           play="true" loop="false" quality="high" allowScriptAccess="sameDomain"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer">
+    </embed>
+</object>
+
+  <//form name="form1" onsubmit="return false;">
+    <//input type="text" name="input" value="" />
+  <//input type="button" value="Send" onclick="sendToActionScript(this.form.input.value);" /><br />
+  <//textarea cols="60" rows="20" name="output" readonly="true">Initializing...</textarea>
+<///form>
+<!-- Calls into the javascript interface for the activity -->
+        <input type="button"  value="click me"  onclick="window.demo.clickOnAndroid()"/>
+
+</body>
+</html>
