@@ -34,3 +34,6 @@
 public static final int *;
 }
 
+-dontwarn com.tencent.bugly.**
+-kepp public class com.tencent.bugly.**{*;}
+

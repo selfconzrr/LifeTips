@@ -24,6 +24,7 @@ import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.ToastUtil;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.modelmsg.WXTextObject;
@@ -72,6 +73,8 @@ public class MainActivity extends BaseActivity {
     // 参考链接：https://github.com/selfconzrr/MMKV/blob/master/readme_cn.md
     MMKV.initialize(this);
 
+    // 腾讯 Bugly 初始化 建议在测试阶段建议设置成 true，发布时设置为 false
+    CrashReport.initCrashReport(getApplicationContext(), APP_ID, true);
     setContentView(R.layout.activity_main);
     registerToWx();
     ButterKnife.bind(this);
@@ -287,6 +290,7 @@ public class MainActivity extends BaseActivity {
           if (mCycleViewPager.isCycle()) {
             position = position - 1;
           }
+          // CrashReport.testJavaCrash();
           Toast.makeText(MainActivity.this, info.getTitle() +
               "选择了--" + position, Toast.LENGTH_LONG).show();
         }
