@@ -10,6 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 
+  <!-- 指示器 此处以图片代替-->
   <LinearLayout
     android:id="@+id/cycle_indicator"
     android:layout_width="match_parent"
@@ -19,6 +20,7 @@
     android:gravity="center"
     android:orientation="horizontal" />
 
+  <!-- 用于展示图片对应的标题或者其他文字，浮于 指示器 上方-->
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

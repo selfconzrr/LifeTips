@@ -5,12 +5,12 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
-<com.bugfree.zhangruirui.banner.CycleViewPager
-  android:id="@+id/view_pager"
-  android:layout_width="match_parent"
-  android:layout_height="200dp">
+  <com.bugfree.zhangruirui.banner.CycleViewPager
+    android:id="@+id/view_pager"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
 
-</com.bugfree.zhangruirui.banner.CycleViewPager>
+  </com.bugfree.zhangruirui.banner.CycleViewPager>
 
   <Button
     android:id="@+id/quit"
@@ -199,6 +199,14 @@
     android:textColor="#ff0000"
     android:layout_below="@+id/coordinator"
     android:layout_toRightOf="@+id/JSDemo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+  <Button
+    android:id="@+id/downRefresh"
+    android:text="下拉刷新"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/dianzan"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 
