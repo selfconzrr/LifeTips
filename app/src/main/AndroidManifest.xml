@@ -118,6 +118,7 @@
       android:name=".demo_learning.jscommunication.JSActivity"
       android:hardwareAccelerated="true" />
     <activity android:name=".share.wxapi.WXEntryActivity" />
+    <activity android:name=".demo_learning.refreshlayout.SmartRefreshActivity"></activity>
   </application>
 
 </manifest>

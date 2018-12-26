@@ -15,6 +15,7 @@ import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.Coordina
 import com.example.zhangruirui.lifetips.demo_learning.coordinatorlayout.ViewActivity;
 import com.example.zhangruirui.lifetips.demo_learning.dialog.DialogShowHelper;
 import com.example.zhangruirui.lifetips.demo_learning.jscommunication.JSActivity;
+import com.example.zhangruirui.lifetips.demo_learning.refreshlayout.SmartRefreshActivity;
 import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
@@ -221,6 +222,13 @@ public class MainActivity extends BaseActivity {
   public void onClickShare() {
     wechatShare(1);
   }
+
+  @OnClick({R.id.downRefresh})
+  public void onClickDownRefresh() {
+    final Intent intent = new Intent(MainActivity.this, SmartRefreshActivity.class);
+    startActivity(intent);
+  }
+
 
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
