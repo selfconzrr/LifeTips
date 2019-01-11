@@ -182,7 +182,8 @@
     android:layout_below="@+id/rx"
     android:layout_toRightOf="@+id/dianzan"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/dianzan" />
 
   <Button
     android:id="@+id/JSDemo"
@@ -191,7 +192,8 @@
     android:layout_below="@+id/dialog"
     android:layout_toRightOf="@+id/menu"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/menu" />
 
   <Button
     android:id="@+id/shareApp"
@@ -200,7 +202,8 @@
     android:layout_below="@+id/coordinator"
     android:layout_toRightOf="@+id/JSDemo"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/JSDemo" />
 
   <Button
     android:id="@+id/downRefresh"
@@ -209,5 +212,15 @@
     android:layout_below="@+id/dianzan"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
+
+  <Button
+    android:id="@+id/passwordBook"
+    android:text="我的密码本"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/menu"
+    android:layout_toRightOf="@+id/downRefresh"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/downRefresh" />
 
 </RelativeLayout>

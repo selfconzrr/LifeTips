@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/add_record_relativelayout01"
+    android:layout_width="468dp"
+    android:layout_height="750dp">
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/search_relativelayout02">
+
+      <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/search_textview01_search"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/search_textview01" />
+
+      <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/search_textview01"
+        android:layout_alignParentLeft="true"
+        android:hint="@string/search_edittext01_hint"
+        android:id="@+id/search_edittext01" />
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/search_relativelayout02"
+      android:layout_marginTop="20dip"
+      android:id="@+id/search_relativelayout03">
+
+      <Button
+        android:layout_height="wrap_content"
+        android:layout_width="100dip"
+        android:layout_marginLeft="100dip"
+        android:id="@+id/search_button01"
+        android:text="@string/search_button01_search" />
+
+    </RelativeLayout>
+  </RelativeLayout>
+</LinearLayout>

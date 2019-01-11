@@ -7,6 +7,7 @@
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="android.permission.READ_LOGS" />
+  <uses-permission android:name="android.permission.READ_CONTACTS" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.RECEIVE_SMS" />
   <uses-permission android:name="android.permission.SEND_SMS" />
@@ -119,7 +120,14 @@
       android:name=".demo_learning.jscommunication.JSActivity"
       android:hardwareAccelerated="true" />
     <activity android:name=".share.wxapi.WXEntryActivity" />
-    <activity android:name=".demo_learning.refreshlayout.SmartRefreshActivity"></activity>
+    <activity android:name=".demo_learning.refreshlayout.SmartRefreshActivity" />
+    <activity android:name=".passwordbook.VerifyActivity" />
+    <activity android:name=".passwordbook.SetHandPasswordActivity" />
+    <activity android:name=".passwordbook.HomeActivity" />
+    <activity android:name=".passwordbook.AddRecord" />
+    <activity android:name=".passwordbook.SearchRecord" />
+    <activity android:name=".passwordbook.SearchResult" />
+    <activity android:name=".passwordbook.ShowAllPassword"></activity>
   </application>
 
 </manifest>
