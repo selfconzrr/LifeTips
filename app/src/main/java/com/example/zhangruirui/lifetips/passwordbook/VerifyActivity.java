@@ -11,6 +11,7 @@ import com.example.zhangruirui.utils.ToastUtil;
 
 public class VerifyActivity extends AppCompatActivity {
 
+  // 手势密码  7
   private LocusPassWordView mLocusPassWordView;
 
   @Override

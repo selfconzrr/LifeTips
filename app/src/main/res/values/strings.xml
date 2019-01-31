@@ -170,4 +170,7 @@
   <string name="search_result_delete">删除</string>
   <string name="search_result_back">返回</string>
   <string name="mimatip">注意：默认密码为admin，请修改后牢记自己密码</string>
+
+  <!-- 图形编辑器-->
+  <string name="select_shape">请选择要画的形状</string>
 </resources>

@@ -127,7 +127,8 @@
     <activity android:name=".passwordbook.AddRecord" />
     <activity android:name=".passwordbook.SearchRecord" />
     <activity android:name=".passwordbook.SearchResult" />
-    <activity android:name=".passwordbook.ShowAllPassword"></activity>
+    <activity android:name=".passwordbook.ShowAllPassword" />
+    <activity android:name=".DrawShapeActivity"></activity>
   </application>
 
 </manifest>

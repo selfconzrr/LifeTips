@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -35,6 +37,12 @@ public class HomeActivity extends AppCompatActivity {
     button_chongzhimima.setImageDrawable(getResources().getDrawable(R.drawable
         .button_chongzhimima));
     button_chongzhimima.setOnClickListener(new myButtonListener());
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
 
   }
 

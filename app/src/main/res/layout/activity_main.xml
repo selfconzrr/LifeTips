@@ -223,4 +223,14 @@
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/downRefresh" />
 
+  <Button
+    android:id="@+id/drawShape"
+    android:text="我要画图"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/JSDemo"
+    android:layout_toRightOf="@+id/passwordBook"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/passwordBook" />
+
 </RelativeLayout>

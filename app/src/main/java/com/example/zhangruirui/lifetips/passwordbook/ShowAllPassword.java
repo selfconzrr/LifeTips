@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.bugfree.zhangruirui.slideback.SlideBackHelper;
+import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.R;
 
 import java.util.ArrayList;
@@ -65,6 +67,13 @@ public class ShowAllPassword extends AppCompatActivity {
         new String[]{"ItemKeyword", "ItemAccount", "ItemPassword", "ItemRemind"}, new int[]{R.id
         .check_textview01, R.id.check_textview02, R.id.check_textview03, R.id.check_textview04});
     list.setAdapter(listAdapter);
+
+    SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
+        .swipe_back);
+    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
+    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
+    mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
+
   }
 
   class ListOnItem implements AdapterView.OnItemClickListener {

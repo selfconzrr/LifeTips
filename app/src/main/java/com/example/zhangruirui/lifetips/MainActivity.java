@@ -245,6 +245,12 @@ public class MainActivity extends BaseActivity {
     startActivity(intent);
   }
 
+  @OnClick({R.id.drawShape})
+  public void onClickDrawShape() {
+    final Intent intent = new Intent(MainActivity.this, DrawShapeActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")
