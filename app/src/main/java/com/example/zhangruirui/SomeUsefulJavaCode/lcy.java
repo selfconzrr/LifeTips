@@ -1,5 +1,7 @@
 package com.example.zhangruirui.SomeUsefulJavaCode;
 
+import android.content.Intent;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -110,8 +112,10 @@ public class lcy {
       System.out.println();
       com = "";
     }
-    System.out.println(count + "  " + result.size());
+//    System.out.println(count + "  " + result.size());
 
-    System.out.println("热刺Vs多特蒙德 概率 = " + 1.0 * count / result.size());
+//    System.out.println("热刺Vs多特蒙德 概率 = " + 1.0 * count / result.size());
+
+    System.out.println("  " + Integer.parseInt("f", 16));
   }
 }

@@ -107,7 +107,8 @@
 
   <!-- 时光便签 -->
   <string name="add_event">新的事件</string>
-  <string name="change_bg">更换背景</string>
+  <string name="change_bg_from_album">更换背景（相册选取）</string>
+  <string name="change_bg_take_photo">更换背景（相机拍照）</string>
   <string name="diary">时光便签</string>
   <string name="save">保存</string>
 
@@ -147,4 +148,30 @@
   <string name="toolbar">"我是toolbar"</string>
   <string name="user_name">"用户名/手机号"</string>
 
+  <!-- 我的密码本-->
+  <string name="button_add">增加</string>
+  <string name="button_search">查找</string>
+  <string name="button_preview">列表</string>
+  <string name="button_about">关于</string>
+  <string name="button_chongzhi">重置密码</string>
+  <string name="add_record_edittext01_hint">关键字</string>
+  <string name="add_record_edittext02_hint">账号</string>
+  <string name="add_record_edittext03_hint">密码</string>
+  <string name="add_record_edittext04_hint">备注</string>
+  <string name="add_record_button_add">保存</string>
+  <string name="add_record_button_back">返回</string>
+  <string name="add_record_textview01_account">账号</string>
+  <string name="add_record_textview02_password">密码</string>
+  <string name="add_record_textview03_reminds">备注</string>
+  <string name="search_textview01_search">查找已保存的账户</string>
+  <string name="all_password">全部的密码</string>
+  <string name="search_button01_search">查找</string>
+  <string name="search_button02_back">返回</string>
+  <string name="search_edittext01_hint">请输入关键字</string>
+  <string name="search_result_delete">删除</string>
+  <string name="search_result_back">返回</string>
+  <string name="mimatip">注意：默认密码为admin，请修改后牢记自己密码</string>
+
+  <!-- 图形编辑器-->
+  <string name="select_shape">请选择要画的形状</string>
 </resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+    <ImageButton
+      android:layout_height="wrap_content"
+      android:layout_width="140dip"
+      android:layout_marginTop="170dip"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/button_add"
+      android:text="@string/button_add" />
+
+    <ImageButton
+      android:layout_height="wrap_content"
+      android:layout_width="140dip"
+      android:layout_below="@id/button_add"
+      android:layout_marginTop="10dip"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/button_search"
+      android:text="@string/button_search" />
+
+    <ImageButton
+      android:layout_height="wrap_content"
+      android:layout_width="140dip"
+      android:layout_below="@id/button_search"
+      android:layout_marginTop="10dip"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/button_preview"
+      android:text="@string/button_preview" />
+
+    <ImageButton
+      android:layout_height="wrap_content"
+      android:layout_width="140dip"
+      android:layout_below="@id/button_preview"
+      android:layout_marginTop="10dip"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/button_chongzhimima"
+      android:text="@string/button_chongzhi" />
+
+    <ImageButton
+      android:layout_height="wrap_content"
+      android:layout_width="140dip"
+      android:layout_below="@id/button_chongzhimima"
+      android:layout_marginTop="10dip"
+      android:layout_centerHorizontal="true"
+      android:id="@+id/button_about"
+      android:text="@string/button_about" />
+  </RelativeLayout>
+</LinearLayout>

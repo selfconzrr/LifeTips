@@ -2,6 +2,11 @@
   <dictionary name="zhangruirui">
     <words>
       <w>bugly</w>
+      <w>chongzhimima</w>
+      <w>dbname</w>
+      <w>dbversion</w>
+      <w>edittext</w>
+      <w>listview</w>
       <w>refreshlayout</w>
       <w>unselect</w>
     </words>

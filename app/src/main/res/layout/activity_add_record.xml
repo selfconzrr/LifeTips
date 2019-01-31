@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/add_record_relativelayout01">
+
+    <EditText
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:singleLine="true"
+      android:hint="@string/add_record_edittext01_hint"
+      android:layout_alignParentLeft="true"
+      android:id="@+id/add_record_edittext01" />
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/add_record_relativelayout02"
+      android:layout_below="@id/add_record_edittext01">
+
+      <TextView
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:text="@string/add_record_textview01_account"
+        android:id="@+id/add_record_textview01" />
+
+      <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/add_record_textview01"
+
+        android:layout_marginLeft="5dip"
+        android:hint="@string/add_record_edittext02_hint"
+        android:id="@+id/add_record_edittext02" />"
+    </RelativeLayout>
+
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/add_record_relativelayout03"
+      android:layout_below="@id/add_record_relativelayout02">
+
+      <TextView
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/add_record_textview02_password"
+        android:id="@+id/add_record_textview02" />
+
+      <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/add_record_textview02"
+        android:layout_marginLeft="5dip"
+        android:hint="@string/add_record_edittext03_hint"
+        android:id="@+id/add_record_edittext03" />
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/add_record_relativelayout04"
+      android:layout_below="@id/add_record_relativelayout03">
+
+      <TextView
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/add_record_textview03_reminds"
+        android:id="@+id/add_record_textview03" />
+
+      <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minLines="2"
+        android:layout_toRightOf="@id/add_record_textview03"
+        android:layout_marginLeft="5dip"
+        android:hint="@string/add_record_edittext04_hint"
+        android:id="@+id/add_record_edittext04" />
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dip"
+      android:id="@+id/add_record_relativelayout05"
+      android:layout_below="@id/add_record_relativelayout04">
+
+      <Button
+        android:layout_height="wrap_content"
+        android:layout_width="100dip"
+        android:layout_marginLeft="80dip"
+        android:id="@+id/add_record_add"
+        android:text="@string/add_record_button_add" />
+
+    </RelativeLayout>
+
+  </RelativeLayout>
+
+</LinearLayout>
