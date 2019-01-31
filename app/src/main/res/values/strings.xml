@@ -107,7 +107,8 @@
 
   <!-- 时光便签 -->
   <string name="add_event">新的事件</string>
-  <string name="change_bg">更换背景</string>
+  <string name="change_bg_from_album">更换背景（相册选取）</string>
+  <string name="change_bg_take_photo">更换背景（相机拍照）</string>
   <string name="diary">时光便签</string>
   <string name="save">保存</string>
 

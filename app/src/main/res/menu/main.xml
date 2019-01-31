@@ -2,9 +2,14 @@
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <item
-    android:id="@+id/change_bg"
+    android:id="@+id/change_bg_from_album"
     android:orderInCategory="100"
     app:showAsAction="never"
-    android:title="@string/change_bg" />
+    android:title="@string/change_bg_from_album" />
 
+  <item
+    android:id="@+id/change_bg_take_photo"
+    android:orderInCategory="100"
+    app:showAsAction="never"
+    android:title="@string/change_bg_take_photo" />
 </menu>
