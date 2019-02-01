@@ -23,7 +23,7 @@ public final class FileProviders {
    * 要在应用间共享文件，应发送一项 content:// URI，并授予 URI 临时访问权限。
    * 进行此授权的最简单方式是使用 FileProvider 类，该字符串即在 manifest 文件中声明的 authority
    */
-  private static final String FILE_PROVIDER_AUTHORITY = "com.kwai.video.fileprovider";
+  private static final String FILE_PROVIDER_AUTHORITY = "com.example.zhangruirui.lifetips.fileprovider";
 
   /**
    * 获取某个文件相应的 Content URI. 并且授权访问：读写
