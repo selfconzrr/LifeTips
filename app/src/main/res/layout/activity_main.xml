@@ -233,4 +233,14 @@
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/passwordBook" />
 
+  <Button
+    android:id="@+id/myWechat"
+    android:text="高仿微信"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/JSDemo"
+    android:layout_toRightOf="@+id/drawShape"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/drawShape" />
+
 </RelativeLayout>

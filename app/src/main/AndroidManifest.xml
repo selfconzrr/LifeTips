@@ -141,14 +141,20 @@
     </receiver>
 
     <provider
-      android:authorities="com.example.zhangruirui.lifetips.fileprovider"
       android:name="android.support.v4.content.FileProvider"
-      android:grantUriPermissions="true"
-      android:exported="false">
+      android:authorities="com.example.zhangruirui.lifetips.fileprovider"
+      android:exported="false"
+      android:grantUriPermissions="true">
       <meta-data
         android:name="android.support.FILE_PROVIDER_PATHS"
         android:resource="@xml/file_path" />
     </provider>
+
+    <activity android:name=".wechat.WelcomeWeChatActivity"
+      android:theme="@style/WeChatSplashTheme"
+      />
+    <activity android:name=".wechat.LoginWeChatActivity" />
+    <activity android:name=".wechat.MainWeChatActivity"></activity>
   </application>
 
 </manifest>

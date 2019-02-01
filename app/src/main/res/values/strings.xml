@@ -174,4 +174,13 @@
 
   <!-- 图形编辑器-->
   <string name="select_shape">请选择要画的形状</string>
+
+  <!-- 高仿微信-->
+  <string name="wechat">微信</string>
+  <string name="personal_mail">By：1138517609@qq.com</string>
+  <string name="wechat_login">登录</string>
+  <string name="wechat_register">注册</string>
+  <string name="hint_login">使用QQ号或者微信号登录</string>
+  <string name="hint_no_qq">【点击跳转到主界面】\n如果你没有QQ号，请注册</string>
+
 </resources>

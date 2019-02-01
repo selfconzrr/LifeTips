@@ -25,6 +25,7 @@ import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
+import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -246,6 +247,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.drawShape})
   public void onClickDrawShape() {
     final Intent intent = new Intent(MainActivity.this, DrawShapeActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.myWechat})
+  public void onClickWeChat() {
+    final Intent intent = new Intent(MainActivity.this, WelcomeWeChatActivity.class);
     startActivity(intent);
   }
 
