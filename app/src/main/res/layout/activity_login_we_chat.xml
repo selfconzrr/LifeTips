@@ -1,8 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".wechat.LoginWeChatActivity">
+  android:background="#eee"
+  android:orientation="vertical"
+  android:gravity="center_horizontal">
 
-</android.support.constraint.ConstraintLayout>
+  <EditText
+    android:id="@+id/login_user_edit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#000"
+    android:textSize="15sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:singleLine="true"
+    android:background="@drawable/login_editbox"
+    android:hint="@string/wechat_login_account_hint"
+    android:inputType="text" />
+
+  <EditText
+    android:id="@+id/login_passwd_edit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/login_user_edit"
+    android:textColor="#000"
+    android:textSize="15sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/login_editbox"
+    android:inputType="textPassword"
+    android:singleLine="true"
+    android:hint="@string/wechat_login_password_hint" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_below="@+id/login_passwd_edit">
+
+    <Button
+      android:id="@+id/forget_passwd"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="23dp"
+      android:layout_marginTop="5dp"
+      android:text="@string/forget_password"
+      android:textSize="16sp"
+      android:textColor="#00f"
+      android:background="#0000"
+      android:onClick="forget_password"
+      android:layout_marginStart="23dp" />
+
+    <Button
+      android:id="@+id/login_login_btn"
+      android:layout_width="90dp"
+      android:layout_height="45dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginRight="23dp"
+      android:layout_alignParentRight="true"
+      android:text="@string/wechat_login"
+      android:background="@drawable/btn_style_green"
+      android:textColor="#ffffff"
+      android:textSize="18sp"
+      android:onClick="login_main_wechat"
+      android:layout_marginEnd="23dp"
+      android:layout_alignParentEnd="true" />
+  </RelativeLayout>
+</RelativeLayout>

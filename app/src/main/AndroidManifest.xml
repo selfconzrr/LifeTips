@@ -150,11 +150,12 @@
         android:resource="@xml/file_path" />
     </provider>
 
-    <activity android:name=".wechat.WelcomeWeChatActivity"
-      android:theme="@style/WeChatSplashTheme"
-      />
+    <activity
+      android:name=".wechat.WelcomeWeChatActivity"
+      android:theme="@style/WeChatSplashTheme" />
     <activity android:name=".wechat.LoginWeChatActivity" />
-    <activity android:name=".wechat.MainWeChatActivity"></activity>
+    <activity android:name=".wechat.MainWeChatActivity" />
+    <activity android:name=".wechat.LoadingActivity"></activity>
   </application>
 
 </manifest>

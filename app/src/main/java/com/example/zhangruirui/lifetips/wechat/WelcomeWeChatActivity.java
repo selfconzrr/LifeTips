@@ -26,6 +26,7 @@ public class WelcomeWeChatActivity extends AppCompatActivity {
     startActivity(login_intent);
   }
 
+  // 点击注册之后直接跳转到微信主界面
   public void welcome_register(View view) {
     final Intent register_intent = new Intent(WelcomeWeChatActivity.this, MainWeChatActivity.class);
     startActivity(register_intent);
