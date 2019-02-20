@@ -153,7 +153,7 @@
   <string name="button_search">查找</string>
   <string name="button_preview">列表</string>
   <string name="button_about">关于</string>
-  <string name="button_chongzhi">重置密码</string>
+  <string name="button_reset_pwd">重置密码</string>
   <string name="add_record_edittext01_hint">关键字</string>
   <string name="add_record_edittext02_hint">账号</string>
   <string name="add_record_edittext03_hint">密码</string>
@@ -170,20 +170,21 @@
   <string name="search_edittext01_hint">请输入关键字</string>
   <string name="search_result_delete">删除</string>
   <string name="search_result_back">返回</string>
-  <string name="mimatip">注意：默认密码为admin，请修改后牢记自己密码</string>
+  <string name="modify_pwd_tip">注意：默认密码为admin，请修改后牢记自己密码</string>
 
   <!-- 图形编辑器-->
   <string name="select_shape">请选择要画的形状</string>
 
   <!-- 高仿微信-->
-  <string name="wechat">微信</string>
   <string name="forget_password">忘记密码?</string>
+  <string name="hint_login">使用QQ号或者微信号登录</string>
+  <string name="hint_no_qq">【点击跳转到主界面】\n如果你没有QQ号，请注册</string>
+  <string name="isLogining">正在登录</string>
   <string name="personal_mail">By：1138517609@qq.com</string>
+  <string name="wechat">微信</string>
   <string name="wechat_login">登录</string>
   <string name="wechat_login_account_hint">QQ号/微信号/手机号（请输入admin）</string>
   <string name="wechat_login_password_hint">密码(请输入123456)</string>
   <string name="wechat_register">注册</string>
-  <string name="hint_login">使用QQ号或者微信号登录</string>
-  <string name="hint_no_qq">【点击跳转到主界面】\n如果你没有QQ号，请注册</string>
 
 </resources>

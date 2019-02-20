@@ -41,7 +41,7 @@
       android:layout_marginTop="10dip"
       android:layout_centerHorizontal="true"
       android:id="@+id/button_chongzhimima"
-      android:text="@string/button_chongzhi" />
+      android:text="@string/button_reset_pwd" />
 
     <ImageButton
       android:layout_height="wrap_content"

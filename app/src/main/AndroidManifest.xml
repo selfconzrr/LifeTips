@@ -155,7 +155,8 @@
       android:theme="@style/WeChatSplashTheme" />
     <activity android:name=".wechat.LoginWeChatActivity" />
     <activity android:name=".wechat.MainWeChatActivity" />
-    <activity android:name=".wechat.LoadingActivity"></activity>
+    <activity android:name=".wechat.LoadingActivity" />
+    <activity android:name=".wechat.WhatsNewDoorActivity"></activity>
   </application>
 
 </manifest>
