@@ -47,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   @Override
   public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-    Log.e("zhangrr", "onCreateViewHolder() called with: parent = " + "]");
+    Log.e("recyclerview", "onCreateViewHolder() called with: parent = " + "]");
     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent,
         false);
     final MyViewHolder viewHolder = new MyViewHolder(view);
@@ -76,7 +76,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
   @Override
   public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
-    Log.e("zhangrr", "两参 onBindViewHolder() called with: position = " + position + " text = " +
+    Log.e("recyclerview", "两参 onBindViewHolder() called with: position = " + position + " text = " +
         list.get(position));
     holder.mText.setText(list.get(position));
     holder.mText.setTag(list.get(position));
@@ -88,7 +88,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   @Override
   public void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull List<Object>
       payloads) {
-    Log.e("zhangrr", "三参 onBindViewHolder() called with: position = [" + position + "], " +
+    Log.e("recyclerview", "三参 onBindViewHolder() called with: position = [" + position + "], " +
         "adapter = [" + holder.getAdapterPosition() + " layout = " + holder.getLayoutPosition()
         + " getpos = " + holder.getPosition());
     if (payloads.isEmpty()) {

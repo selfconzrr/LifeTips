@@ -52,10 +52,9 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
 
-  // TODO: 2018/12/19 更换 app id
   // FIXME: zhangruirui 2018/12/27
   // 注意通过 AS 下载程序和通过 apk 安装程序，生成的签名是不一样的，申请 app_id 需要注意
-  private static final String APP_ID = "wx59b5f3646e7f0fde"; //申请的 app_id
+  private static final String APP_ID = "wxdef6a13ebf99866d"; //申请的 app_id
   public static IWXAPI api;
 
   private int mBackCount = 0; // 点击返回键的次数
