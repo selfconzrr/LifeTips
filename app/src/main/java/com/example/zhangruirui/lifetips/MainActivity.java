@@ -25,6 +25,7 @@ import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
+import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -51,10 +52,9 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
 
-  // TODO: 2018/12/19 更换 app id
   // FIXME: zhangruirui 2018/12/27
   // 注意通过 AS 下载程序和通过 apk 安装程序，生成的签名是不一样的，申请 app_id 需要注意
-  private static final String APP_ID = "wx59b5f3646e7f0fde"; //申请的 app_id
+  private static final String APP_ID = "wxdef6a13ebf99866d"; //申请的 app_id
   public static IWXAPI api;
 
   private int mBackCount = 0; // 点击返回键的次数
@@ -246,6 +246,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.drawShape})
   public void onClickDrawShape() {
     final Intent intent = new Intent(MainActivity.this, DrawShapeActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.myWechat})
+  public void onClickWeChat() {
+    final Intent intent = new Intent(MainActivity.this, WelcomeWeChatActivity.class);
     startActivity(intent);
   }
 

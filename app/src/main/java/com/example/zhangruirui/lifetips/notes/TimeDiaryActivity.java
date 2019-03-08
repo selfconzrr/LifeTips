@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.StrictMode;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -35,6 +34,7 @@ import com.bugfree.zhangruirui.slideback.SlideBackHelper;
 import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.lifetips.BaseActivity;
 import com.example.zhangruirui.lifetips.R;
+import com.example.zhangruirui.utils.FileProviders;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -116,11 +116,11 @@ public class TimeDiaryActivity extends BaseActivity {
      *
      * @see {@link com.example.zhangruirui.utils.FileProviders}
      */
-    // TODO: 2019/1/31 替换成 FileProvider，已添加 FileProviders
+    // TODO: 2019/1/31 替换成 FileProvider，已添加 FileProviders   2.1 已完成该 todo
 
-    StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-    StrictMode.setVmPolicy(builder.build());
-    builder.detectFileUriExposure();
+//    StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+//    StrictMode.setVmPolicy(builder.build());
+//    builder.detectFileUriExposure();
   }
 
   @Override
@@ -154,11 +154,12 @@ public class TimeDiaryActivity extends BaseActivity {
         } catch (IOException e) {
           e.printStackTrace();
         }
-        // android 7.0 用下面的 api 方法时是有问题的
-        // TODO: 2019/1/31 替换成 FileProvider 
-        imageUri = Uri.fromFile(outputImage); // 将 File 对象转换成 Uri 对象
 
-        Intent intentPhoto = new Intent("android.media.action.IMAGE_CAPTURE"); // 隐式 Intent
+        Intent intentPhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); // 隐式 Intent
+
+        // android 7.0 用下面的 api 方法时是有问题的，故替换为 FileProvider
+        // imageUri = Uri.fromFile(outputImage); // 将 File 对象转换成 Uri 对象
+        imageUri = FileProviders.getUriForFile(this, outputImage, intentPhoto);
         intentPhoto.putExtra(MediaStore.EXTRA_OUTPUT, imageUri); // 指定图片的输出地址
         startActivityForResult(intentPhoto, TAKE_PHOTO); // 启动相机程序
         // 因为拍完照后会有结果返回到 onActivityResult() 方法中
@@ -174,6 +175,8 @@ public class TimeDiaryActivity extends BaseActivity {
       case TAKE_PHOTO:
         if (resultCode == RESULT_OK) { // 如果拍照成功
           Intent intent = new Intent("com.android.camera.action.CROP"); // 准备启动裁剪程序
+          intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent
+              .FLAG_GRANT_READ_URI_PERMISSION);
           intent.setDataAndType(imageUri, "image/*");
           intent.putExtra("scale", true);
           intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
@@ -198,7 +201,8 @@ public class TimeDiaryActivity extends BaseActivity {
 
       case CHOOSE_PHOTO:
         Log.e("zhangrr", "onActivityResult() called with: requestCode = [" + requestCode + "], " +
-            "resultCode = [" + resultCode + "], hasWritePermimssion = [" + hasWritePermimssion + "]");
+            "resultCode = [" + resultCode + "], hasWritePermimssion = [" + hasWritePermimssion +
+            "]");
         if (resultCode == RESULT_OK && hasWritePermimssion) {
           // 判断手机系统版本号
           if (Build.VERSION.SDK_INT >= 19) {

@@ -139,6 +139,24 @@
         <action android:name="com.example.zhangruirui.lifetips.FORCE_OFFLINE" />
       </intent-filter>
     </receiver>
+
+    <provider
+      android:name="android.support.v4.content.FileProvider"
+      android:authorities="com.example.zhangruirui.lifetips.fileprovider"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_path" />
+    </provider>
+
+    <activity
+      android:name=".wechat.WelcomeWeChatActivity"
+      android:theme="@style/WeChatSplashTheme" />
+    <activity android:name=".wechat.LoginWeChatActivity" />
+    <activity android:name=".wechat.MainWeChatActivity" />
+    <activity android:name=".wechat.LoadingActivity" />
+    <activity android:name=".wechat.WhatsNewDoorActivity"></activity>
   </application>
 
 </manifest>

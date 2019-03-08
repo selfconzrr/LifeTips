@@ -1,9 +1,4 @@
-package com.example.zhangruirui.utils;
-
-import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
-import static android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
-
-import java.io.File;
+package com.example.zhangruirui.ks_usefulcode;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +8,15 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 
+import com.example.zhangruirui.utils.SystemUtil;
+
+import java.io.File;
+
+import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
+import static android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
+
 /**
- * Utility class 配合 {@link android.support.v4.content.FileProvider} 使用的工具类
+ * Utility class 配合 {@link FileProvider} 使用的工具类
  */
 @SuppressWarnings({"unused", "WeakerAccess"})
 public final class FileProviders {

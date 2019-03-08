@@ -212,6 +212,7 @@ public class CycleViewPager extends FrameLayout implements ViewPager.OnPageChang
     mAdapter = new ViewPagerAdapter();
     // 默认指向第一项，下方 viewPager.setCurrentItem 将触发重新计算指示器指向
     setIndicator(0);
+    // 预加载 item 数量，可以在一定程度上解决滑动卡顿问题
     mViewPager.setOffscreenPageLimit(3);
     mViewPager.addOnPageChangeListener(this);
     mViewPager.setAdapter(mAdapter);
