@@ -125,4 +125,13 @@ public class KSUtils {
     return age;
   }
 
+  public static void runOnUiThread(Runnable action) {
+    if (Looper.getMainLooper() == Looper.myLooper()) {
+      action.run();
+    } else {
+      UI_HANDLER.post(action);
+    }
+  }
+
+
 }

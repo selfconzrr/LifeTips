@@ -66,6 +66,7 @@ public class LoveView extends RelativeLayout {
     imageView.setLayoutParams(params);
     addView(imageView);
 
+
     // 设置 imageView 动画
     AnimatorSet animatorSet = new AnimatorSet();
     animatorSet.play(scale(imageView, "scaleX", 2f, 0.9f, 100, 0)) // 缩放动画，X轴2倍缩小至0.9倍

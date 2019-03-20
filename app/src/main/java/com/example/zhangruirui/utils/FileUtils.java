@@ -14,6 +14,8 @@ import java.io.OutputStream;
  * GitHub：https://github.com/selfconzrr
  * Blog：http://blog.csdn.net/u011489043
  * Date：01/11/19
+ *
+ * {@link CacheCleanUtil 文件、缓存清理工具类}
  */
 public class FileUtils {
 

@@ -3,33 +3,38 @@ package com.example.zhangruirui;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Index;
 
-@Entity
+@Entity(
+    indexes = {
+        @Index(value = "name DESC", unique = true)
+    }
+)
 public class User {
 
   @Id
-  private long id;
+  private Long id;
 
   private String name;
 
-  private int age;
+  private String age;
 
-  @Generated(hash = 446251977)
-  public User(long id, String name, int age) {
-    this.id = id;
-    this.name = name;
-    this.age = age;
+  @Generated(hash = 1666193281)
+  public User(Long id, String name, String age) {
+      this.id = id;
+      this.name = name;
+      this.age = age;
   }
 
   @Generated(hash = 586692638)
   public User() {
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -41,11 +46,11 @@ public class User {
     this.name = name;
   }
 
-  public int getAge() {
+  public String getAge() {
     return age;
   }
 
-  public void setAge(int age) {
+  public void setAge(String age) {
     this.age = age;
   }
 }

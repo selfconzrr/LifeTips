@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class ToastUtil {
 
   /**
-   * 用于自定义 toast 内容展示
+   * 用于自定义 toast 内容展示，系统自带的 Toast.LENGTH_LONG 是3.5秒，Toast.LENGTH_SHORT 是2秒，
    * <p>
    * 使用 Toast 时，建议定义一个全局的 Toast 对象，这样可以避免连续显示 Toast 时不能取消上一次 Toast 消息的情况
    * (如果你有连续弹出 Toast 的情况，避免使用 Toast.makeText)。

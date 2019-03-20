@@ -37,3 +37,10 @@ public static final int *;
 -dontwarn com.tencent.bugly.**
 -kepp public class com.tencent.bugly.**{*;}
 
+#greendao
+-keep class org.greenrobot.greendao.**{*;}
+-keep public interface org.greenrobot.greendao.**
+-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+public static java.lang.String TABLENAME;
+}
+-keep class **$Properties
