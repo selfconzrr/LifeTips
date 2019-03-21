@@ -20,6 +20,7 @@ import com.example.zhangruirui.lifetips.demo_learning.jscommunication.JSActivity
 import com.example.zhangruirui.lifetips.demo_learning.refreshlayout.SmartRefreshActivity;
 import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
+import com.example.zhangruirui.lifetips.lucky_pan.LuckySpanActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
 import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
@@ -252,6 +253,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.myWechat})
   public void onClickWeChat() {
     final Intent intent = new Intent(MainActivity.this, WelcomeWeChatActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.luckyPan})
+  public void onClickLuckyPan() {
+    final Intent intent = new Intent(MainActivity.this, LuckySpanActivity.class);
     startActivity(intent);
   }
 

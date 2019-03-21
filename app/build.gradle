@@ -69,3 +69,4 @@ dependencies {
 //    daoPackage 'com.example.zhangruirui.greendao' // 设置 DaoMaster、DaoSession、Dao 包名
 //    targetGenDir 'src/main/java' // 设置 DaoMaster、DaoSession、Dao 目录
 //}
+

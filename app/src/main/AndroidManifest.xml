@@ -157,7 +157,8 @@
     <activity android:name=".wechat.LoginWeChatActivity" />
     <activity android:name=".wechat.MainWeChatActivity" />
     <activity android:name=".wechat.LoadingActivity" />
-    <activity android:name=".wechat.WhatsNewDoorActivity"></activity>
+    <activity android:name=".wechat.WhatsNewDoorActivity" />
+    <activity android:name=".lucky_pan.LuckySpanActivity"></activity>
   </application>
 
 </manifest>

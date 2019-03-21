@@ -243,4 +243,11 @@
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/drawShape" />
 
+  <Button
+    android:id="@+id/luckyPan"
+    android:text="转盘抽奖"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/downRefresh"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 </RelativeLayout>
