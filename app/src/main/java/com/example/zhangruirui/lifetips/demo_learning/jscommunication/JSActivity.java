@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Android和js交互的简单demo
+ * Android 和 js 交互的简单 demo
  */
 public class JSActivity extends BasicActivity {
 
@@ -44,15 +44,12 @@ public class JSActivity extends BasicActivity {
      * 上面的代码执行之后在 html 的 js 中就能通过别名（这里是“demo”）来调用 newDemoJavaScriptInterface 类中的任何方法
      */
 
-    // TODO: 2018/12/18 没成功？没效果？
     mWebView.setBackgroundColor(0);
     mWebView.addJavascriptInterface(new DemoJavaScriptInterface(), "demo");
-    mWebView.loadUrl("demo1.html");
+    mWebView.loadUrl("file:///android_asset/demo1.html"); // 注意是 3 个 /// 转义
 
     SlideBackLayout mirrorSwipeBackLayout = SlideBackHelper.attach(this, R.layout
         .swipe_back);
-    // mMirrorSwipeBackLayout.setRightSwipeEnable(true);
-    // mMirrorSwipeBackLayout.setLeftSwipeEnable(true);
     mirrorSwipeBackLayout.setSwipeBackListener(this::finish);
   }
 
@@ -69,7 +66,7 @@ public class JSActivity extends BasicActivity {
       // 不要在UI线程之外访问 Android UI toolkit
 
       mHandler.post(() -> {
-        // js调用 Android
+        // js 调用 Android
         Toast.makeText(JSActivity.this, "哈哈", Toast.LENGTH_SHORT)
             .show();
         // Android 调用 js 里的方法 wave()

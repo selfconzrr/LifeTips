@@ -1,35 +1,19 @@
-<!-- saved from url=(0014)about:internet -->
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>ExternalInterfaceExample</title>
     <script language="JavaScript">
         var jsReady = false;
-		/* This function is invoked by the activity */
+		/* 下面的函数由 Activity 调用 */
         function wave() {
             document.write("我爱学习--喜欢学习，就和大家一起来分享你的学习经验与技巧。。。");
-            
         }
-        function isReady() {
-            return jsReady;
-        }
+
         function pageInit() {
             jsReady = true;
             document.forms["form1"].output.value += "\n" + "JavaScript is ready.\n";
         }
-        function thisMovie(movieName) {
-            if (navigator.appName.indexOf("Microsoft") != -1) {
-                return window[movieName];
-            } else {
-                return document[movieName];
-            }
-        }
-        function sendToActionScript(value) {
-            thisMovie("test7").sendToActionScript(value);
-        }
-        function sendToJavaScript(value) {
-            document.forms["form1"].output.value += "ActionScript says: " + value + "\n";
-        }
+
         document.onkeydown=function(){
             //alert(event.keyCode);
             var key;
@@ -59,6 +43,7 @@
            // alert(key);
             thisMovie("test7").asFun(key);
         }
+
     </script>
 </head>
 
@@ -79,13 +64,8 @@
     </embed>
 </object>
 
-  <//form name="form1" onsubmit="return false;">
-    <//input type="text" name="input" value="" />
-  <//input type="button" value="Send" onclick="sendToActionScript(this.form.input.value);" /><br />
-  <//textarea cols="60" rows="20" name="output" readonly="true">Initializing...</textarea>
-<///form>
-<!-- Calls into the javascript interface for the activity -->
-        <input type="button"  value="click me"  onclick="window.demo.clickOnAndroid()"/>
+<!-- 点击 js 的按钮，回调 android 的 clickOnAndroid() 方法-->
+<input type="button" value="click me" onclick="window.demo.clickOnAndroid()"/>
 
 </body>
 </html>
