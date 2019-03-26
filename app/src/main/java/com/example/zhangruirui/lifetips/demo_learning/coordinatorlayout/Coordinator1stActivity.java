@@ -41,16 +41,29 @@ public class Coordinator1stActivity extends AppCompatActivity {
     ButterKnife.bind(this);
   }
 
+  // SnackBar 允许用户向右滑动消除它
+
+  /**
+   * DISMISS_EVENT_SWIPE、DISMISS_EVENT_ACTION、DISMISS_EVENT_TIMEOUT、DISMISS_EVENT_MANUAL
+   * 从 0 到 4 分别是滑动清除、点击 Action、持续时间结束、调用 dismiss 方法以及有新的 SnackBar 产生
+   * 开发者可以根据这四种状态来确定 snackbar 的消失原因而进行相应的处理
+   */
   @OnClick(R.id.fab)
   public void onClick() {
-    Snackbar.make(mFloatingActionButton, "Hello ZRR", Snackbar.LENGTH_LONG).setAction("ActionI",
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-            Intent intent = new Intent(Coordinator1stActivity.this, Coordinator2ndActivity.class);
-            startActivity(intent);
-          }
-        }).show();
+    Snackbar snackbar = Snackbar.make(mFloatingActionButton, "Hello ZRR", Snackbar.LENGTH_LONG)
+        .setAction("ActionI",
+            new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                Intent intent = new Intent(Coordinator1stActivity.this, Coordinator2ndActivity
+                    .class);
+                Coordinator1stActivity.this.startActivity(intent);
+              }
+            });
+    // ColoredSnackBar.alert(snackbar).show();
+    // ColoredSnackBar.info(snackbar).show();
+    // ColoredSnackBar.warning(snackbar).show();
+    ColoredSnackBar.confirm(snackbar).show();
   }
 
   @OnClick(R.id.PopUp)

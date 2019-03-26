@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -67,6 +70,9 @@ public class MainActivity extends BaseActivity {
   @BindView(R.id.view_pager)
   CycleViewPager mCycleViewPager;
 
+  @BindView(R.id.dl_main_drawer)
+  DrawerLayout mDrawerLayout;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // The easiest way to transition back to your normal theme in your launcher (main) activity
@@ -101,6 +107,19 @@ public class MainActivity extends BaseActivity {
         "http://imgsrc.baidu.com/forum/pic/item/b64543a98226cffc8872e00cb9014a90f603ea30.jpg"));
     mList.add(new PicInfo("标题4",
         "http://imgsrc.baidu.com/forum/pic/item/261bee0a19d8bc3e6db92913828ba61eaad345d4.jpg"));
+  }
+
+  // 设置 NavigationView 元素的回调事件
+  private void setupDrawerContent(NavigationView navigationView) {
+    navigationView.setNavigationItemSelectedListener(
+        new NavigationView.OnNavigationItemSelectedListener() {
+          @Override
+          public boolean onNavigationItemSelected(MenuItem menuItem) {
+            menuItem.setChecked(true);
+            mDrawerLayout.closeDrawers();
+            return true;
+          }
+        });
   }
 
   // 避免多次启动 Splash Screen

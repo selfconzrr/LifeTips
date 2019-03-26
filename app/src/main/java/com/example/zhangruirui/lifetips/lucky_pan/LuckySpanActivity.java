@@ -20,7 +20,11 @@ public class LuckySpanActivity extends AppCompatActivity {
     setContentView(R.layout.activity_lucky_span);
     ButterKnife.bind(this);
 
-    mLuckySpanView.setOnLuckPanAnimEndListener((position, msg) -> ToastUtil.showToast
-        (LuckySpanActivity.this, " 恭喜您抽中了： " + msg));
+    mLuckySpanView.setLuckAnimationEndListener(new LuckySpanView.OnLuckAnimationEndListener() {
+      @Override
+      public void onLuckAnimationEnd(int pos, String msg) {
+        ToastUtil.showToast(LuckySpanActivity.this, "恭喜您抽中了： " + msg);
+      }
+    });
   }
 }

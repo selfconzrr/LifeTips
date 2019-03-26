@@ -210,8 +210,11 @@ public class FragmentModel extends Fragment {
       }
     });
 
-    mSwipeRefresh.setColorSchemeColors(Color.RED, Color.RED);
+    mSwipeRefresh.setColorSchemeColors(Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW);
     mSwipeRefresh.setSize(SwipeRefreshLayout.LARGE);
+    // 设置手指在屏幕下拉多少距离会触发下拉刷新
+    // mSwipeRefresh.setDistanceToTriggerSync(300);
+
     mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
       @Override
       public void onRefresh() {
@@ -220,6 +223,11 @@ public class FragmentModel extends Fragment {
         int tempSize = mList.size();
         for (int i = 0; i < tempSize; i++) {
           mList.set(i, "New " + i + " Item ");
+        }
+        try {
+          Thread.sleep(4000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
         }
         doCalculate();
         mSwipeRefresh.setRefreshing(false);

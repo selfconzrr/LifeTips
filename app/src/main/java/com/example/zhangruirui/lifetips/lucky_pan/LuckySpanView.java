@@ -20,36 +20,32 @@ import android.view.View;
 import com.example.zhangruirui.lifetips.R;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-@SuppressWarnings("FieldCanBeLocal")
 public class LuckySpanView extends View {
-  private Paint mPaint;
-  private ArrayList<RectF> mRectFs; // 存储矩形的集合
-  private float mStrokeWidth = 5; // 矩形的描边宽度
-  private int[] mItemColor = {Color.GREEN, Color.YELLOW}; // 矩形的颜色
-  private int mRectSize; // 矩形的宽和高（矩形为正方形）
-  private boolean mClickStartFlag = false; // 是否点击中间矩形的标记
 
+  private Paint mPaint;
+  private float mStrokeWidth = 5;
   private int mRepeatCount = 5; // 转的圈数
+  private int mRectSize; // 矩形的宽和高（矩形为正方形）
+  private boolean mShouldStartFlag;
+  private int mStartLuckPosition = 0; // 开始抽奖的位置
+  private int mCurrentPosition = -1; // 当前转圈所在的位置
+
+  private OnLuckAnimationEndListener mLuckAnimationEndListener;
 
   /**
-   * 可以通过对 mLuckNum 设置计算策略，来控制用户中哪些奖以及中大奖的概率
+   * 可以通过对 mLuckNum 设置计算策略，来控制用户 中哪些奖 以及 中大奖 的概率
    */
   private int mLuckNum = 3; // 默认最终中奖位置
-  private int mPosition = -1; // 抽奖块的位置
-  private int mStartLuckPosition = 0; // 开始抽奖的位置
 
-  private int[] mAvailablePrizes = {R.drawable.ic_df, R.drawable.ic_jt, R.drawable.ic_mf, R.drawable
+  private List<RectF> mRectFs; // 存储矩形的集合
+  private int[] mItemColor = {Color.GREEN, Color.YELLOW}; // 矩形的颜色
+  private String[] mPrizeDescription = {"豆腐", "鸡腿", "米饭", "卷心菜", "南瓜", "糖葫芦", "大虾", "香肠", "Go"};
+  private int[] mLuckyPrizes = {R.drawable.ic_df, R.drawable.ic_jt, R.drawable.ic_mf, R.drawable
       .ic_scjx, R.drawable.ic_scng, R.drawable.ic_thl, R.drawable.ic_x, R.drawable.ic_xc, R
       .drawable.ic_j};
-
-  private String[] mLuckStr = {"豆腐", "鸡腿", "米饭", "卷心菜", "南瓜", "糖葫芦", "大虾", "香肠"};
-  private OnLuckPanAnimEndListener onLuckPanAnimEndListener;
-
-  public void setOnLuckPanAnimEndListener(OnLuckPanAnimEndListener onLuckPanAnimEndListener) {
-    this.onLuckPanAnimEndListener = onLuckPanAnimEndListener;
-  }
 
   public LuckySpanView(Context context) {
     this(context, null);
@@ -64,146 +60,178 @@ public class LuckySpanView extends View {
     init();
   }
 
-  /**
-   * 初始化数据
-   */
   private void init() {
-    mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaint = new Paint(Paint.ANTI_ALIAS_FLAG); // 抗锯齿
     mPaint.setStyle(Paint.Style.FILL);
-    mPaint.setStrokeWidth(mStrokeWidth);
+    // mPaint.setStyle(Paint.Style.STROKE); // 设置样式为描边
+    mPaint.setStrokeWidth(mStrokeWidth); // 设置描边的宽度
 
     mRectFs = new ArrayList<>();
+  }
+
+  public void setLuckAnimationEndListener(OnLuckAnimationEndListener luckAnimationEndListener) {
+    mLuckAnimationEndListener = luckAnimationEndListener;
   }
 
   @Override
   protected void onSizeChanged(int w, int h, int oldw, int oldh) {
     super.onSizeChanged(w, h, oldw, oldh);
-    mRectSize = Math.min(w, h) / 3; // 获取矩形的宽和高
+    mRectSize = Math.min(w, h) / 3; // 矩形的宽高
+
     mRectFs.clear(); // 当控件大小改变的时候清空数据
-    initRect(); // 重新加载矩形数据
+    initNineRect();
   }
 
   /**
-   * 加载矩形数据
+   * 初始化 9 个矩形（正方形）的位置信息
    */
-  private void initRect() {
+  private void initNineRect() {
+    final float width = getWidth();
+
     // 加载前三个矩形
-    for (int x = 0; x < 3; x++) {
-      float left = x * mRectSize;
+    for (int i = 0; i < 3; i++) {
+      float left = i * mRectSize;
+      float right = (i + 1) * mRectSize;
       float top = 0;
-      float right = (x + 1) * mRectSize;
       float bottom = mRectSize;
       RectF rectF = new RectF(left, top, right, bottom);
       mRectFs.add(rectF);
     }
-    // 加载第四个
-    mRectFs.add(new RectF(getWidth() - mRectSize, mRectSize, getWidth(), mRectSize * 2));
-    // 加载第 五~七 个
-    for (int y = 3; y > 0; y--) {
-      float left = getWidth() - (4 - y) * mRectSize;
-      float top = mRectSize * 2;
-      float right = (y - 3) * mRectSize + getWidth();
-      float bottom = mRectSize * 3;
+
+    // 加载第 4 个矩形
+    mRectFs.add(new RectF(width - mRectSize, mRectSize, width, 2 * mRectSize));
+
+    // 加载第 5~7 个矩形
+    for (int j = 3; j > 0; j--) {
+      float left = width - (4 - j) * mRectSize;
+      float right = width - (3 - j) * mRectSize;
+      float top = 2 * mRectSize;
+      float bottom = 3 * mRectSize;
       RectF rectF = new RectF(left, top, right, bottom);
       mRectFs.add(rectF);
     }
-    // 加载第八个
-    mRectFs.add(new RectF(0, mRectSize, mRectSize, mRectSize * 2));
-    // 加载第九个
-    mRectFs.add(new RectF(mRectSize, mRectSize, mRectSize * 2, mRectSize * 2));
+
+    // 加载第 8 个矩形
+    mRectFs.add(new RectF(0, mRectSize, mRectSize, 2 * mRectSize));
+
+    // 加载中心第 9 个矩形
+    mRectFs.add(new RectF(mRectSize, mRectSize, 2 * mRectSize, 2 * mRectSize));
+  }
+
+  @Override
+  protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    drawNineRect(canvas);
+    // drawNineText(canvas); // 填充奖品文字
+    drawNineBitmaps(canvas); // 填充奖品图片
+  }
+
+  /**
+   * 在每个矩形中填充奖品图片
+   * left：The position of the left side of the bitmap being drawn
+   * top：The position of the top side of the bitmap being drawn
+   */
+  private void drawNineBitmaps(Canvas canvas) {
+    for (int i = 0; i < mRectFs.size(); i++) {
+      RectF rectF = mRectFs.get(i);
+      float left = rectF.left + mRectSize / 4; // 将图片设置在每个矩形中央
+      float top = rectF.top + mRectSize / 4;
+      canvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),
+          mLuckyPrizes[i]), mRectSize / 2, mRectSize / 2, false), left, top, null);
+    }
+  }
+
+  /**
+   * 在每个矩形中央填充文字，代替抽奖图片
+   * x：he x-coordinate of the origin of the text being drawn
+   * y：The y-coordinate of the baseline of the text being drawn
+   */
+  private void drawNineText(Canvas canvas) {
+    for (int i = 0; i < mRectFs.size(); i++) {
+      RectF rectF = mRectFs.get(i);
+      float x = rectF.left + mRectSize / 4; // 将文字设置在每个矩形中央
+      float y = rectF.top + mRectSize / 2;
+      mPaint.setColor(Color.RED);
+      mPaint.setStyle(Paint.Style.FILL);
+      mPaint.setTextSize(40); // unit px
+      canvas.drawText(mPrizeDescription[i], x, y, mPaint);
+    }
+  }
+
+  /**
+   * 执行真正的绘制矩形操作
+   */
+  private void drawNineRect(Canvas canvas) {
+    for (int x = 0; x < mRectFs.size(); x++) {
+      RectF rectF = mRectFs.get(x);
+      if (x == 8) {
+        mPaint.setColor(Color.WHITE);
+      } else {
+        if (mCurrentPosition == x) {
+          mPaint.setColor(Color.BLUE);
+        } else {
+          mPaint.setColor(mItemColor[x % 2]); // 标记当前转盘经过的位置
+        }
+      }
+      canvas.drawRect(rectF, mPaint);
+    }
   }
 
   @SuppressLint("ClickableViewAccessibility")
   @Override
   public boolean onTouchEvent(MotionEvent event) {
     if (event.getAction() == MotionEvent.ACTION_DOWN) {
-      mClickStartFlag = mRectFs.get(8).contains(event.getX(), event.getY());
+      mShouldStartFlag = mRectFs.get(8).contains(event.getX(), event.getY());
       return true;
     }
     if (event.getAction() == MotionEvent.ACTION_UP) {
-      if (mClickStartFlag) {
+      if (mShouldStartFlag) {
         if (mRectFs.get(8).contains(event.getX(), event.getY())) {
-          startAnim(); // 判断只有手指落下和抬起都在中间的矩形内才开始抽奖
+          startAnim(); // 判断只有手指落下和抬起都在中间的矩形内时才开始执行动画抽奖
         }
-        mClickStartFlag = false;
+        mShouldStartFlag = false;
       }
     }
     return super.onTouchEvent(event);
   }
 
-  @Override
-  protected void onDraw(Canvas canvas) {
-    super.onDraw(canvas);
-    drawRects(canvas);
-    drawImages(canvas);
-  }
-
-  /**
-   * 画图片
-   */
-  private void drawImages(Canvas canvas) {
-    for (int x = 0; x < mRectFs.size(); x++) {
-      RectF rectF = mRectFs.get(x);
-      float left = rectF.centerX() - mRectSize / 4;
-      float top = rectF.centerY() - mRectSize / 4;
-      canvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),
-          mAvailablePrizes[x]), mRectSize / 2, mRectSize / 2, false), left, top, null);
-    }
-  }
-
-  /**
-   * 画矩形
-   */
-  private void drawRects(Canvas canvas) {
-    for (int x = 0; x < mRectFs.size(); x++) {
-      RectF rectF = mRectFs.get(x);
-      if (x == 8) {
-        mPaint.setColor(Color.WHITE);
-        canvas.drawRect(rectF, mPaint);
-      } else {
-        mPaint.setColor(mItemColor[x % 2]);
-        if (mPosition == x) {
-          mPaint.setColor(Color.BLUE); // 标记转盘路过的 矩形
-        }
-        canvas.drawRect(rectF, mPaint);
-      }
-    }
-  }
-
-  public void setPosition(int position) {
-    mPosition = position;
-    invalidate();
-  }
-
-  /**
-   * 开始动画
-   */
   private void startAnim() {
     Random random = new Random();
     mLuckNum = random.nextInt(8); // 生成 [0,8) 的随机整数
 
-    ValueAnimator valueAnimator = ValueAnimator.ofInt(mStartLuckPosition, mRepeatCount * 8 +
-        mLuckNum).setDuration(5000);
+    ValueAnimator animator = ValueAnimator.ofInt(mStartLuckPosition, mRepeatCount * 8 + mLuckNum)
+        .setDuration(5000);
 
-    valueAnimator.addUpdateListener(animation -> {
-      int position = (int) animation.getAnimatedValue();
-      setPosition(position % 8);
+    animator.addUpdateListener(animation -> {
+      final int position = (int) animation.getAnimatedValue();
+      setCurrentPosition(position % 8);
     });
 
-    valueAnimator.addListener(new AnimatorListenerAdapter() {
+    animator.addListener(new AnimatorListenerAdapter() {
       @Override
       public void onAnimationEnd(Animator animation) {
         mStartLuckPosition = mLuckNum;
-        Log.e("zhangrr", "onAnimationEnd() called with: mLuckNum = " + mLuckNum + " mPosition = " + mPosition);
-        if (onLuckPanAnimEndListener != null) {
-          onLuckPanAnimEndListener.onAnimEnd(mPosition, mLuckStr[mPosition]);
+        Log.e("zhangrr", "onAnimationEnd() called with: mLuckNum = " + mLuckNum + " mPosition = "
+            + mCurrentPosition);
+        if (mLuckAnimationEndListener != null) {
+          mLuckAnimationEndListener.onLuckAnimationEnd(mCurrentPosition,
+              mPrizeDescription[mCurrentPosition]);
         }
       }
     });
-    valueAnimator.start();
+
+    animator.start();
   }
 
-  public interface OnLuckPanAnimEndListener {
-    void onAnimEnd(int position, String msg);
+  private void setCurrentPosition(int position) {
+    mCurrentPosition = position;
+    invalidate(); // 强制刷新，在 UI 线程回调 onDraw()
+  }
+
+  /**
+   * 用于抽奖结果回调
+   */
+  public interface OnLuckAnimationEndListener {
+    void onLuckAnimationEnd(int pos, String msg);
   }
 }

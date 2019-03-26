@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Coordinator属性较全解析
+ * Coordinator 属性较全解析
  */
 public class Coordinator3rdActivity extends AppCompatActivity {
 
@@ -27,11 +27,14 @@ public class Coordinator3rdActivity extends AppCompatActivity {
     ButterKnife.bind(this);
   }
 
+  /**
+   * Action 的字体颜色默认使用系统主题中的如 <item name="colorAccent">#ff0000</item>
+   */
   @OnClick(R.id.fab)
   public void onClick() {
     Snackbar.make(mFab, "Hello ZRR", Snackbar.LENGTH_LONG).setAction("ActionIII", view -> {
       Intent intent = new Intent(Coordinator3rdActivity.this, Coordinator4thActivity.class);
       startActivity(intent);
-    }).show();
+    }).setDuration(5000).show();
   }
 }
