@@ -8,7 +8,15 @@ import com.example.zhangruirui.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+/**
+ * @author zhangruirui
+ * email：1138517609@qq.com
+ * GitHub：https://github.com/selfconzrr
+ * Blog：http://blog.csdn.net/u011489043
+ * Date：03/26/19
+ *
+ * Android 实现超简单九宫格抽奖 demo，可自行设置中奖概率、中奖奖品
+ */
 public class LuckySpanActivity extends AppCompatActivity {
 
   @BindView(R.id.lucky_span)

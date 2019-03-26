@@ -30,6 +30,7 @@ public class LuckySpanView extends View {
   private int mRepeatCount = 5; // 转的圈数
   private int mRectSize; // 矩形的宽和高（矩形为正方形）
   private boolean mShouldStartFlag;
+  private boolean mShouldStartNextTurn = true; // 标记是否应该开启下一轮抽奖
   private int mStartLuckPosition = 0; // 开始抽奖的位置
   private int mCurrentPosition = -1; // 当前转圈所在的位置
 
@@ -196,6 +197,10 @@ public class LuckySpanView extends View {
   }
 
   private void startAnim() {
+    if (!mShouldStartNextTurn) {
+      return;
+    }
+
     Random random = new Random();
     mLuckNum = random.nextInt(8); // 生成 [0,8) 的随机整数
 
@@ -205,6 +210,7 @@ public class LuckySpanView extends View {
     animator.addUpdateListener(animation -> {
       final int position = (int) animation.getAnimatedValue();
       setCurrentPosition(position % 8);
+      mShouldStartNextTurn = false;
     });
 
     animator.addListener(new AnimatorListenerAdapter() {
@@ -217,6 +223,7 @@ public class LuckySpanView extends View {
           mLuckAnimationEndListener.onLuckAnimationEnd(mCurrentPosition,
               mPrizeDescription[mCurrentPosition]);
         }
+        mShouldStartNextTurn = true;
       }
     });
 
