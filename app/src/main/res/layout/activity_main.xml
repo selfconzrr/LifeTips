@@ -271,4 +271,14 @@
     android:layout_below="@+id/downRefresh"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
+
+  <Button
+    android:id="@+id/timeLine"
+    android:text="时间轴"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/passwordBook"
+    android:layout_toRightOf="@+id/luckyPan"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/luckyPan" />
 </RelativeLayout>

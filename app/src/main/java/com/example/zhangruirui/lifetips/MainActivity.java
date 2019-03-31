@@ -29,6 +29,7 @@ import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
+import com.example.zhangruirui.lifetips.time_line.TimeLineActivity;
 import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
@@ -278,6 +279,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.luckyPan})
   public void onClickLuckyPan() {
     final Intent intent = new Intent(MainActivity.this, LuckySpanActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.timeLine})
+  public void onClickTimeLine() {
+    final Intent intent = new Intent(MainActivity.this, TimeLineActivity.class);
     startActivity(intent);
   }
 
