@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.zhangruirui.utils.ActivityCollector;
+import com.example.zhangruirui.utils.MMKVManager;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.tencent.mmkv.MMKV;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
@@ -35,8 +35,7 @@ public class BaseActivity extends AppCompatActivity {
 
     super.onResume();
     MobclickAgent.onResume(this);
-    MMKV mmkv = MMKV.defaultMMKV();
-    final int value = mmkv.getInt("light_value", 180);
+    final int value = MMKVManager.getInstance().getLightValue();
     SetActivity set = new SetActivity();
     set.changeAppBrightness(this, value);
   }

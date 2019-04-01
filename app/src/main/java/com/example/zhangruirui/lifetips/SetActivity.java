@@ -16,8 +16,8 @@ import android.widget.TextView;
 import com.bugfree.zhangruirui.slideback.SlideBackHelper;
 import com.bugfree.zhangruirui.slideback.SlideBackLayout;
 import com.example.zhangruirui.utils.CacheCleanUtil;
+import com.example.zhangruirui.utils.MMKVManager;
 import com.example.zhangruirui.utils.ToastUtil;
-import com.tencent.mmkv.MMKV;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,8 +38,6 @@ public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChange
   @BindView(R.id.show_value)
   TextView mShowLightValue;
 
-  MMKV mmkv = MMKV.defaultMMKV();
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -48,7 +46,7 @@ public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChange
 
     // final SharedPreferences pref = getSharedPreferences("light", MODE_PRIVATE);
     // final int value = pref.getInt("light_value", 180);
-    final int value = mmkv.getInt("light_value", 180);
+    final int value = MMKVManager.getInstance().getLightValue();
     mLight.setOnSeekBarChangeListener(this); // 不要忘了设置 Listener，否则不会触发 onProgressChanged
     mLight.setProgress(value);
 
@@ -64,7 +62,7 @@ public class SetActivity extends BaseActivity implements SeekBar.OnSeekBarChange
   public void onProgressChanged(SeekBar seekBar, int progress,
                                 boolean fromUser) {
     final int bright = seekBar.getProgress();
-    mmkv.putInt("light_value", bright);
+    MMKVManager.getInstance().setLightValue(bright);
     mShowLightValue.setText(" : " + String.valueOf(bright));
     changeAppBrightness(this, bright);
   }
