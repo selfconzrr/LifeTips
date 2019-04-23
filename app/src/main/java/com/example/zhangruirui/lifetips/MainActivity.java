@@ -43,6 +43,7 @@ import com.tencent.mmkv.MMKV;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -93,6 +94,10 @@ public class MainActivity extends BaseActivity {
     ButterKnife.bind(this);
     initData();
 
+    String myCountryCode = Locale.getDefault().getCountry();
+    String myLanguageCode = Locale.getDefault().getLanguage();
+
+    android.util.Log.e("zhangrr", "onCreate() called with: myCountryCode = " + myCountryCode + " myLanguageCode = " + myLanguageCode);
     //设置选中和未选中时的图片
     mCycleViewPager.setIndicators(R.mipmap.ad_select, R.mipmap.ad_unselect);
     mCycleViewPager.setDelay(2000);
@@ -285,6 +290,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.timeLine})
   public void onClickTimeLine() {
     final Intent intent = new Intent(MainActivity.this, TimeLineActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.keyBoardLayout})
+  public void onClickKeyBoard() {
+    final Intent intent = new Intent(MainActivity.this, KeyBoardLayoutActivity.class);
     startActivity(intent);
   }
 

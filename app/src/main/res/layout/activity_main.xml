@@ -5,8 +5,7 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
-  <android.support.v4.widget.DrawerLayout
-    android:id="@+id/dl_main_drawer"
+  <android.support.v4.widget.DrawerLayout android:id="@+id/dl_main_drawer"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -281,4 +280,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/luckyPan" />
+
+  <Button
+    android:id="@+id/keyBoardLayout"
+    android:text="软键盘"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/drawShape"
+    android:layout_toRightOf="@+id/timeLine"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/timeLine" />
 </RelativeLayout>
