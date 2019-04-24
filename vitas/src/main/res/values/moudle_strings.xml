@@ -1,0 +1,14 @@
+<resources>
+  <string name="app_name">lifeTips</string>
+  <string name="btn_clear">clear</string>
+  <string name="btn_show">展示</string>
+  <string name="detail_request">Request</string>
+  <string name="detail_response">Response：</string>
+  <string name="tag_h1_start"><![CDATA[<h1>]]></string>
+  <string name="tag_h1_end"><![CDATA[</h1>]]></string>
+  <string name="tag_font_strong_start"><![CDATA[<font color=\'red\'><strong>]]></string>
+  <string name="tag_font_strong_end"><![CDATA[</strong></font><br>]]></string>
+  <string name="tag_br"><![CDATA[<br>]]></string>
+  <item type="id" name="tag_simple_url" />
+  <item type="id" name="tag_item_position" />
+</resources>

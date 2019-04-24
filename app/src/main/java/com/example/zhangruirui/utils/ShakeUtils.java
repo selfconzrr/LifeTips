@@ -8,7 +8,7 @@ import android.hardware.SensorManager;
 
 /**
  * 摇一摇监听器：
- * 用于开发、测试同学，方便吊起 debug 界面，进行测试环境或者其他配置的设置
+ * 用于开发、测试同学，方便进行某种操作
  * 在任何界面都可以进行摇一摇操作，默认来回晃动三次即触发。
  */
 public class ShakeUtils implements SensorEventListener {

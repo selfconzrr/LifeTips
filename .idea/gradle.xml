@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/banner" />
             <option value="$PROJECT_DIR$/shape_draw" />
             <option value="$PROJECT_DIR$/slidebacklayout" />
+            <option value="$PROJECT_DIR$/vitas" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

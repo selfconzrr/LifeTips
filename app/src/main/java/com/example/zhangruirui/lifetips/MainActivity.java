@@ -30,6 +30,7 @@ import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.lifetips.time_line.TimeLineActivity;
+import com.example.zhangruirui.lifetips.vitas_log.VitasActivity;
 import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
@@ -97,7 +98,8 @@ public class MainActivity extends BaseActivity {
     String myCountryCode = Locale.getDefault().getCountry();
     String myLanguageCode = Locale.getDefault().getLanguage();
 
-    android.util.Log.e("zhangrr", "onCreate() called with: myCountryCode = " + myCountryCode + " myLanguageCode = " + myLanguageCode);
+    android.util.Log.e("zhangrr", "onCreate() called with: myCountryCode = " + myCountryCode + " " +
+        "myLanguageCode = " + myLanguageCode);
     //设置选中和未选中时的图片
     mCycleViewPager.setIndicators(R.mipmap.ad_select, R.mipmap.ad_unselect);
     mCycleViewPager.setDelay(2000);
@@ -296,6 +298,12 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.keyBoardLayout})
   public void onClickKeyBoard() {
     final Intent intent = new Intent(MainActivity.this, KeyBoardLayoutActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.vitasLog})
+  public void onClickVitas() {
+    final Intent intent = new Intent(MainActivity.this, VitasActivity.class);
     startActivity(intent);
   }
 

@@ -290,4 +290,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/timeLine" />
+
+  <Button
+    android:id="@+id/vitasLog"
+    android:text="VitasLog"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/myWechat"
+    android:layout_toRightOf="@+id/keyBoardLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/keyBoardLayout" />
 </RelativeLayout>

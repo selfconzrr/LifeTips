@@ -1,0 +1,8 @@
+<resources>
+    <string name="btn_clear">clear</string>
+    <string name="btn_request">Get A Http Response</string>
+    <string name="tv_current_request">当前还没有请求</string>
+    <string name="btn_show">展示</string>
+    <string name="detail_request">Request</string>
+    <string name="detail_response">Response(详细信息)：</string>
+</resources>

@@ -207,6 +207,13 @@
       android:label="@string/app_name"
       android:screenOrientation="portrait"
       android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".vitas_log.VitasActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
   </application>
 
 </manifest>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout android:id="@+id/linearLayout"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <Button
+    android:id="@+id/btn_get_a_request"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="36dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginStart="8dp"
+    android:text="@string/btn_request"
+    app:layout_constraintBottom_toTopOf="@+id/btn_clear"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+    android:id="@+id/btn_clear"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="64dp"
+    android:text="@string/btn_clear"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/guideline3" />
+
+  <Button
+    android:id="@+id/btn_show"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/btn_show"
+    app:layout_constraintBottom_toBottomOf="@+id/btn_clear"
+    app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+  <TextView
+    android:id="@+id/tv_current_equest"
+    android:layout_width="wrap_content"
+    android:layout_height="20dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp"
+    android:text="@string/tv_current_request"
+    app:layout_constraintBottom_toTopOf="@+id/btn_get_a_request"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guideline3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.5" />
+</android.support.constraint.ConstraintLayout>
