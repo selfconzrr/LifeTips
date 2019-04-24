@@ -131,6 +131,9 @@ public class RemindActivity extends BaseActivity implements View.OnClickListener
 
           e.printStackTrace();
         }
+        if (today == null) {
+          return;
+        }
         long value = today.getTime();
         long value2 = System.currentTimeMillis();
         if (value <= value2) {

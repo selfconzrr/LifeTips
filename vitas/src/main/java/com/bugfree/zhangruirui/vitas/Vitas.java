@@ -13,6 +13,19 @@ import com.bugfree.zhangruirui.vitas.view.ShowLogActivity;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
+/**
+ * Vitas 是一个基于自定义 okhttp 拦截器的小工具，在发起网络请求的时候添加 vitas.KeepLoggerInterceptor，
+ * 在 Vitas 运行模式下，会自动将拦截的网络请求收集并且存入数据库。点击顶部的通知栏可以查询详细的信息。
+ * <p>
+ * 功能：
+ * 1. 自定义 LoggingInterceptor，实现获取请求的各种数据。
+ * 2. 所有经过拦截器的数据都会存入到原生的数据库中。
+ * 3. 使用 RecyclerView 展示数据，点击可进入详情页面。
+ * <p>
+ * 使用：
+ * Vitas.getInstance().init(this);
+ * Vitas.getInstance().setEnable(true);
+ */
 public class Vitas {
 
   private static final String CHANNEL_ID_SHOW_LOG = "vitas";
