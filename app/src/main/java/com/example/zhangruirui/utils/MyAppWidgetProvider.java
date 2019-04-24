@@ -31,6 +31,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider {
   public static final String TAG = "MyAppWidgetProvider";
   public static final String CLICK_ACTION = "com.example.zhangruirui.action.CLICK";
 
+  // appwidget 上的操作都必须借助远程对象来操作
   private RemoteViews mRemoteViews;
 
   /**
@@ -72,6 +73,10 @@ public class MyAppWidgetProvider extends AppWidgetProvider {
     // 为 APPWidget 设置点击监听事件，点击启动主界面
     mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.desktop_widget);
     Intent mainIntent = new Intent(context, MainActivity.class);
+    // PendingIntent 可以看成是一个特殊的 Intent，如果我们把 Intent 看成一封信，那么 PendingIntent
+    // 就是一封被信封包裹起来的信。这封信在 remoteViews.setOnClickPendingIntent() 中被“邮寄”到了 appwidget，
+    // 当 appwidget 中的按钮单击时他知道将这封信打开，并执行里面的内容。这样就避免了直接从 appwidget 中执行本地代码
+
     PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, mainIntent, 0);
     mRemoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
     appWidgetManager.updateAppWidget(appWidgetIds, mRemoteViews);

@@ -80,7 +80,7 @@ public class AlarmService extends Service {
         builder.setContentText(intent.getStringExtra("contentText"));
         builder.setContentTitle(intent.getStringExtra("contentTitle"));
         builder.setAutoCancel(true);
-        builder.setVibrate(new long[]{0, 1000, 1000, 1000});
+        builder.setVibrate(new long[]{0, 1000, 1000, 1000}); // 震动需要真机测试-延迟0秒震动1秒 延迟1秒震动1秒
         // builder.setSound(Uri.withAppendedPath(Audio.Media.INTERNAL_CONTENT_URI,
         // "5"));
         // builder.setSound(Uri.parse("file:///sdcard/xx/xx.mp3"));
@@ -91,7 +91,7 @@ public class AlarmService extends Service {
         notification.ledARGB = Color.GREEN;
         notification.ledOnMS = 1000;
         notification.ledOffMS = 1000;
-        notification.flags = Notification.FLAG_INSISTENT;
+        notification.flags = Notification.FLAG_INSISTENT; // 声音无限循环
         notification.flags = Notification.FLAG_AUTO_CANCEL;
         if (mn != null) {
           mn.notify((int) System.currentTimeMillis(), notification);

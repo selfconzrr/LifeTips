@@ -153,11 +153,67 @@
 
     <activity
       android:name=".wechat.WelcomeWeChatActivity"
-      android:theme="@style/WeChatSplashTheme" />
-    <activity android:name=".wechat.LoginWeChatActivity" />
-    <activity android:name=".wechat.MainWeChatActivity" />
-    <activity android:name=".wechat.LoadingActivity" />
-    <activity android:name=".wechat.WhatsNewDoorActivity"></activity>
+      android:theme="@style/WeChatSplashTheme"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".wechat.LoginWeChatActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".wechat.MainWeChatActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".wechat.LoadingActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".wechat.WhatsNewDoorActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".lucky_pan.LuckySpanActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".time_line.TimeLineActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".KeyBoardLayoutActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+
+    <activity
+      android:name=".vitas_log.VitasActivity"
+      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+      android:label="@string/app_name"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
   </application>
 
 </manifest>

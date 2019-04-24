@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,11 +23,14 @@ import com.example.zhangruirui.lifetips.demo_learning.jscommunication.JSActivity
 import com.example.zhangruirui.lifetips.demo_learning.refreshlayout.SmartRefreshActivity;
 import com.example.zhangruirui.lifetips.demo_learning.rxjava.RxActivity;
 import com.example.zhangruirui.lifetips.leetcode.activity.LeetcodeActivity;
+import com.example.zhangruirui.lifetips.lucky_pan.LuckySpanActivity;
 import com.example.zhangruirui.lifetips.music.MusicActivity;
 import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
+import com.example.zhangruirui.lifetips.time_line.TimeLineActivity;
+import com.example.zhangruirui.lifetips.vitas_log.VitasActivity;
 import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
@@ -38,6 +44,7 @@ import com.tencent.mmkv.MMKV;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,6 +73,9 @@ public class MainActivity extends BaseActivity {
   @BindView(R.id.view_pager)
   CycleViewPager mCycleViewPager;
 
+  @BindView(R.id.dl_main_drawer)
+  DrawerLayout mDrawerLayout;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // The easiest way to transition back to your normal theme in your launcher (main) activity
@@ -85,6 +95,11 @@ public class MainActivity extends BaseActivity {
     ButterKnife.bind(this);
     initData();
 
+    String myCountryCode = Locale.getDefault().getCountry();
+    String myLanguageCode = Locale.getDefault().getLanguage();
+
+    android.util.Log.e("zhangrr", "onCreate() called with: myCountryCode = " + myCountryCode + " " +
+        "myLanguageCode = " + myLanguageCode);
     //设置选中和未选中时的图片
     mCycleViewPager.setIndicators(R.mipmap.ad_select, R.mipmap.ad_unselect);
     mCycleViewPager.setDelay(2000);
@@ -100,6 +115,19 @@ public class MainActivity extends BaseActivity {
         "http://imgsrc.baidu.com/forum/pic/item/b64543a98226cffc8872e00cb9014a90f603ea30.jpg"));
     mList.add(new PicInfo("标题4",
         "http://imgsrc.baidu.com/forum/pic/item/261bee0a19d8bc3e6db92913828ba61eaad345d4.jpg"));
+  }
+
+  // 设置 NavigationView 元素的回调事件
+  private void setupDrawerContent(NavigationView navigationView) {
+    navigationView.setNavigationItemSelectedListener(
+        new NavigationView.OnNavigationItemSelectedListener() {
+          @Override
+          public boolean onNavigationItemSelected(MenuItem menuItem) {
+            menuItem.setChecked(true);
+            mDrawerLayout.closeDrawers();
+            return true;
+          }
+        });
   }
 
   // 避免多次启动 Splash Screen
@@ -252,6 +280,30 @@ public class MainActivity extends BaseActivity {
   @OnClick({R.id.myWechat})
   public void onClickWeChat() {
     final Intent intent = new Intent(MainActivity.this, WelcomeWeChatActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.luckyPan})
+  public void onClickLuckyPan() {
+    final Intent intent = new Intent(MainActivity.this, LuckySpanActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.timeLine})
+  public void onClickTimeLine() {
+    final Intent intent = new Intent(MainActivity.this, TimeLineActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.keyBoardLayout})
+  public void onClickKeyBoard() {
+    final Intent intent = new Intent(MainActivity.this, KeyBoardLayoutActivity.class);
+    startActivity(intent);
+  }
+
+  @OnClick({R.id.vitasLog})
+  public void onClickVitas() {
+    final Intent intent = new Intent(MainActivity.this, VitasActivity.class);
     startActivity(intent);
   }
 

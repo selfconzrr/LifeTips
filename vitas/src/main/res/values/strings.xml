@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="menu_item_clear">Clear</string>
+  <string name="menu_item_search">Search</string>
+  <string name="vitasTitle">Vitas</string>
+  <string name="show_detial_template" formatted="false">%s Request Details: %s url: %s requestTime: %s requestHeaders: %s method: %s requestBody: %s Response Details: %s responseCode: %s tookTimeMS: %s responseHeaders: %s responseBody: %s</string>
+  <string name="notification_title">Click to view vitas logs</string>
+</resources>

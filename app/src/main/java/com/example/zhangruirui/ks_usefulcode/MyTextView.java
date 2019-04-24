@@ -32,6 +32,8 @@ public class MyTextView extends android.support.v7.widget.AppCompatTextView {
    *
    * 使用的时候
    * tv.setMovementMethod(MyLinkMovementMethod.getInstance());
+   *
+   * {@link TextView#onTouchEvent(android.view.MotionEvent)}
    */
   static class MyLinkMovementMethod extends LinkMovementMethod {
 

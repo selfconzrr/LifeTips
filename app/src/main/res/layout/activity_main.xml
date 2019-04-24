@@ -5,6 +5,26 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
+  <android.support.v4.widget.DrawerLayout android:id="@+id/dl_main_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- 你的内容布局-->
+    <!-- <include layout="@layout/navigation_content" /> -->
+
+    <android.support.design.widget.NavigationView
+      android:id="@+id/nv_main_navigation"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_gravity="start"
+      app:headerLayout="@layout/navigation_header"
+      app:menu="@menu/drawer_view" />
+
+  </android.support.v4.widget.DrawerLayout>
+
   <com.bugfree.zhangruirui.banner.CycleViewPager
     android:id="@+id/view_pager"
     android:layout_width="match_parent"
@@ -243,4 +263,41 @@
     android:layout_height="wrap_content"
     android:layout_toEndOf="@+id/drawShape" />
 
+  <Button
+    android:id="@+id/luckyPan"
+    android:text="转盘抽奖"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/downRefresh"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+  <Button
+    android:id="@+id/timeLine"
+    android:text="时间轴"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/passwordBook"
+    android:layout_toRightOf="@+id/luckyPan"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/luckyPan" />
+
+  <Button
+    android:id="@+id/keyBoardLayout"
+    android:text="软键盘"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/drawShape"
+    android:layout_toRightOf="@+id/timeLine"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/timeLine" />
+
+  <Button
+    android:id="@+id/vitasLog"
+    android:text="VitasLog"
+    android:textColor="#ff0000"
+    android:layout_below="@+id/myWechat"
+    android:layout_toRightOf="@+id/keyBoardLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/keyBoardLayout" />
 </RelativeLayout>

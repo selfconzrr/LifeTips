@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.view.Window;
 
 import java.util.Calendar;
@@ -133,5 +135,15 @@ public class KSUtils {
     }
   }
 
+  public static int getBottomRelativeAncestor(View targetView, View ancestorView) {
+    int bottomRelativeToAncestor = targetView.getBottom();
+
+    for (ViewParent parent = targetView.getParent(); parent != null && parent != ancestorView &&
+        parent instanceof ViewGroup; parent = parent.getParent()) {
+      bottomRelativeToAncestor += ((ViewGroup) parent).getTop();
+    }
+
+    return bottomRelativeToAncestor;
+  }
 
 }
