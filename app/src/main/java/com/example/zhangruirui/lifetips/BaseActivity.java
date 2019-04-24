@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.MMKVManager;
+import com.example.zhangruirui.utils.ShakeUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -18,6 +19,8 @@ import com.umeng.commonsdk.UMConfigure;
  * Date：11/19/18
  */
 public class BaseActivity extends AppCompatActivity {
+
+  private ShakeUtils mShakeUtil;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +44,33 @@ public class BaseActivity extends AppCompatActivity {
   }
 
   @Override
+  protected void onStart() {
+    super.onStart();
+    if (mShakeUtil == null) {
+      createShakeDetectorIfNeeded();
+    }
+
+    if (mShakeUtil != null) {
+      mShakeUtil.register();
+    }
+  }
+
+  @Override
   protected void onPause() {
     super.onPause();
     MobclickAgent.onPause(this);
+    /**
+     * 弹出 debug 调试界面，即注销监听，防止多次吊起
+     * 如果吊起的是 Activity，解注册需要放在 onStop() 中，如果是 dialog，放在 onPause()
+     */
+    if (mShakeUtil != null) {
+      mShakeUtil.unregister();
+    }
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
   }
 
   @Override
@@ -52,4 +79,15 @@ public class BaseActivity extends AppCompatActivity {
     ActivityCollector.removeActivity(this);
   }
 
+  private void createShakeDetectorIfNeeded() {
+    if (BuildConfig.DEBUG) {
+      mShakeUtil = new ShakeUtils(this, new ShakeUtils.ShakeListener() {
+        @Override
+        public void onShake() {
+          // here add what you want to do
+          Log.e("zhangrr", "onShake() called");
+        }
+      });
+    }
+  }
 }
