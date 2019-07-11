@@ -1,190 +1,190 @@
 <resources>
 
-  <!-- Default-->
-  <string name="app_name">LifeTips</string>
-  <string name="compass">指南针</string>
-  <string name="direction">方向</string>
-  <string name="js_and">JS和android通信</string>
-  <string name="light_intensity">光照强度</string>
-  <string name="menuDemo">菜单学习</string>
-  <string name="quit">退出</string>
-  <string name="welcome">欢迎使用您的生活小管家</string>
+    <!-- Default-->
+    <string name="app_name">LifeTips</string>
+    <string name="compass">指南针</string>
+    <string name="direction">方向</string>
+    <string name="js_and">JS和android通信</string>
+    <string name="light_intensity">光照强度</string>
+    <string name="menuDemo">菜单学习</string>
+    <string name="quit">退出</string>
+    <string name="welcome">欢迎使用您的生活小管家</string>
 
-  <!-- 登录界面 Login-->
-  <string name="account">Account:</string>
-  <string name="account_hint">input your account</string>
-  <string name="login_button">Login</string>
-  <string name="login_toast">用户名或密码错误，请重新输入</string>
-  <string name="password">Password:</string>
-  <string name="password_hint">input your password</string>
-  <string name="remember_password">Remember password</string>
+    <!-- 登录界面 Login-->
+    <string name="account">Account:</string>
+    <string name="account_hint">input your account</string>
+    <string name="login_button">Login</string>
+    <string name="login_toast">用户名或密码错误，请重新输入</string>
+    <string name="password">Password:</string>
+    <string name="password_hint">input your password</string>
+    <string name="remember_password">Remember password</string>
 
-  <!-- 获取网络时间-->
-  <string name="getTime">获取时间</string>
-  <string name="getNetworkTime">获取网络时间</string>
-  <string name="showNetworkTime">yyyy-MM-dd HH:mm:ss</string>
+    <!-- 获取网络时间-->
+    <string name="getTime">获取时间</string>
+    <string name="getNetworkTime">获取网络时间</string>
+    <string name="showNetworkTime">yyyy-MM-dd HH:mm:ss</string>
 
-  <!-- 收发短信 SMS-->
-  <string name="content">Content：</string>
-  <string name="content_hint">Input the content to send：</string>
-  <string name="from">From：</string>
-  <string name="phone_number">Input the Phone Number：</string>
-  <string name="to">To：</string>
-  <string name="send">Send</string>
-  <string name="sms">收发短信</string>
+    <!-- 收发短信 SMS-->
+    <string name="content">Content：</string>
+    <string name="content_hint">Input the content to send：</string>
+    <string name="from">From：</string>
+    <string name="phone_number">Input the Phone Number：</string>
+    <string name="to">To：</string>
+    <string name="send">Send</string>
+    <string name="sms">收发短信</string>
 
-  <!-- 设置-->
-  <string name="about">关于</string>
-  <string name="about_us">关于我们</string>
-  <string name="advice">我要提意见</string>
-  <string name="clear_cache">清除缓存</string>
-  <string name="help">使用帮助</string>
-  <string name="light_adjust">亮度调节</string>
-  <string name="set">设置</string>
+    <!-- 设置-->
+    <string name="about">关于</string>
+    <string name="about_us">关于我们</string>
+    <string name="advice">我要提意见</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="help">使用帮助</string>
+    <string name="light_adjust">亮度调节</string>
+    <string name="set">设置</string>
 
-  <!-- memo——MyDialog -->
-  <string name="dialog_memo_title">添加提醒事项</string>
-  <string name="dialog_memo_ok">确定</string>
-  <string name="dialog_memo_cancle">取消</string>
+    <!-- memo——MyDialog -->
+    <string name="dialog_memo_title">添加提醒事项</string>
+    <string name="dialog_memo_ok">确定</string>
+    <string name="dialog_memo_cancle">取消</string>
 
-  <!-- calculator 计算器-->
-  <string name="calculator">计算器</string>
-  <string name="num_0_label">0</string>
-  <string name="num_1_label">1</string>
-  <string name="num_2_label">2</string>
-  <string name="num_3_label">3</string>
-  <string name="num_4_label">4</string>
-  <string name="num_5_label">5</string>
-  <string name="num_6_label">6</string>
-  <string name="num_7_label">7</string>
-  <string name="num_8_label">8</string>
-  <string name="num_9_label">9</string>
-  <string name="op_dot_label">.</string>
-  <string name="op_equal_label">=</string>
-  <string name="op_add_label">+</string>
-  <string name="op_minus_label">-</string>
-  <string name="op_multi_label">*</string>
-  <string name="op_div_label">/</string>
-  <string name="op_one_in_x_label">1/x</string>
-  <string name="op_converse_label">+/-</string>
-  <string name="op_exit_label">EX</string>
-  <string name="op_clear_label">CE</string>
-  <string name="result">0</string>
-  <string name="title">My Calculator</string>
+    <!-- calculator 计算器-->
+    <string name="calculator">计算器</string>
+    <string name="num_0_label">0</string>
+    <string name="num_1_label">1</string>
+    <string name="num_2_label">2</string>
+    <string name="num_3_label">3</string>
+    <string name="num_4_label">4</string>
+    <string name="num_5_label">5</string>
+    <string name="num_6_label">6</string>
+    <string name="num_7_label">7</string>
+    <string name="num_8_label">8</string>
+    <string name="num_9_label">9</string>
+    <string name="op_dot_label">.</string>
+    <string name="op_equal_label">=</string>
+    <string name="op_add_label">+</string>
+    <string name="op_minus_label">-</string>
+    <string name="op_multi_label">*</string>
+    <string name="op_div_label">/</string>
+    <string name="op_one_in_x_label">1/x</string>
+    <string name="op_converse_label">+/-</string>
+    <string name="op_exit_label">EX</string>
+    <string name="op_clear_label">CE</string>
+    <string name="result">0</string>
+    <string name="title">My Calculator</string>
 
-  <!-- BMI 健康指数分析-->
-  <string name="BMI">体质分析</string>
-  <string name="clear">清空</string>
-  <string name="compute">计算</string>
-  <string name="condition">您的体重情况为：</string>
-  <string name="default_value">默认值</string>
-  <string name="fit_weight">您的健康体重为：</string>
-  <string name="height">身高(cm)：</string>
-  <string name="height_hint">请输入身高</string>
-  <string name="introduce">BMI指数（即身体质量指数，英文为Body Mass Index，简称BMI），是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。当我们需要比较及分析一个人的体重对于不同高度的人所带来的健康影响时，BMI值是一个中立而可靠的指标。本程序按照中国标准计算</string>
-  <string name="index">您的BMI指数为：</string>
-  <string name="sex">性别：</string>
-  <string name="sex_man">男/M</string>
-  <string name="sex_woman">女/F</string>
-  <string name="test_result">测试结果</string>
-  <string name="weight">体重(kg)：</string>
-  <string name="weight_hint">请输入体重</string>
+    <!-- BMI 健康指数分析-->
+    <string name="BMI">体质分析</string>
+    <string name="clear">清空</string>
+    <string name="compute">计算</string>
+    <string name="condition">您的体重情况为：</string>
+    <string name="default_value">默认值</string>
+    <string name="fit_weight">您的健康体重为：</string>
+    <string name="height">身高(cm)：</string>
+    <string name="height_hint">请输入身高</string>
+    <string name="introduce">BMI指数（即身体质量指数，英文为Body Mass Index，简称BMI），是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。当我们需要比较及分析一个人的体重对于不同高度的人所带来的健康影响时，BMI值是一个中立而可靠的指标。本程序按照中国标准计算</string>
+    <string name="index">您的BMI指数为：</string>
+    <string name="sex">性别：</string>
+    <string name="sex_man">男/M</string>
+    <string name="sex_woman">女/F</string>
+    <string name="test_result">测试结果</string>
+    <string name="weight">体重(kg)：</string>
+    <string name="weight_hint">请输入体重</string>
 
-  <!-- Music -->
-  <string name="ini_time">00:00</string>
-  <string name="listen_music">听听音乐</string>
+    <!-- Music -->
+    <string name="ini_time">00:00</string>
+    <string name="listen_music">听听音乐</string>
 
-  <!-- 待办事项 -->
-  <string name="add_task">添加提醒事项</string>
-  <string name="cancel">取消</string>
-  <string name="date_format">yyyy-mm-dd</string>
-  <string name="remind">待办事项</string>
-  <string name="set_remind_date">设置提醒日期</string>
-  <string name="set_remind_time">设置提醒时间</string>
-  <string name="sure">确定</string>
-  <string name="task_hint">请输入待办事项</string>
-  <string name="time_format">hh-mm-ss</string>
+    <!-- 待办事项 -->
+    <string name="add_task">添加提醒事项</string>
+    <string name="cancel">取消</string>
+    <string name="date_format">yyyy-mm-dd</string>
+    <string name="remind">待办事项</string>
+    <string name="set_remind_date">设置提醒日期</string>
+    <string name="set_remind_time">设置提醒时间</string>
+    <string name="sure">确定</string>
+    <string name="task_hint">请输入待办事项</string>
+    <string name="time_format">hh-mm-ss</string>
 
-  <!-- 时光便签 -->
-  <string name="add_event">新的事件</string>
-  <string name="change_bg_from_album">更换背景（相册选取）</string>
-  <string name="change_bg_take_photo">更换背景（相机拍照）</string>
-  <string name="diary">时光便签</string>
-  <string name="save">保存</string>
+    <!-- 时光便签 -->
+    <string name="add_event">新的事件</string>
+    <string name="change_bg_from_album">更换背景（相册选取）</string>
+    <string name="change_bg_take_photo">更换背景（相机拍照）</string>
+    <string name="diary">时光便签</string>
+    <string name="save">保存</string>
 
-  <!-- NoteBook -->
-  <string name="note_book">笔记本</string>
-  <string name="add_note">AddNote</string>
-  <string name="search_hint">请输入要搜索标题的关键字</string>
-  <string name="searchNote">Search</string>
-  <string name="title_hint">请输入笔记的标题</string>
-  <string name="note_content_hint">请输入笔记的内容</string>
-  <string name="modify_note">Modify</string>
+    <!-- NoteBook -->
+    <string name="note_book">笔记本</string>
+    <string name="add_note">AddNote</string>
+    <string name="search_hint">请输入要搜索标题的关键字</string>
+    <string name="searchNote">Search</string>
+    <string name="title_hint">请输入笔记的标题</string>
+    <string name="note_content_hint">请输入笔记的内容</string>
+    <string name="modify_note">Modify</string>
 
-  <!-- 剑指 offer -->
-  <string name="offer">剑指offer</string>
-  <string name="problem_title">Title</string>
-  <string name="problem_knowledge">Knowledge</string>
-  <string name="problem_ac_rate">AC Rate</string>
-  <string name="problem_hot">Hot Index</string>
-  <string name="see_problem_answer">查看讨论</string>
+    <!-- 剑指 offer -->
+    <string name="offer">剑指offer</string>
+    <string name="problem_title">Title</string>
+    <string name="problem_knowledge">Knowledge</string>
+    <string name="problem_ac_rate">AC Rate</string>
+    <string name="problem_hot">Hot Index</string>
+    <string name="see_problem_answer">查看讨论</string>
 
-  <!-- 生命周期测试 -->
-  <string name="jump_to_2nd">跳到第二个Activity</string>
-  <string name="jump_to_3rd">跳到第三个Activity</string>
-  <string name="back_to_1st">回到第一个Activity</string>
+    <!-- 生命周期测试 -->
+    <string name="jump_to_2nd">跳到第二个Activity</string>
+    <string name="jump_to_3rd">跳到第三个Activity</string>
+    <string name="back_to_1st">回到第一个Activity</string>
 
-  <!-- RxJava 学习 -->
-  <string name="rxJava">RxJava</string>
+    <!-- RxJava 学习 -->
+    <string name="rxJava">RxJava</string>
 
-  <!-- CoordinatorLayout 学习 -->
-  <string name="fixed">"第一个固定(pin)"</string>
-  <string name="followscroll">"不设置,跟随滑动"</string>
-  <string name="haha">"哈哈"</string>
-  <string name="inappbaroutcollap">"appbar之内,collap之外"</string>
-  <string name="parallax">"视差效果(parallax)"</string>
-  <string name="phone_hint">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
-  <string name="raw">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
-  <string name="toolbar">"我是toolbar"</string>
-  <string name="user_name">"用户名/手机号"</string>
+    <!-- CoordinatorLayout 学习 -->
+    <string name="fixed">"第一个固定(pin)"</string>
+    <string name="followscroll">"不设置,跟随滑动"</string>
+    <string name="haha">"哈哈"</string>
+    <string name="inappbaroutcollap">"appbar之内,collap之外"</string>
+    <string name="parallax">"视差效果(parallax)"</string>
+    <string name="phone_hint">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
+    <string name="raw">"请按照xxx-xxxx-xxxx格式输入手机号"</string>
+    <string name="toolbar">"我是toolbar"</string>
+    <string name="user_name">"用户名/手机号"</string>
 
-  <!-- 我的密码本-->
-  <string name="button_add">增加</string>
-  <string name="button_search">查找</string>
-  <string name="button_preview">列表</string>
-  <string name="button_about">关于</string>
-  <string name="button_reset_pwd">重置密码</string>
-  <string name="add_record_edittext01_hint">关键字</string>
-  <string name="add_record_edittext02_hint">账号</string>
-  <string name="add_record_edittext03_hint">密码</string>
-  <string name="add_record_edittext04_hint">备注</string>
-  <string name="add_record_button_add">保存</string>
-  <string name="add_record_button_back">返回</string>
-  <string name="add_record_textview01_account">账号</string>
-  <string name="add_record_textview02_password">密码</string>
-  <string name="add_record_textview03_reminds">备注</string>
-  <string name="search_textview01_search">查找已保存的账户</string>
-  <string name="all_password">全部的密码</string>
-  <string name="search_button01_search">查找</string>
-  <string name="search_button02_back">返回</string>
-  <string name="search_edittext01_hint">请输入关键字</string>
-  <string name="search_result_delete">删除</string>
-  <string name="search_result_back">返回</string>
-  <string name="modify_pwd_tip">注意：默认密码为admin，请修改后牢记自己密码</string>
+    <!-- 我的密码本-->
+    <string name="button_add">增加</string>
+    <string name="button_search">查找</string>
+    <string name="button_preview">列表</string>
+    <string name="button_about">关于</string>
+    <string name="button_reset_pwd">重置密码</string>
+    <string name="add_record_edittext01_hint">关键字</string>
+    <string name="add_record_edittext02_hint">账号</string>
+    <string name="add_record_edittext03_hint">密码</string>
+    <string name="add_record_edittext04_hint">备注</string>
+    <string name="add_record_button_add">保存</string>
+    <string name="add_record_button_back">返回</string>
+    <string name="add_record_textview01_account">账号</string>
+    <string name="add_record_textview02_password">密码</string>
+    <string name="add_record_textview03_reminds">备注</string>
+    <string name="search_textview01_search">查找已保存的账户</string>
+    <string name="all_password">全部的密码</string>
+    <string name="search_button01_search">查找</string>
+    <string name="search_button02_back">返回</string>
+    <string name="search_edittext01_hint">请输入关键字</string>
+    <string name="search_result_delete">删除</string>
+    <string name="search_result_back">返回</string>
+    <string name="modify_pwd_tip">注意：默认密码为admin，请修改后牢记自己密码</string>
 
-  <!-- 图形编辑器-->
-  <string name="select_shape">请选择要画的形状</string>
+    <!-- 图形编辑器-->
+    <string name="select_shape">请选择要画的形状</string>
 
-  <!-- 高仿微信-->
-  <string name="forget_password">忘记密码?</string>
-  <string name="hint_login">使用QQ号或者微信号登录</string>
-  <string name="hint_no_qq">【点击跳转到主界面】\n如果你没有QQ号，请注册</string>
-  <string name="isLogining">正在登录</string>
-  <string name="personal_mail">By：1138517609@qq.com</string>
-  <string name="wechat">微信</string>
-  <string name="wechat_login">登录</string>
-  <string name="wechat_login_account_hint">QQ号/微信号/手机号（请输入admin）</string>
-  <string name="wechat_login_password_hint">密码(请输入123456)</string>
-  <string name="wechat_register">注册</string>
+    <!-- 高仿微信-->
+    <string name="forget_password">忘记密码?</string>
+    <string name="hint_login">使用QQ号或者微信号登录</string>
+    <string name="hint_no_qq">【点击跳转到主界面】\n如果你没有QQ号，请注册</string>
+    <string name="isLogining">正在登录</string>
+    <string name="personal_mail">By：1138517609@qq.com</string>
+    <string name="wechat">微信</string>
+    <string name="wechat_login">登录</string>
+    <string name="wechat_login_account_hint">QQ号/微信号/手机号（请输入admin）</string>
+    <string name="wechat_login_password_hint">密码(请输入123456)</string>
+    <string name="wechat_register">注册</string>
 
 </resources>

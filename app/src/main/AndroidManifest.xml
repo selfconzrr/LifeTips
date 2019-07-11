@@ -1,219 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  package="com.example.zhangruirui.lifetips">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.zhangruirui.lifetips">
 
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-  <uses-permission android:name="android.permission.READ_LOGS" />
-  <uses-permission android:name="android.permission.READ_CONTACTS" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.RECEIVE_SMS" />
-  <uses-permission android:name="android.permission.SEND_SMS" />
-  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
-  <application
-    android:allowBackup="true"
-    android:icon="@mipmap/launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme"
-    tools:ignore="AllowBackup">
-    <activity
-      android:name=".MainActivity"
-      android:theme="@style/SplashTheme">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-    <activity android:name=".HelpActivity" />
-    <activity android:name=".WelcomeActivity" />
-    <activity android:name=".LoginActivity" />
-    <activity android:name=".LightIntensityActivity" />
-    <activity android:name=".NetworkTimeActivity" />
-    <activity android:name=".SMSActivity" />
-    <activity android:name=".SetActivity" />
-    <activity android:name=".CalculatorActivity" />
-    <activity
-      android:name=".bmi.BMIActivity"
-      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-    <activity
-      android:name=".bmi.ResultActivity"
-      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-    <activity android:name=".compass.CompassActivity" />
-    <activity android:name=".music.MusicActivity" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".LightIntensityActivity" />
+        <activity android:name=".NetworkTimeActivity" />
+        <activity android:name=".SMSActivity" />
+        <activity android:name=".SetActivity" />
+        <activity android:name=".CalculatorActivity" />
+        <activity
+            android:name=".bmi.BMIActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".bmi.ResultActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".compass.CompassActivity" />
+        <activity android:name=".music.MusicActivity" />
 
-    <service android:name=".music.PlayService" />
+        <service android:name=".music.PlayService" />
 
-    <activity android:name=".remind.RemindActivity" />
+        <activity android:name=".remind.RemindActivity" />
 
-    <service
-      android:name=".remind.AlarmService"
-      android:enabled="true"
-      android:exported="true"
-      android:process="system"
-      tools:ignore="ExportedService" />
+        <service
+            android:name=".remind.AlarmService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="system"
+            tools:ignore="ExportedService" />
 
-    <activity android:name=".notes.TimeDiaryActivity" />
-    <activity android:name=".notes.WriteActivity" />
-    <activity android:name=".notes.EditActivity" />
-    <activity android:name=".BaseActivity" />
-    <activity
-      android:name=".notebook.activity.NotebookActivity"
-      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".notes.TimeDiaryActivity" />
+        <activity android:name=".notes.WriteActivity" />
+        <activity android:name=".notes.EditActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity
+            android:name=".notebook.activity.NotebookActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
-    <provider
-      android:name=".notebook.db.NoteProvider"
-      android:authorities="com.terry.NoteBook"
-      android:exported="false" />
+        <provider
+            android:name=".notebook.db.NoteProvider"
+            android:authorities="com.terry.NoteBook"
+            android:exported="false" />
 
-    <activity
-      android:name=".notebook.activity.NoteDetailActivity"
-      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-    <activity android:name=".leetcode.activity.LeetcodeActivity" />
-    <activity android:name=".leetcode.activity.ProblemDetailActivity" />
-    <activity android:name=".demo_learning.lifecycle.LifeCycleMainActivity" />
-    <activity android:name=".demo_learning.lifecycle.LifeCycle2Activity" />
-    <activity android:name=".demo_learning.lifecycle.LifeCycle3Activity" />
-    <activity android:name=".demo_learning.launchmode.BasicActivity" />
-    <activity
-      android:name=".demo_learning.launchmode.ActivityStandard"
-      android:launchMode="standard" />
-    <activity android:name=".demo_learning.rxjava.RxActivity" />
-    <activity android:name=".SplashActivity" />
-    <activity android:name=".demo_learning.HandlerDemoActivity" />
-    <activity android:name=".demo_learning.coordinatorlayout.Coordinator1stActivity" />
-    <activity android:name=".demo_learning.coordinatorlayout.ViewActivity" />
-    <activity android:name=".demo_learning.coordinatorlayout.Coordinator2ndActivity" />
-    <activity android:name=".demo_learning.coordinatorlayout.Coordinator3rdActivity" />
-    <activity android:name=".demo_learning.coordinatorlayout.Coordinator4thActivity" />
+        <activity
+            android:name=".notebook.activity.NoteDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".leetcode.activity.LeetcodeActivity" />
+        <activity android:name=".leetcode.activity.ProblemDetailActivity" />
+        <activity android:name=".demo_learning.lifecycle.LifeCycleMainActivity" />
+        <activity android:name=".demo_learning.lifecycle.LifeCycle2Activity" />
+        <activity android:name=".demo_learning.lifecycle.LifeCycle3Activity" />
+        <activity android:name=".demo_learning.launchmode.BasicActivity" />
+        <activity
+            android:name=".demo_learning.launchmode.ActivityStandard"
+            android:launchMode="standard" />
+        <activity android:name=".demo_learning.rxjava.RxActivity" />
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".demo_learning.HandlerDemoActivity" />
+        <activity android:name=".demo_learning.coordinatorlayout.Coordinator1stActivity" />
+        <activity android:name=".demo_learning.coordinatorlayout.ViewActivity" />
+        <activity android:name=".demo_learning.coordinatorlayout.Coordinator2ndActivity" />
+        <activity android:name=".demo_learning.coordinatorlayout.Coordinator3rdActivity" />
+        <activity android:name=".demo_learning.coordinatorlayout.Coordinator4thActivity" />
 
-    <meta-data
-      android:name="UMENG_APPKEY"
-      android:value="5c11f976b465f58cfc00024d" />
-    <meta-data
-      android:name="UMENG_CHANNEL"
-      android:value="Wandoujia" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5c11f976b465f58cfc00024d" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Wandoujia" />
 
-    <!-- 声明 appWidget 桌面小工具类 -->
-    <receiver
-      android:name="com.example.zhangruirui.utils.MyAppWidgetProvider"
-      android:icon="@drawable/launch_icon">
-      <meta-data
-        android:name="android.appwidget.provider"
-        android:resource="@xml/appwidget_provider_info" />
+        <!-- 声明 appWidget 桌面小工具类 -->
+        <receiver
+            android:name="com.example.zhangruirui.utils.MyAppWidgetProvider"
+            android:icon="@drawable/launch_icon">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info" />
 
-      <intent-filter>
-        <action android:name="com.example.zhangruirui.action.CLICK" />
-        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-      </intent-filter>
-    </receiver>
+            <intent-filter>
+                <action android:name="com.example.zhangruirui.action.CLICK" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
 
-    <activity android:name=".demo_learning.MenuDemoActivity" />
-    <activity
-      android:name=".demo_learning.jscommunication.JSActivity"
-      android:hardwareAccelerated="true" />
-    <activity android:name=".share.wxapi.WXEntryActivity" />
-    <activity android:name=".demo_learning.refreshlayout.SmartRefreshActivity" />
-    <activity android:name=".passwordbook.VerifyActivity" />
-    <activity android:name=".passwordbook.SetHandPasswordActivity" />
-    <activity android:name=".passwordbook.HomeActivity" />
-    <activity android:name=".passwordbook.AddRecord" />
-    <activity android:name=".passwordbook.SearchRecord" />
-    <activity android:name=".passwordbook.SearchResult" />
-    <activity android:name=".passwordbook.ShowAllPassword" />
-    <activity android:name=".DrawShapeActivity" />
+        <activity android:name=".demo_learning.MenuDemoActivity" />
+        <activity
+            android:name=".demo_learning.jscommunication.JSActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".share.wxapi.WXEntryActivity" />
+        <activity android:name=".demo_learning.refreshlayout.SmartRefreshActivity" />
+        <activity android:name=".passwordbook.VerifyActivity" />
+        <activity android:name=".passwordbook.SetHandPasswordActivity" />
+        <activity android:name=".passwordbook.HomeActivity" />
+        <activity android:name=".passwordbook.AddRecord" />
+        <activity android:name=".passwordbook.SearchRecord" />
+        <activity android:name=".passwordbook.SearchResult" />
+        <activity android:name=".passwordbook.ShowAllPassword" />
+        <activity android:name=".DrawShapeActivity" />
 
-    <receiver
-      android:name=".ForceOfflineReceiver"
-      android:enabled="true"
-      android:exported="true">
-      <intent-filter>
-        <action android:name="com.example.zhangruirui.lifetips.FORCE_OFFLINE" />
-      </intent-filter>
-    </receiver>
+        <receiver
+            android:name=".ForceOfflineReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.zhangruirui.lifetips.FORCE_OFFLINE" />
+            </intent-filter>
+        </receiver>
 
-    <provider
-      android:name="android.support.v4.content.FileProvider"
-      android:authorities="com.example.zhangruirui.lifetips.fileprovider"
-      android:exported="false"
-      android:grantUriPermissions="true">
-      <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/file_path" />
-    </provider>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.zhangruirui.lifetips.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
 
-    <activity
-      android:name=".wechat.WelcomeWeChatActivity"
-      android:theme="@style/WeChatSplashTheme"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".wechat.LoginWeChatActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".wechat.MainWeChatActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".wechat.LoadingActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".wechat.WhatsNewDoorActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".lucky_pan.LuckySpanActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".time_line.TimeLineActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".KeyBoardLayoutActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-
-    <activity
-      android:name=".vitas_log.VitasActivity"
-      android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
-      android:label="@string/app_name"
-      android:screenOrientation="portrait"
-      android:windowSoftInputMode="stateHidden|adjustResize" />
-  </application>
+        <activity
+            android:name=".wechat.WelcomeWeChatActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/WeChatSplashTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".wechat.LoginWeChatActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".wechat.MainWeChatActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".wechat.LoadingActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".wechat.WhatsNewDoorActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".lucky_pan.LuckySpanActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".time_line.TimeLineActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".KeyBoardLayoutActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".vitas_log.VitasActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".CountDownActivity"></activity>
+    </application>
 
 </manifest>

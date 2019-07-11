@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao' // apply plugin
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions' // apply plugin
 
 android {
     compileSdkVersion 28
@@ -39,6 +41,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.10.3'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     implementation 'com.android.support:customtabs:25.1.0+'
     implementation 'com.tencent:mmkv:1.0.18'
 
@@ -64,6 +67,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 // 该代码使用一次即可注释掉;如果没有这段代码，则默认在 build 目录下生成

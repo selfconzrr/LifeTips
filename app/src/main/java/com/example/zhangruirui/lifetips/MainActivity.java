@@ -310,6 +310,12 @@ public class MainActivity extends BaseActivity {
     startActivity(intent);
   }
 
+  @OnClick({R.id.countDownCode})
+  public void onClickCountDownCode() {
+    final Intent intent = new Intent(MainActivity.this, CountDownActivity.class);
+    startActivity(intent);
+  }
+
   private void doExit() {
     new AlertDialog.Builder(MainActivity.this)
         .setTitle("Quit")
