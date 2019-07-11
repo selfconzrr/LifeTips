@@ -89,84 +89,95 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
 
     switch (v.getId()) {
       case R.id.num_0:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("0");
-        else
-          resultView.setText(currentText.append('0'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("0");
+        } else {
+            resultView.setText(currentText.append('0'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_1:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("1");
-        else
-          resultView.setText(currentText.append('1'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("1");
+        } else {
+            resultView.setText(currentText.append('1'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_2:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("2");
-        else
-          resultView.setText(currentText.append('2'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("2");
+        } else {
+            resultView.setText(currentText.append('2'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_3:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("3");
-        else
-          resultView.setText(currentText.append('3'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("3");
+        } else {
+            resultView.setText(currentText.append('3'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_4:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("4");
-        else
-          resultView.setText(currentText.append('4'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("4");
+        } else {
+            resultView.setText(currentText.append('4'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_5:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("5");
-        else
-          resultView.setText(currentText.append('5'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("5");
+        } else {
+            resultView.setText(currentText.append('5'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_6:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("6");
-        else
-          resultView.setText(currentText.append('6'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("6");
+        } else {
+            resultView.setText(currentText.append('6'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_7:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("7");
-        else
-          resultView.setText(currentText.append('7'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("7");
+        } else {
+            resultView.setText(currentText.append('7'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_8:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("8");
-        else
-          resultView.setText(currentText.append('8'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("8");
+        } else {
+            resultView.setText(currentText.append('8'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.num_9:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("9");
-        else
-          resultView.setText(currentText.append('9'));
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("9");
+        } else {
+            resultView.setText(currentText.append('9'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.op_add:
-        if (mLastOp == ADD)
-          mAnswer += Double.parseDouble(currentText.toString());
-        else if (mLastOp == MINUS)
-          mAnswer -= Double.parseDouble(currentText.toString());
-        else if (mLastOp == MULTI)
-          mAnswer *= Double.parseDouble(currentText.toString());
-        else if (mLastOp == DIV)
-          mAnswer /= Double.parseDouble(currentText.toString());
+        if (mLastOp == ADD) {
+            mAnswer += Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MINUS) {
+            mAnswer -= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MULTI) {
+            mAnswer *= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == DIV) {
+            mAnswer /= Double.parseDouble(currentText.toString());
+        }
         if (String.valueOf(mAnswer).endsWith(".0")) {
           int length = String.valueOf(mAnswer).length();
           resultView.setText(String.valueOf(mAnswer).substring(0, length - 2));
@@ -177,14 +188,15 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         mLastInputIsOp = true;
         break;
       case R.id.op_minus:
-        if (mLastOp == ADD)
-          mAnswer += Double.parseDouble(currentText.toString());
-        else if (mLastOp == MINUS)
-          mAnswer -= Double.parseDouble(currentText.toString());
-        else if (mLastOp == MULTI)
-          mAnswer *= Double.parseDouble(currentText.toString());
-        else if (mLastOp == DIV)
-          mAnswer /= Double.parseDouble(currentText.toString());
+        if (mLastOp == ADD) {
+            mAnswer += Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MINUS) {
+            mAnswer -= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MULTI) {
+            mAnswer *= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == DIV) {
+            mAnswer /= Double.parseDouble(currentText.toString());
+        }
         if (String.valueOf(mAnswer).endsWith(".0")) {
           int length = String.valueOf(mAnswer).length();
           resultView.setText(String.valueOf(mAnswer).substring(0, length - 2));
@@ -195,14 +207,15 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         mLastInputIsOp = true;
         break;
       case R.id.op_multi:
-        if (mLastOp == ADD)
-          mAnswer += Double.parseDouble(currentText.toString());
-        else if (mLastOp == MINUS)
-          mAnswer -= Double.parseDouble(currentText.toString());
-        else if (mLastOp == MULTI)
-          mAnswer *= Double.parseDouble(currentText.toString());
-        else if (mLastOp == DIV)
-          mAnswer /= Double.parseDouble(currentText.toString());
+        if (mLastOp == ADD) {
+            mAnswer += Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MINUS) {
+            mAnswer -= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MULTI) {
+            mAnswer *= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == DIV) {
+            mAnswer /= Double.parseDouble(currentText.toString());
+        }
         if (String.valueOf(mAnswer).endsWith(".0")) {
           int length = String.valueOf(mAnswer).length();
           resultView.setText(String.valueOf(mAnswer).substring(0, length - 2));
@@ -213,14 +226,15 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         mLastInputIsOp = true;
         break;
       case R.id.op_div:
-        if (mLastOp == ADD)
-          mAnswer += Double.parseDouble(currentText.toString());
-        else if (mLastOp == MINUS)
-          mAnswer -= Double.parseDouble(currentText.toString());
-        else if (mLastOp == MULTI)
-          mAnswer *= Double.parseDouble(currentText.toString());
-        else if (mLastOp == DIV)
-          mAnswer /= Double.parseDouble(currentText.toString());
+        if (mLastOp == ADD) {
+            mAnswer += Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MINUS) {
+            mAnswer -= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MULTI) {
+            mAnswer *= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == DIV) {
+            mAnswer /= Double.parseDouble(currentText.toString());
+        }
         if (String.valueOf(mAnswer).endsWith(".0")) {
           int length = String.valueOf(mAnswer).length();
           resultView.setText(String.valueOf(mAnswer).substring(0, length - 2));
@@ -231,21 +245,23 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         mLastInputIsOp = true;
         break;
       case R.id.op_dot:
-        if (mLastInputIsOp)
-          resultView.setText("0");
-        else
-          resultView.setText(currentText.append('.'));
+        if (mLastInputIsOp) {
+            resultView.setText("0");
+        } else {
+            resultView.setText(currentText.append('.'));
+        }
         mLastInputIsOp = false;
         break;
       case R.id.op_equal:
-        if (mLastOp == ADD)
-          mAnswer += Double.parseDouble(currentText.toString());
-        else if (mLastOp == MINUS)
-          mAnswer -= Double.parseDouble(currentText.toString());
-        else if (mLastOp == MULTI)
-          mAnswer *= Double.parseDouble(currentText.toString());
-        else if (mLastOp == DIV)
-          mAnswer /= Double.parseDouble(currentText.toString());
+        if (mLastOp == ADD) {
+            mAnswer += Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MINUS) {
+            mAnswer -= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == MULTI) {
+            mAnswer *= Double.parseDouble(currentText.toString());
+        } else if (mLastOp == DIV) {
+            mAnswer /= Double.parseDouble(currentText.toString());
+        }
         if (String.valueOf(mAnswer).endsWith(".0")) {
           int length = String.valueOf(mAnswer).length();
           resultView.setText(String.valueOf(mAnswer).substring(0, length - 2));
@@ -256,9 +272,9 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         mLastInputIsOp = false;
         break;
       case R.id.op_one_in_x:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("0");
-        else {
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("0");
+        } else {
           if (mLastOp == EQUAL) {
             mAnswer = 1 / Double.parseDouble(currentText.toString());
             if (String.valueOf(mAnswer).endsWith(".0")) {
@@ -267,15 +283,16 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
             } else {
               resultView.setText(String.valueOf(mAnswer));
             }
-          } else
-            resultView.setText(String.valueOf(1 / Double.parseDouble(currentText.toString())));
+          } else {
+              resultView.setText(String.valueOf(1 / Double.parseDouble(currentText.toString())));
+          }
         }
         mLastInputIsOp = false;
         break;
       case R.id.op_converse:
-        if (mLastInputIsOp || currentText.toString().equals("0"))
-          resultView.setText("0");
-        else {
+        if (mLastInputIsOp || currentText.toString().equals("0")) {
+            resultView.setText("0");
+        } else {
           if (mLastOp == EQUAL) {
             mAnswer = 0 - Double.parseDouble(currentText.toString());
             if (String.valueOf(mAnswer).endsWith(".0")) {
@@ -284,8 +301,9 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
             } else {
               resultView.setText(String.valueOf(mAnswer));
             }
-          } else
-            resultView.setText(String.valueOf(0 - Double.parseDouble(currentText.toString())));
+          } else {
+              resultView.setText(String.valueOf(0 - Double.parseDouble(currentText.toString())));
+          }
         }
         mLastInputIsOp = false;
         break;

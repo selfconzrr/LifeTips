@@ -1,5 +1,7 @@
 package com.example.zhangruirui.lifetips;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -32,6 +34,7 @@ import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.lifetips.time_line.TimeLineActivity;
 import com.example.zhangruirui.lifetips.vitas_log.VitasActivity;
 import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
+import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -308,26 +311,29 @@ public class MainActivity extends BaseActivity {
   }
 
   private void doExit() {
-//    new AlertDialog.Builder(MainActivity.this)
-//        .setTitle("Quit")
-//        .setMessage("小主，确认退出吗？")
-//        .setIcon(R.drawable.quit)
-//        .setPositiveButton("残忍退出",
-//            (dialog, whichButton) -> {
-//              MMKV mmkv = MMKV.defaultMMKV();
-//              final int value = mmkv.getInt("light_value", 180);
-//              mmkv.putInt("light_value", value);
-//              ActivityCollector.finishAll();
-//            })
-//        .setNegativeButton("再玩一会",
-//            (dialog, whichButton) -> {
-//              // LEFT DO NOTHING
-//              ToastUtil.showToast(MainActivity.this, "感谢您的挽留");
-//            }).show();
+    new AlertDialog.Builder(MainActivity.this)
+        .setTitle("Quit")
+        .setMessage("小主，确认退出吗？")
+        .setIcon(R.drawable.quit)
+        .setPositiveButton("残忍退出",
+                new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialog, int whichButton) {
+                    MMKV mmkv = MMKV.defaultMMKV();
+                    final int value = mmkv.getInt("light_value", 180);
+                    mmkv.putInt("light_value", value);
+                    ActivityCollector.finishAll();
+                  }
+                })
+        .setNegativeButton("再玩一会",
+            (dialog, whichButton) -> {
+              // LEFT DO NOTHING
+              ToastUtil.showToast(MainActivity.this, "感谢您的挽留");
+            }).show();
 
     // 测试强制下线功能，提示用户，将退出登录状态，下次需要重新登录
-    Intent intent = new Intent("com.example.zhangruirui.lifetips.FORCE_OFFLINE");
-    sendBroadcast(intent);
+//    Intent intent = new Intent("com.example.zhangruirui.lifetips.FORCE_OFFLINE");
+//    sendBroadcast(intent);
   }
 
   private void registerToWx() {

@@ -119,7 +119,9 @@ public class KSUtils {
 
     if (monthNow <= monthBirth) {
       if (monthNow == monthBirth) {
-        if (dayOfMonthNow < dayOfMonthBirth) age--;
+        if (dayOfMonthNow < dayOfMonthBirth) {
+            age--;
+        }
       } else {
         age--;
       }

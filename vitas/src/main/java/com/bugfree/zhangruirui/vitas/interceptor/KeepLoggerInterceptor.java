@@ -195,8 +195,9 @@ public class KeepLoggerInterceptor implements Interceptor {
             source = new GzipSource(buffer.clone());
             buffer.writeAll(source);
           } finally {
-            if (source != null)
-              source.close();
+            if (source != null) {
+                source.close();
+            }
           }
         }
       } else {

@@ -196,8 +196,9 @@ public class CycleViewPager extends FrameLayout implements ViewPager.OnPageChang
     // 设置指示器
     mIndicators = new ImageView[ivSize];
 
-    if (isCycle)
-      mIndicators = new ImageView[ivSize - 2];
+    if (isCycle) {
+        mIndicators = new ImageView[ivSize - 2];
+    }
 
     mIndicatorLayout.removeAllViews();
     for (int i = 0; i < mIndicators.length; i++) {
@@ -216,8 +217,9 @@ public class CycleViewPager extends FrameLayout implements ViewPager.OnPageChang
     mViewPager.setOffscreenPageLimit(3);
     mViewPager.addOnPageChangeListener(this);
     mViewPager.setAdapter(mAdapter);
-    if (showPosition < 0 || showPosition >= mViews.size())
-      showPosition = 0;
+    if (showPosition < 0 || showPosition >= mViews.size()) {
+        showPosition = 0;
+    }
     if (isCycle) {
       showPosition = showPosition + 1;
     }
@@ -259,8 +261,9 @@ public class CycleViewPager extends FrameLayout implements ViewPager.OnPageChang
       for (ImageView mIndicator : mIndicators) {
         mIndicator.setBackgroundResource(mIndicatorUnselected);
       }
-      if (mIndicators.length > selectedPosition)
-        mIndicators[selectedPosition].setBackgroundResource(mIndicatorSelected);
+      if (mIndicators.length > selectedPosition) {
+          mIndicators[selectedPosition].setBackgroundResource(mIndicatorSelected);
+      }
     } catch (Exception e) {
       Log.i("zhangrr", "指示器路径不正确");
     }
@@ -392,8 +395,9 @@ public class CycleViewPager extends FrameLayout implements ViewPager.OnPageChang
    * 刷新数据，当外部视图更新后，通知刷新数据
    */
   public void refreshData() {
-    if (mAdapter != null)
-      mAdapter.notifyDataSetChanged();
+    if (mAdapter != null) {
+        mAdapter.notifyDataSetChanged();
+    }
   }
 
   /**

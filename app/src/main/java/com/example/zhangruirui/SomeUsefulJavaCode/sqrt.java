@@ -12,12 +12,13 @@ public class sqrt {
     int high = x;
     while (low <= high) {
       long mid = (low + high) / 2; // 防止溢出
-      if (mid * mid == x)
-        return (int) mid;
-      else if (mid * mid < x)
-        low = (int) (mid + 1);
-      else
-        high = (int) (mid - 1);
+      if (mid * mid == x) {
+          return (int) mid;
+      } else if (mid * mid < x) {
+          low = (int) (mid + 1);
+      } else {
+          high = (int) (mid - 1);
+      }
     }
     return high;
   }

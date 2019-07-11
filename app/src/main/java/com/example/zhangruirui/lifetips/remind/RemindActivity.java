@@ -140,9 +140,10 @@ public class RemindActivity extends BaseActivity implements View.OnClickListener
           return;
         }
         if (!(txt_date.equals("") || txt_time.equals("") || txt_remark
-            .equals("")))
-          ToastUtil.showToast(this, " 提醒您： " + mDate.getText() + " " + mTime.getText()
-              + "  " + mRemark.getText() + " !");
+            .equals(""))) {
+            ToastUtil.showToast(this, " 提醒您： " + mDate.getText() + " " + mTime.getText()
+                + "  " + mRemark.getText() + " !");
+        }
         cancel();
         int delayTime = (int) (value - value2);
         Intent intent = new Intent();

@@ -43,8 +43,9 @@ public class LogAdapter extends RecyclerView.Adapter<LogAdapter.ViewHolder> {
       StringBuilder urlBuilder = new StringBuilder();
       char[] chars = requestInfo.getUrl().toCharArray();
       for (int i = 0; i < chars.length; i++) {
-        if (chars[i] == '?')
-          break;
+        if (chars[i] == '?') {
+            break;
+        }
         urlBuilder.append(chars[i]);
       }
       holder.mCardView.setTag(R.id.tag_simple_url, urlBuilder.toString());
