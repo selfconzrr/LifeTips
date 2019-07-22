@@ -100,7 +100,7 @@ public class KeepLoggerInterceptor implements Interceptor {
     Headers headers = request.headers();
     String headersFormatterString = headers.toString();
     headersFormatterString = headersFormatterString.replaceAll("\n", "<br>");
-    requestInfo.setRequestHeaders(headersFormatterString);
+    requestInfo.setRequestHeaders(headersFormatterString + " HAHA");
     logger.log(headers.toString());
 
     // Response
@@ -163,6 +163,7 @@ public class KeepLoggerInterceptor implements Interceptor {
     logger.log("tookTimeMS:" + requestInfo.getTookTimeMS());
     logger.log(requestInfo.getResponseHeaders());
     logger.log("<--END HTTP ");
+
     Vitas.getInstance().getLogRepository().saveToDB(requestInfo, null);
     return response;
   }

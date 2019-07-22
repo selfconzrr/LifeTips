@@ -111,14 +111,6 @@ public class ViewActivity extends AppCompatActivity {
     if (hasFocus) {
       final int height = mBtn.getHeight();
       final int measuredHeight = mBtn.getMeasuredHeight();
-      Log.e("zhangrr", "btn onWindowFocusChanged() called height = " + height
-          + " measuredHeight = " + measuredHeight);
-      Log.e("zhangrr", "myView onWindowFocusChanged() called height = " + mView.getHeight()
-          + " measuredHeight = " + mView.getMeasuredHeight());
-//      int defaultMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,100,
-// getResources().getDisplayMetrics());
-//      Log.e("zhangrr", "onWindowFocusChanged() called with: defaultMargin = [" + defaultMargin
-// + "]");
     }
   }
 }

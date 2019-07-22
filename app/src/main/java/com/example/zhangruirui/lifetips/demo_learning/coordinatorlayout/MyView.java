@@ -15,12 +15,18 @@ import android.view.View;
  * 当然了，还得写至少写2个构造函数：1参和2参的
  */
 public class MyView extends View {
+  private Paint mPaint;
   public MyView(Context context) {
     super(context);
   }
 
   public MyView(Context context, @Nullable AttributeSet attrs) {
     super(context, attrs);
+    init();
+  }
+
+  private void init() {
+    mPaint = new Paint();
   }
 
   @Override
@@ -55,14 +61,12 @@ public class MyView extends View {
     super.onDraw(canvas);
 
     int r = getMeasuredWidth() / 2;
-    // 圆心的横坐标为当前的 View 的左边起始位置+半径
-    int centerX = getLeft() + r;
-    // 圆心的纵坐标为当前的 View 的顶部起始位置+半径
-    int centerY = getTop() + r;
+    // 这里的圆心是应该是指相对画布 Canvas 的位置，不需要获取在父布局中的位置
+    int centerX = r;
+    int centerY = r;
 
-    Paint paint = new Paint();
-    paint.setColor(Color.GREEN);
-    canvas.drawCircle(centerX, centerY, r, paint);
+    mPaint.setColor(Color.GREEN);
+    canvas.drawCircle(centerX, centerY, r, mPaint);
   }
 
   private int getMySize(int defaultSize, int measureSpec) {
@@ -82,7 +86,7 @@ public class MyView extends View {
         break;
       }
       case MeasureSpec.EXACTLY: { // 如果是固定的大小，那就不要去改变它
-        mySize = size;
+        mySize = mySize;
         break;
       }
     }

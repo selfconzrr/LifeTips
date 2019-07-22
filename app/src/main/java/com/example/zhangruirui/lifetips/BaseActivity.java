@@ -59,6 +59,12 @@ public class BaseActivity extends AppCompatActivity {
   protected void onPause() {
     super.onPause();
     MobclickAgent.onPause(this);
+
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
     /**
      * 弹出 debug 调试界面，即注销监听，防止多次吊起
      * 如果吊起的是 Activity，解注册需要放在 onStop() 中，如果是 dialog，放在 onPause()
@@ -66,11 +72,6 @@ public class BaseActivity extends AppCompatActivity {
     if (mShakeUtil != null) {
       mShakeUtil.unregister();
     }
-  }
-
-  @Override
-  protected void onStop() {
-    super.onStop();
   }
 
   @Override

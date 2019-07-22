@@ -45,6 +45,7 @@ public class VitasActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         postRequest();
+        // getRequest();
       }
     });
     mBtnClearLog.setOnClickListener(new View.OnClickListener() {
@@ -131,8 +132,11 @@ public class VitasActivity extends AppCompatActivity {
       @Override
       public void onResponse(Call<GetTranslation> call, retrofit2.Response<GetTranslation>
           response) {
-        assert response.body() != null;
-        response.body().show();
+//        assert response.body() != null;
+//        response.body().show();
+        String json = new Gson().toJson(response.body());
+        Log.d(TAG, "onResponse: responseBody的值:" + json);
+        mTvCurrentRequest.setText(String.format("response: \r\n %s", response.raw()));
       }
 
       @Override

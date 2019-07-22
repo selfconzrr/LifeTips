@@ -78,7 +78,9 @@ public class Vitas {
       }
     }
 
-    mManager.notify(S_NOTIFICATION_ID, builder.build());
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+      mManager.notify(S_NOTIFICATION_ID, builder.build());
+    }
   }
 
   private void clearNotification() {

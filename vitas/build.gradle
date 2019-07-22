@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'com.novoda.bintray-release'//添加
 
 android {
     compileSdkVersion 28
@@ -21,16 +22,17 @@ android {
         }
     }
 
-}
+    lintOptions{
+        abortOnError false
+    }
 
-//repositories {
-//    mavenCentral()
-//}
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -38,48 +40,16 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.2.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
-    implementation 'com.android.support:recyclerview-v7:27.0.2'
-    implementation 'com.android.support:cardview-v7:27.0.2'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
 }
 
-//task sourcesJar(type: Jar) {
-//    classifier = 'sources'
-//    from android.sourceSets.main.java.srcDirs
-//}
-//
-//artifacts {
-//    archives sourcesJar
-//}
-
-
-////  ./gradlew :vitas:uploadArchives 打包本地 maven
-
-//// 上传到本地
-
-//uploadArchives {
-//    repositories {
-//        mavenDeployer {
-//            def localDir = uri("${rootProject.buildFile.parentFile.absolutePath}/repos")
-//            repository(url: localDir)
-//
-//            pom.project {
-//                groupId 'com.xxx.xxx'
-//                artifactId 'vitas'
-//                version '1.0.3'
-//
-//            }
-//        }
-//    }
-//}
-
-//上传到 jcenter
-//task upload {
-//    doLast {
-//        exec {
-//            commandLine "mvn", "deploy:deploy-file", "-DgroupId="+group, "-DartifactId="+artifactId, "-Dversion="+version,
-//                    "-Dpackaging=aar", "-Durl="+mavenUrl,
-//                    "-Dfile=build/outputs/aar/vitas-release.aar", "-DrepositoryId=kuaishou.releases",
-//                    "-Djava-source="+android.sourceSets.main.java.srcDirs
-//        }
-//    }
-//}
+//添加
+publish {
+    userOrg = "bugfreezrr" // bintray.com 你的用户名
+    groupId = 'com.bugfree.zhangruirui.vitas'// jcenter 上的路径
+    artifactId = 'vitas'//项目名称
+    publishVersion = '1.0.3'//版本号
+    desc = 'vitas log'//描述，不重要
+    website = 'https://github.com/selfconzrr' //网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+}

@@ -1,7 +1,6 @@
 package com.example.zhangruirui.lifetips
 
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
@@ -21,7 +20,7 @@ class CountDownActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_count_down)
 
-        RxView.clicks(btn_get_code)
+        disposable = RxView.clicks(btn_get_code)
                 .throttleFirst(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 // 点击后设置为不可点击
