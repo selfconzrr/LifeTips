@@ -55,7 +55,6 @@ public class NetworkTimeActivity extends BaseActivity {
 
     DatePicker datePicker = findViewById(R.id.date_Picker);
 
-    datePicker.setMaxDate(new Date().getTime());
     datePicker.init(mChooseBirthday.get(Calendar.YEAR), mChooseBirthday.get(Calendar.MONTH),
         mChooseBirthday.get(Calendar.DAY_OF_MONTH), (view, year, monthOfYear, dayOfMonth) -> {
           mChooseBirthday.set(Calendar.YEAR, year);
