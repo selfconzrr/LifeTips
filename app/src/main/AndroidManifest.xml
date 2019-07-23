@@ -207,8 +207,9 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".CountDownActivity"></activity>
-        <activity android:name=".fallingball.FallingActivity"></activity>
+        <activity android:name=".CountDownActivity" />
+        <activity android:name=".fallingball.FallingActivity" />
+        <activity android:name=".voice_recognizer.VoiceActivity"></activity>
     </application>
 
 </manifest>

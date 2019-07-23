@@ -102,10 +102,10 @@ public class FallingBallView extends View {
             mStartY = mStartY + mSpeedY / 30;
             mSpeedX *= 0.97; // 慢慢降低速度
             mSpeedY *= 0.97;
-            if (Math.abs(mSpeedX) < 10) {
+            if (Math.abs(mSpeedX) < 5) {
                 mSpeedX = 0;
             }
-            if (Math.abs(mSpeedY) < 10) {
+            if (Math.abs(mSpeedY) < 5) {
                 mSpeedY = 0;
             }
             if (refreshRectByCurrentPoint()) {

@@ -317,4 +317,13 @@
         android:layout_toRightOf="@+id/countDownCode"
         android:text="碰碰球"
         android:textColor="#ff0000" />
+
+    <Button
+        android:id="@+id/voice_recognize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeLine"
+        android:layout_toRightOf="@+id/fallingBall"
+        android:text="语音识别"
+        android:textColor="#ff0000" />
 </RelativeLayout>

@@ -34,6 +34,7 @@ import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
 import com.example.zhangruirui.lifetips.time_line.TimeLineActivity;
 import com.example.zhangruirui.lifetips.vitas_log.VitasActivity;
+import com.example.zhangruirui.lifetips.voice_recognizer.VoiceActivity;
 import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.Log;
@@ -320,6 +321,12 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.fallingBall})
     public void onClickFallingBall() {
         final Intent intent = new Intent(MainActivity.this, FallingActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick({R.id.voice_recognize})
+    public void onClickVoiceRecoginze() {
+        final Intent intent = new Intent(MainActivity.this, VoiceActivity.class);
         startActivity(intent);
     }
 
