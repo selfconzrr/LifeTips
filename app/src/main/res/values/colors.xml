@@ -10,5 +10,8 @@
   <color name="white">#ffffff</color>
   <color name="window_bg">#ffeef1f3</color>
   <color name="qqblue">#ff54acea</color>
+  <color name="red">#aacc0000</color>
+  <color name="orange_red">#FF6700</color>
+  <color name="shadow_color">#7F000000</color>
 
 </resources>

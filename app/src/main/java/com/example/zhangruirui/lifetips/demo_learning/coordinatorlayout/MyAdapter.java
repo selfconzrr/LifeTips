@@ -27,7 +27,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   private final AsyncListDiffer<Bean> mItemCallback = new AsyncListDiffer(this, new
       DiffItemCallBack());
 
-  MyAdapter() {
+  MyAdapter(List<String> list) {
+    this.list = list;
   }
 
   public void setDatas(List<String> list) {

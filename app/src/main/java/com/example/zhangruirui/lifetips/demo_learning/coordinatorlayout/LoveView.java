@@ -27,13 +27,11 @@ public class LoveView extends RelativeLayout {
   float[] num = {-30, -20, 0, 20, 30}; // 随机心形图片的角度
 
   public LoveView(Context context) {
-    super(context);
-    initView(context);
+    this(context, null);
   }
 
   public LoveView(Context context, AttributeSet attrs) {
-    super(context, attrs);
-    initView(context);
+    this(context, attrs, 0);
   }
 
   public LoveView(Context context, AttributeSet attrs, int defStyleAttr) {

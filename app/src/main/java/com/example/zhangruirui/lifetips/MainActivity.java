@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
@@ -39,6 +40,8 @@ import com.example.zhangruirui.lifetips.wechat.WelcomeWeChatActivity;
 import com.example.zhangruirui.utils.ActivityCollector;
 import com.example.zhangruirui.utils.Log;
 import com.example.zhangruirui.utils.ToastUtil;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipeline;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
@@ -327,6 +330,12 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.voice_recognize})
     public void onClickVoiceRecoginze() {
         final Intent intent = new Intent(MainActivity.this, VoiceActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick({R.id.my_tablayout})
+    public void onClickTabLayout() {
+        final Intent intent = new Intent(MainActivity.this, TagTextActivity.class);
         startActivity(intent);
     }
 

@@ -117,8 +117,8 @@ public class FragmentModel extends Fragment {
     // 如果可以确定每个 item 的高度是固定的，设置这个选项可以提高性能
     mRecyclerView.setHasFixedSize(true);
 
-    myAdapter = new MyAdapter();
-    myAdapter.setDatas(mList);
+    myAdapter = new MyAdapter(mList);
+    // myAdapter.setDatas(mList);
     mRecyclerView.setAdapter(myAdapter);
 
     mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -171,9 +171,9 @@ public class FragmentModel extends Fragment {
             .findViewByPosition(position).getHeight() + " measure = "
             + mLinearLayoutManager.findViewByPosition(position).getMeasuredHeight());
         mList.set(position, "new " + position + " item");
-//        doCalculate();
+        doCalculate();
 
-        moveToPosition(myAdapter.getItemCount() - 1);
+//        moveToPosition(myAdapter.getItemCount() - 1);
 //        mRecyclerView.scrollToPosition(5); // 将点击的 item 置顶：如果移动到当前屏幕可见列表的前面的项时，会将目标 item
 // 的顶部和布局的顶部对齐；如果是移动到后面的项时，会将目标 item 的底部和布局底部对齐
 //        mRecyclerView.scrollTo(0, 100); // 总是相对于 view 的初始位置进行偏移
@@ -195,10 +195,10 @@ public class FragmentModel extends Fragment {
                 if (position < mList.size()) {
 
                   mList.remove(position);
-                  // doCalculate();
+                  doCalculate();
 
-                  myAdapter.setDatas(mList);
-                  myAdapter.notifyItemRemoved(position); // 使用该方法，一般还需要我们再调用下面的方法或者
+//                  myAdapter.setDatas(mList);
+//                  myAdapter.notifyItemRemoved(position); // 使用该方法，一般还需要我们再调用下面的方法或者
                   // notifyDataSetChanged()
                   // 因为该方法不会使 position 及其之后位置的 itemView 重新 onBindViewHolder
                   // 在删除单项后，已经出现在画面里的项不会再有调用 onBind 机会，这样它保留的 position 一直是未进行删除操作前的 position
@@ -333,7 +333,7 @@ public class FragmentModel extends Fragment {
             // 利用 DiffUtil.DiffResult 对象的 dispatchUpdatesTo() 方法，传入 RecyclerView 的 Adapter
             diffResult.dispatchUpdatesTo(myAdapter);
             // 别忘了将新数据给 Adapter
-            myAdapter.setDatas(mList);
+             myAdapter.setDatas(mList);
           }
         });
   }

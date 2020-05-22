@@ -31,7 +31,7 @@ public class DiffCallBack extends DiffUtil.Callback {
    * Called by the DiffUtil to decide whether two object represent the same Item.
    * 被 DiffUtil 调用，用来判断两个对象是否是相同的 Item。
    * For example, if your items have unique ids, this method should check their id equality.
-   * 例如，如果你的Item有唯一的id字段，这个方法就判断id是否相等。
+   * 例如，如果你的 Item 有唯一的 id 字段，这个方法就判断 id 是否相等。
    *
    * @param oldItemPosition The position of the item in the old list
    * @param newItemPosition The position of the item in the new list

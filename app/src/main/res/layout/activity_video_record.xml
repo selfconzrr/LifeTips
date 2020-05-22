@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".video_record.VideoRecordActivity">
+
+    <Button
+        android:id="@+id/video_shoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shoot video"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/video_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="upload video"
+        app:layout_constraintLeft_toRightOf="@+id/video_shoot"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp" />
+
+    <Button
+        android:id="@+id/video_compress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="compress video"
+        app:layout_constraintLeft_toRightOf="@+id/video_upload"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp" />
+
+    <VideoView
+        android:id="@+id/vv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/video_shoot" />
+</android.support.constraint.ConstraintLayout>

@@ -26,6 +26,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <activity android:name=".TagTextActivity"></activity>
+        <activity android:name=".video_clip.VideoClipActivity" />
+        <activity android:name=".video_record.EsayVideoEditActivity" />
+        <activity android:name=".video_record.VideoRecordActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplashTheme">
@@ -102,9 +106,7 @@
             android:value="5c11f976b465f58cfc00024d" />
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="Wandoujia" />
-
-        <!-- 声明 appWidget 桌面小工具类 -->
+            android:value="Wandoujia" /> <!-- 声明 appWidget 桌面小工具类 -->
         <receiver
             android:name="com.example.zhangruirui.utils.MyAppWidgetProvider"
             android:icon="@drawable/launch_icon">
@@ -209,7 +211,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".CountDownActivity" />
         <activity android:name=".fallingball.FallingActivity" />
-        <activity android:name=".voice_recognizer.VoiceActivity"></activity>
+        <activity android:name=".voice_recognizer.VoiceActivity" />
     </application>
 
 </manifest>

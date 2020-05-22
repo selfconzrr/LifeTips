@@ -307,6 +307,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/luckyPan"
         android:text="倒计时"
+        android:background="@drawable/btn_layer2nd"
         android:textColor="#ff0000" />
 
     <Button
@@ -325,5 +326,22 @@
         android:layout_below="@+id/timeLine"
         android:layout_toRightOf="@+id/fallingBall"
         android:text="语音识别"
+        android:textColor="#ff0000" />
+
+    <Button
+        android:id="@+id/video_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/keyBoardLayout"
+        android:layout_toRightOf="@+id/voice_recognize"
+        android:text="视频录制"
+        android:textColor="#ff0000" />
+
+    <Button
+        android:id="@+id/my_tablayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countDownCode"
+        android:text="TABlayout"
         android:textColor="#ff0000" />
 </RelativeLayout>

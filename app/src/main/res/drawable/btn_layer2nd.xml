@@ -20,7 +20,7 @@
           <corners android:radius="10dp" />
         </shape>
       </item>
-      <!-- 白色前景 -->
+      <!-- 渐变色前景 -->
       <item android:bottom="3dp" android:top="3dp">
         <shape>
           <gradient android:angle="270" android:endColor="#FF0000" android:startColor="#BABABA" />
