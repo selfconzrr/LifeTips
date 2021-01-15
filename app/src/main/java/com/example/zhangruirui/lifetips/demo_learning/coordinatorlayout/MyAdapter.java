@@ -117,6 +117,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
   @Override
   public void onViewRecycled(@NonNull MyViewHolder holder) {
+    // 加速图片回收
+//    holder.imageView.setImageDrawable(null);
     super.onViewRecycled(holder);
   }
 

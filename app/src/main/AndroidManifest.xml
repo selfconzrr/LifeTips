@@ -26,12 +26,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".TagTextActivity"></activity>
-        <activity android:name=".video_clip.VideoClipActivity" />
-        <activity android:name=".video_record.EsayVideoEditActivity" />
-        <activity android:name=".video_record.VideoRecordActivity" />
+        <activity android:name=".skeleton.RecyclerViewActivity"></activity>
+        <activity android:name=".skeleton.StatusViewActivity" />
+        <activity android:name=".skeleton.ViewActivity" />
+        <activity android:name=".skeleton.SkeletonActivity" />
+        <activity
+            android:name=".TagTextActivity"
+            android:launchMode="singleInstance" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

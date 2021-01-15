@@ -1,1 +1,2 @@
+include ':skeleton'
 include ':app', ':slidebacklayout', ':banner', ':shape_draw', ':vitas'

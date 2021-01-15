@@ -187,4 +187,7 @@
     <string name="wechat_login_password_hint">密码(请输入123456)</string>
     <string name="wechat_register">注册</string>
 
+    <!-- 骨架屏 -->
+    <string name="fast_furious"><![CDATA[Fast & Furious]]></string>
+
 </resources>

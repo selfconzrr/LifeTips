@@ -6,86 +6,95 @@
     android:layout_height="match_parent"
     tools:context=".TagTextActivity">
 
-    <com.example.zhangruirui.lifetips.widget.TagsLayout
-        android:id="@+id/layout_unhappy_tag"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+<!--    <com.example.zhangruirui.lifetips.widget.TagsLayout-->
+<!--        android:id="@+id/layout_unhappy_tag"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:orientation="horizontal">-->
 
-        <TextView
-            android:id="@+id/et_unhappy_product"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_confirm_shape"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="666666666" />
+<!--        <TextView-->
+<!--            android:id="@+id/et_unhappy_product"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/btn_confirm_shape"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="666666666" />-->
 
-        <TextView
-            android:id="@+id/et_unhappy_delivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_confirm_shape"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="777777777777" />
+<!--        <TextView-->
+<!--            android:id="@+id/et_unhappy_delivery"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/btn_confirm_shape"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="777777777777" />-->
 
-        <TextView
-            android:id="@+id/et_unhappy_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_confirm_shape"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="88888888888888888" />
+<!--        <TextView-->
+<!--            android:id="@+id/et_unhappy_service"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/btn_confirm_shape"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="88888888888888888" />-->
 
-        <TextView
-            android:id="@+id/et_unhappy_service11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_confirm_shape"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="9999999999" />
+<!--        <TextView-->
+<!--            android:id="@+id/et_unhappy_service11"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/btn_confirm_shape"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="9999999999" />-->
 
-        <TextView
-            android:id="@+id/et_unhappy_service22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_confirm_shape"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="4444444444444" />
-    </com.example.zhangruirui.lifetips.widget.TagsLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/et_unhappy_service22"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:background="@drawable/btn_confirm_shape"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="4444444444444" />-->
+<!--    </com.example.zhangruirui.lifetips.widget.TagsLayout>-->
+
+    <Button
+        android:id="@+id/backMAin"
+        android:layout_width="100dp"
+        android:text="back"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_height="100dp"/>
 </LinearLayout>

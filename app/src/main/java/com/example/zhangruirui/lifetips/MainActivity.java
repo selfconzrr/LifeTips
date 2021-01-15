@@ -33,6 +33,7 @@ import com.example.zhangruirui.lifetips.notebook.activity.NotebookActivity;
 import com.example.zhangruirui.lifetips.notes.TimeDiaryActivity;
 import com.example.zhangruirui.lifetips.passwordbook.VerifyActivity;
 import com.example.zhangruirui.lifetips.remind.RemindActivity;
+import com.example.zhangruirui.lifetips.skeleton.SkeletonActivity;
 import com.example.zhangruirui.lifetips.time_line.TimeLineActivity;
 import com.example.zhangruirui.lifetips.vitas_log.VitasActivity;
 import com.example.zhangruirui.lifetips.voice_recognizer.VoiceActivity;
@@ -112,6 +113,60 @@ public class MainActivity extends BaseActivity {
         mCycleViewPager.setIndicators(R.mipmap.ad_select, R.mipmap.ad_unselect);
         mCycleViewPager.setDelay(2000);
         mCycleViewPager.setData(mList, mAdCycleViewListener);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        android.util.Log.e("zhangrr", "MainActivity onStart()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        android.util.Log.e("zhangrr", "MainActivity onPause()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        android.util.Log.e("zhangrr", "MainActivity onResume()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        android.util.Log.e("zhangrr", "MainActivity onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        android.util.Log.e("zhangrr", "MainActivity onDestroy()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        android.util.Log.e("zhangrr", "MainActivity onRestart()");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        android.util.Log.e("zhangrr", "MainActivity onSaveInstanceState()");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        android.util.Log.e("zhangrr", "MainActivity onRestoreInstanceState()");
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.e("zhangrr", "MainActivity onNewIntent()");
     }
 
     private void initData() {
@@ -336,6 +391,12 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.my_tablayout})
     public void onClickTabLayout() {
         final Intent intent = new Intent(MainActivity.this, TagTextActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick({R.id.skeleton})
+    public void onClickSkeleton() {
+        final Intent intent = new Intent(MainActivity.this, SkeletonActivity.class);
         startActivity(intent);
     }
 

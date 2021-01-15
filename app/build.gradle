@@ -3,6 +3,12 @@ apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions' // apply plugin
 
+repositories {
+    flatDir {
+        dirs 'libs'  // aar 目录
+    }
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -79,6 +85,9 @@ task jar {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation(name: 'flutter-debug', ext: 'aar')
+
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -90,6 +99,7 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation project(path: ':skeleton')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'org.jsoup:jsoup:1.11.2'
